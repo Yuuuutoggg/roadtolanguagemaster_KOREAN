@@ -1,0 +1,3564 @@
+{
+  "beginner": {
+    "verbs": [
+      {
+        "korean": "가다",
+        "japanese": "行く",
+        "example": {
+          "korean": "저는 학교에 갑니다.",
+          "japanese": "私は学校に行きます。"
+        }
+      },
+      {
+        "korean": "오다",
+        "japanese": "来る",
+        "example": {
+          "korean": "친구가 집에 옵니다.",
+          "japanese": "友達が家に来ます。"
+        }
+      },
+      {
+        "korean": "먹다",
+        "japanese": "食べる",
+        "example": {
+          "korean": "저는 사과를 먹습니다.",
+          "japanese": "私はリンゴを食べます。"
+        }
+      },
+      {
+        "korean": "마시다",
+        "japanese": "飲む",
+        "example": {
+          "korean": "물을 마십니다.",
+          "japanese": "水を飲みます。"
+        }
+      },
+      {
+        "korean": "보다",
+        "japanese": "見る",
+        "example": {
+          "korean": "영화를 봅니다.",
+          "japanese": "映画を見ます。"
+        }
+      },
+      {
+        "korean": "듣다",
+        "japanese": "聞く",
+        "example": {
+          "korean": "음악을 듣습니다.",
+          "japanese": "音楽を聞きます。"
+        }
+      },
+      {
+        "korean": "만나다",
+        "japanese": "会う",
+        "example": {
+          "korean": "친구를 만납니다.",
+          "japanese": "友達に会います。"
+        }
+      },
+      {
+        "korean": "주다",
+        "japanese": "与える",
+        "example": {
+          "korean": "선물을 줍니다.",
+          "japanese": "プレゼントをあげます。"
+        }
+      },
+      {
+        "korean": "받다",
+        "japanese": "受け取る",
+        "example": {
+          "korean": "편지를 받았습니다.",
+          "japanese": "手紙を受け取りました。"
+        }
+      },
+      {
+        "korean": "자다",
+        "japanese": "寝る",
+        "example": {
+          "korean": "저는 일찍 자야 합니다.",
+          "japanese": "私は早く寝なければなりません。"
+        }
+      },
+      {
+        "korean": "읽다",
+        "japanese": "読む",
+        "example": {
+          "korean": "책을 읽습니다.",
+          "japanese": "本を読みます。"
+        }
+      },
+      {
+        "korean": "쓰다",
+        "japanese": "書く",
+        "example": {
+          "korean": "편지를 씁니다.",
+          "japanese": "手紙を書きます。"
+        }
+      },
+      {
+        "korean": "배우다",
+        "japanese": "学ぶ",
+        "example": {
+          "korean": "한국어를 배웁니다.",
+          "japanese": "韓国語を学びます。"
+        }
+      },
+      {
+        "korean": "알다",
+        "japanese": "知る",
+        "example": {
+          "korean": "저는 그 사실을 압니다.",
+          "japanese": "私はその事実を知っています。"
+        }
+      },
+      {
+        "korean": "가르치다",
+        "japanese": "教える",
+        "example": {
+          "korean": "영어를 가르칩니다.",
+          "japanese": "英語を教えます。"
+        }
+      },
+      {
+        "korean": "사다",
+        "japanese": "買う",
+        "example": {
+          "korean": "저는 책을 삽니다.",
+          "japanese": "私は本を買います。"
+        }
+      },
+      {
+        "korean": "팔다",
+        "japanese": "売る",
+        "example": {
+          "korean": "가게에서 과일을 팝니다.",
+          "japanese": "店で果物を売ります。"
+        }
+      },
+      {
+        "korean": "일하다",
+        "japanese": "働く",
+        "example": {
+          "korean": "저는 회사에서 일합니다.",
+          "japanese": "私は会社で働きます。"
+        }
+      },
+      {
+        "korean": "운동하다",
+        "japanese": "運動する",
+        "example": {
+          "korean": "매일 운동합니다.",
+          "japanese": "毎日運動します。"
+        }
+      },
+      {
+        "korean": "노래하다",
+        "japanese": "歌う",
+        "example": {
+          "korean": "저는 노래를 좋아합니다.",
+          "japanese": "私は歌うのが好きです。"
+        }
+      },
+      {
+        "korean": "걷다",
+        "japanese": "歩く",
+        "example": {
+          "korean": "공원을 걷습니다.",
+          "japanese": "公園を歩きます。"
+        }
+      },
+      {
+        "korean": "달리다",
+        "japanese": "走る",
+        "example": {
+          "korean": "길을 달립니다.",
+          "japanese": "道を走ります。"
+        }
+      },
+      {
+        "korean": "앉다",
+        "japanese": "座る",
+        "example": {
+          "korean": "의자에 앉으세요.",
+          "japanese": "椅子に座ってください。"
+        }
+      },
+      {
+        "korean": "서다",
+        "japanese": "立つ",
+        "example": {
+          "korean": "저는 일어서 있습니다.",
+          "japanese": "私は立っています。"
+        }
+      },
+      {
+        "korean": "입다",
+        "japanese": "着る",
+        "example": {
+          "korean": "저는 옷을 입습니다.",
+          "japanese": "私は服を着ます。"
+        }
+      },
+      {
+        "korean": "벗다",
+        "japanese": "脱ぐ",
+        "example": {
+          "korean": "저는 옷을 벗습니다.",
+          "japanese": "私は服を脱ぎます。"
+        }
+      },
+      {
+        "korean": "타다",
+        "japanese": "乗る",
+        "example": {
+          "korean": "버스를 탑니다.",
+          "japanese": "バスに乗ります。"
+        }
+      },
+      {
+        "korean": "내리다",
+        "japanese": "降りる",
+        "example": {
+          "korean": "다음 정류장에서 내립니다.",
+          "japanese": "次の停留所で降ります。"
+        }
+      },
+      {
+        "korean": "신다",
+        "japanese": "履く",
+        "example": {
+          "korean": "운동화를 신습니다.",
+          "japanese": "運動靴を履きます。"
+        }
+      },
+      {
+        "korean": "끓이다",
+        "japanese": "沸かす",
+        "example": {
+          "korean": "물을 끓입니다.",
+          "japanese": "水を沸かします。"
+        }
+      },
+      {
+        "korean": "싫어하다",
+        "japanese": "嫌う",
+        "example": {
+          "korean": "저는 거짓말을 싫어합니다.",
+          "japanese": "私は嘘を嫌います。"
+        }
+      },
+      {
+        "korean": "좋아하다",
+        "japanese": "好きだ",
+        "example": {
+          "korean": "저는 영화를 좋아합니다.",
+          "japanese": "私は映画が好きです。"
+        }
+      },
+      {
+        "korean": "연습하다",
+        "japanese": "練習する",
+        "example": {
+          "korean": "발음을 연습합니다.",
+          "japanese": "発音を練習します。"
+        }
+      },
+      {
+        "korean": "요리하다",
+        "japanese": "料理する",
+        "example": {
+          "korean": "저는 요리를 잘합니다.",
+          "japanese": "私は料理が得意です。"
+        }
+      },
+      {
+        "korean": "산책하다",
+        "japanese": "散歩する",
+        "example": {
+          "korean": "매일 아침 산책합니다.",
+          "japanese": "毎朝散歩します。"
+        }
+      },
+      {
+        "korean": "청소하다",
+        "japanese": "掃除する",
+        "example": {
+          "korean": "방을 청소합니다.",
+          "japanese": "部屋を掃除します。"
+        }
+      },
+      {
+        "korean": "치우다",
+        "japanese": "片付ける",
+        "example": {
+          "korean": "책상을 치웁니다.",
+          "japanese": "机を片付けます。"
+        }
+      },
+      {
+        "korean": "끝내다",
+        "japanese": "終える",
+        "example": {
+          "korean": "작업을 끝냅니다.",
+          "japanese": "作業を終えます。"
+        }
+      },
+      {
+        "korean": "시작하다",
+        "japanese": "始める",
+        "example": {
+          "korean": "수업을 시작합니다.",
+          "japanese": "授業を始めます。"
+        }
+      },
+      {
+        "korean": "이기다",
+        "japanese": "勝つ",
+        "example": {
+          "korean": "경기에서 이깁니다.",
+          "japanese": "試合に勝ちます。"
+        }
+      },
+      {
+        "korean": "지다",
+        "japanese": "負ける",
+        "example": {
+          "korean": "경기에서 집니다.",
+          "japanese": "試合に負けます。"
+        }
+      },
+      {
+        "korean": "기다리다",
+        "japanese": "待つ",
+        "example": {
+          "korean": "버스를 기다립니다.",
+          "japanese": "バスを待ちます。"
+        }
+      },
+      {
+        "korean": "말하다",
+        "japanese": "話す",
+        "example": {
+          "korean": "친구에게 말합니다.",
+          "japanese": "友達に話します。"
+        }
+      },
+      {
+        "korean": "묻다",
+        "japanese": "尋ねる",
+        "example": {
+          "korean": "길을 묻습니다.",
+          "japanese": "道を尋ねます。"
+        }
+      },
+      {
+        "korean": "대답하다",
+        "japanese": "答える",
+        "example": {
+          "korean": "질문에 대답합니다.",
+          "japanese": "質問に答えます。"
+        }
+      },
+      {
+        "korean": "도와주다",
+        "japanese": "助ける",
+        "example": {
+          "korean": "친구를 도와줍니다.",
+          "japanese": "友達を助けます。"
+        }
+      },
+      {
+        "korean": "걱정하다",
+        "japanese": "心配する",
+        "example": {
+          "korean": "부모님이 걱정합니다.",
+          "japanese": "両親が心配します。"
+        }
+      },
+      {
+        "korean": "부탁하다",
+        "japanese": "頼む",
+        "example": {
+          "korean": "도움을 부탁합니다.",
+          "japanese": "助けを頼みます。"
+        }
+      },
+      {
+        "korean": "사용하다",
+        "japanese": "使用する",
+        "example": {
+          "korean": "이 도구를 사용합니다.",
+          "japanese": "この道具を使用します。"
+        }
+      },
+      {
+        "korean": "이해하다",
+        "japanese": "理解する",
+        "example": {
+          "korean": "문제를 이해합니다.",
+          "japanese": "問題を理解します。"
+        }
+      },
+      {
+        "korean": "초대하다",
+        "japanese": "招待する",
+        "example": {
+          "korean": "친구를 초대합니다.",
+          "japanese": "友達を招待します。"
+        }
+      },
+      {
+        "korean": "가져가다",
+        "japanese": "持っていく",
+        "example": {
+          "korean": "물을 가져갑니다.",
+          "japanese": "水を持っていきます。"
+        }
+      },
+      {
+        "korean": "돌아가다",
+        "japanese": "戻る",
+        "example": {
+          "korean": "집으로 돌아갑니다.",
+          "japanese": "家に戻ります。"
+        }
+      },
+      {
+        "korean": "기대하다",
+        "japanese": "期待する",
+        "example": {
+          "korean": "결과를 기대합니다.",
+          "japanese": "結果を期待します。"
+        }
+      },
+      {
+        "korean": "해보다",
+        "japanese": "やってみる",
+        "example": {
+          "korean": "새로운 방법을 해봅니다.",
+          "japanese": "新しい方法を試します。"
+        }
+      },
+      {
+        "korean": "연락하다",
+        "japanese": "連絡する",
+        "example": {
+          "korean": "친구에게 연락합니다.",
+          "japanese": "友達に連絡します。"
+        }
+      },
+      {
+        "korean": "참석하다",
+        "japanese": "参加する",
+        "example": {
+          "korean": "회의에 참석합니다.",
+          "japanese": "会議に参加します。"
+        }
+      },
+      {
+        "korean": "거절하다",
+        "japanese": "断る",
+        "example": {
+          "korean": "요청을 거절합니다.",
+          "japanese": "要求を断ります。"
+        }
+      },
+      {
+        "korean": "출발하다",
+        "japanese": "出発する",
+        "example": {
+          "korean": "기차가 출발합니다.",
+          "japanese": "電車が出発します。"
+        }
+      },
+      {
+        "korean": "도착하다",
+        "japanese": "到着する",
+        "example": {
+          "korean": "버스가 도착했습니다.",
+          "japanese": "バスが到着しました。"
+        }
+      },
+      {
+        "korean": "변경하다",
+        "japanese": "変更する",
+        "example": {
+          "korean": "계획을 변경합니다.",
+          "japanese": "計画を変更します。"
+        }
+      },
+      {
+        "korean": "공부하다",
+        "japanese": "勉強する",
+        "example": {
+          "korean": "한국어를 공부합니다.",
+          "japanese": "韓国語を勉強します。"
+        }
+      },
+      {
+        "korean": "생각하다",
+        "japanese": "考える",
+        "example": {
+          "korean": "그 문제를 생각합니다.",
+          "japanese": "その問題を考えます。"
+        }
+      },
+      {
+        "korean": "이사하다",
+        "japanese": "引っ越す",
+        "example": {
+          "korean": "새 집으로 이사합니다.",
+          "japanese": "新しい家に引っ越します。"
+        }
+      },
+      {
+        "korean": "소개하다",
+        "japanese": "紹介する",
+        "example": {
+          "korean": "친구를 소개합니다.",
+          "japanese": "友達を紹介します。"
+        }
+      },
+      {
+        "korean": "졸업하다",
+        "japanese": "卒業する",
+        "example": {
+          "korean": "대학교를 졸업합니다.",
+          "japanese": "大学を卒業します。"
+        }
+      },
+      {
+        "korean": "입학하다",
+        "japanese": "入学する",
+        "example": {
+          "korean": "학교에 입학합니다.",
+          "japanese": "学校に入学します。"
+        }
+      },
+      {
+        "korean": "지키다",
+        "japanese": "守る",
+        "example": {
+          "korean": "약속을 지킵니다.",
+          "japanese": "約束を守ります。"
+        }
+      },
+      {
+        "korean": "신청하다",
+        "japanese": "申請する",
+        "example": {
+          "korean": "프로그램에 신청합니다.",
+          "japanese": "プログラムに申請します。"
+        }
+      },
+      {
+        "korean": "찾다",
+        "japanese": "探す",
+        "example": {
+          "korean": "지갑을 찾습니다.",
+          "japanese": "財布を探します。"
+        }
+      },
+      {
+        "korean": "찾아보다",
+        "japanese": "調べる",
+        "example": {
+          "korean": "정보를 찾아봅니다.",
+          "japanese": "情報を調べます。"
+        }
+      },
+      {
+        "korean": "정리하다",
+        "japanese": "整理する",
+        "example": {
+          "korean": "서류를 정리합니다.",
+          "japanese": "書類を整理します。"
+        }
+      },
+      {
+        "korean": "묘사하다",
+        "japanese": "描写する",
+        "example": {
+          "korean": "장면을 묘사합니다.",
+          "japanese": "場面を描写します。"
+        }
+      },
+      {
+        "korean": "말리다",
+        "japanese": "乾かす",
+        "example": {
+          "korean": "옷을 말립니다.",
+          "japanese": "服を乾かします。"
+        }
+      },
+      {
+        "korean": "자르다",
+        "japanese": "切る",
+        "example": {
+          "korean": "종이를 자릅니다.",
+          "japanese": "紙を切ります。"
+        }
+      },
+      {
+        "korean": "따르다",
+        "japanese": "従う",
+        "example": {
+          "korean": "규칙을 따릅니다.",
+          "japanese": "規則に従います。"
+        }
+      },
+      {
+        "korean": "잠그다",
+        "japanese": "閉める",
+        "example": {
+          "korean": "문을 잠급니다.",
+          "japanese": "ドアを閉めます。"
+        }
+      },
+      {
+        "korean": "펼치다",
+        "japanese": "広げる",
+        "example": {
+          "korean": "책을 펼칩니다.",
+          "japanese": "本を広げます。"
+        }
+      },
+      {
+        "korean": "일어나다",
+        "japanese": "起きる",
+        "example": {
+          "korean": "아침에 일어납니다.",
+          "japanese": "朝に起きます。"
+        }
+      },
+      {
+        "korean": "살다",
+        "japanese": "住む",
+        "example": {
+          "korean": "서울에서 삽니다.",
+          "japanese": "ソウルに住んでいます。"
+        }
+      },
+      {
+        "korean": "웃다",
+        "japanese": "笑う",
+        "example": {
+          "korean": "그녀는 자주 웃습니다.",
+          "japanese": "彼女はよく笑います。"
+        }
+      },
+      {
+        "korean": "울다",
+        "japanese": "泣く",
+        "example": {
+          "korean": "아이는 울고 있습니다.",
+          "japanese": "子供が泣いています。"
+        }
+      },
+      {
+        "korean": "두다",
+        "japanese": "置く",
+        "example": {
+          "korean": "책을 책상 위에 둡니다.",
+          "japanese": "本を机の上に置きます。"
+        }
+      },
+      {
+        "korean": "걸다",
+        "japanese": "かける",
+        "example": {
+          "korean": "옷을 옷걸이에 겁니다.",
+          "japanese": "服をハンガーにかけます。"
+        }
+      },
+      {
+        "korean": "구입하다",
+        "japanese": "購入する",
+        "example": {
+          "korean": "책을 구입했습니다.",
+          "japanese": "本を購入しました。"
+        }
+      },
+      {
+        "korean": "부르다",
+        "japanese": "呼ぶ",
+        "example": {
+          "korean": "친구를 부릅니다.",
+          "japanese": "友達を呼びます。"
+        }
+      },
+      {
+        "korean": "결정하다",
+        "japanese": "決定する",
+        "example": {
+          "korean": "일정을 결정합니다.",
+          "japanese": "日程を決定します。"
+        }
+      },
+      {
+        "korean": "먹이다",
+        "japanese": "食べさせる",
+        "example": {
+          "korean": "아기에게 밥을 먹입니다.",
+          "japanese": "赤ちゃんにご飯を食べさせます。"
+        }
+      },
+      {
+        "korean": "돕다",
+        "japanese": "助ける",
+        "example": {
+          "korean": "어려운 친구를 돕습니다.",
+          "japanese": "困っている友達を助けます。"
+        }
+      },
+      {
+        "korean": "울리다",
+        "japanese": "鳴らす",
+        "example": {
+          "korean": "종을 울립니다.",
+          "japanese": "鐘を鳴らします。"
+        }
+      },
+      {
+        "korean": "맞다",
+        "japanese": "当たる",
+        "example": {
+          "korean": "정답이 맞습니다.",
+          "japanese": "正解です。"
+        }
+      },
+      {
+        "korean": "모으다",
+        "japanese": "集める",
+        "example": {
+          "korean": "우표를 모읍니다.",
+          "japanese": "切手を集めます。"
+        }
+      },
+      {
+        "korean": "만들다",
+        "japanese": "作る",
+        "example": {
+          "korean": "저는 케이크를 만듭니다.",
+          "japanese": "私はケーキを作ります。"
+        }
+      },
+      {
+        "korean": "열다",
+        "japanese": "開ける",
+        "example": {
+          "korean": "문을 엽니다.",
+          "japanese": "ドアを開けます。"
+        }
+      },
+      {
+        "korean": "닫다",
+        "japanese": "閉める",
+        "example": {
+          "korean": "창문을 닫습니다.",
+          "japanese": "窓を閉めます。"
+        }
+      },
+      {
+        "korean": "그리다",
+        "japanese": "描く",
+        "example": {
+          "korean": "그림을 그립니다.",
+          "japanese": "絵を描きます。"
+        }
+      },
+      {
+        "korean": "감다",
+        "japanese": "巻く",
+        "example": {
+          "korean": "밧줄을 감습니다.",
+          "japanese": "ロープを巻きます。"
+        }
+      },
+      {
+        "korean": "펴다",
+        "japanese": "伸ばす",
+        "example": {
+          "korean": "종이를 펍니다.",
+          "japanese": "紙を伸ばします。"
+        }
+      },
+      {
+        "korean": "뒤집다",
+        "japanese": "裏返す",
+        "example": {
+          "korean": "카드를 뒤집습니다.",
+          "japanese": "カードを裏返します。"
+        }
+      },
+      {
+        "korean": "돌리다",
+        "japanese": "回す",
+        "example": {
+          "korean": "핸들을 돌립니다.",
+          "japanese": "ハンドルを回します。"
+        }
+      }
+    ],
+    "adjectives": [
+      {
+        "korean": "기쁘다",
+        "japanese": "嬉しい",
+        "example": {
+          "korean": "기분이 기쁩니다.",
+          "japanese": "気分が嬉しいです。"
+        }
+      },
+      {
+        "korean": "화나다",
+        "japanese": "怒る",
+        "example": {
+          "korean": "그가 화납니다.",
+          "japanese": "彼が怒ります。"
+        }
+      },
+      {
+        "korean": "조용하다",
+        "japanese": "静かだ",
+        "example": {
+          "korean": "방이 조용합니다.",
+          "japanese": "部屋が静かです。"
+        }
+      },
+      {
+        "korean": "시끄럽다",
+        "japanese": "うるさい",
+        "example": {
+          "korean": "거리가 시끄럽습니다.",
+          "japanese": "通りがうるさいです。"
+        }
+      },
+      {
+        "korean": "깨끗하다",
+        "japanese": "綺麗だ",
+        "example": {
+          "korean": "방이 깨끗합니다.",
+          "japanese": "部屋が綺麗です。"
+        }
+      },
+      {
+        "korean": "더럽다",
+        "japanese": "汚い",
+        "example": {
+          "korean": "옷이 더럽습니다.",
+          "japanese": "服が汚いです。"
+        }
+      },
+      {
+        "korean": "쉽다",
+        "japanese": "簡単だ",
+        "example": {
+          "korean": "문제가 쉽습니다.",
+          "japanese": "問題が簡単です。"
+        }
+      },
+      {
+        "korean": "어렵다",
+        "japanese": "難しい",
+        "example": {
+          "korean": "숙제가 어렵습니다.",
+          "japanese": "宿題が難しいです。"
+        }
+      },
+      {
+        "korean": "졸리다",
+        "japanese": "眠い",
+        "example": {
+          "korean": "나는 졸립니다.",
+          "japanese": "私は眠いです。"
+        }
+      },
+      {
+        "korean": "피곤하다",
+        "japanese": "疲れる",
+        "example": {
+          "korean": "일이 피곤합니다.",
+          "japanese": "仕事が疲れます。"
+        }
+      },
+      {
+        "korean": "건강하다",
+        "japanese": "健康だ",
+        "example": {
+          "korean": "그는 건강합니다.",
+          "japanese": "彼は健康です。"
+        }
+      },
+      {
+        "korean": "아프다",
+        "japanese": "痛い",
+        "example": {
+          "korean": "머리가 아픕니다.",
+          "japanese": "頭が痛いです。"
+        }
+      },
+      {
+        "korean": "배고프다",
+        "japanese": "お腹が空く",
+        "example": {
+          "korean": "나는 배고픕니다.",
+          "japanese": "私はお腹が空きます。"
+        }
+      },
+      {
+        "korean": "배부르다",
+        "japanese": "お腹がいっぱいだ",
+        "example": {
+          "korean": "나는 배부릅니다.",
+          "japanese": "私はお腹がいっぱいです。"
+        }
+      },
+      {
+        "korean": "뚱뚱하다",
+        "japanese": "太っている",
+        "example": {
+          "korean": "그는 뚱뚱합니다.",
+          "japanese": "彼は太っています。"
+        }
+      },
+      {
+        "korean": "마르다",
+        "japanese": "痩せている",
+        "example": {
+          "korean": "그녀는 말랐습니다.",
+          "japanese": "彼女は痩せています。"
+        }
+      },
+      {
+        "korean": "강하다",
+        "japanese": "強い",
+        "example": {
+          "korean": "그는 강합니다.",
+          "japanese": "彼は強いです。"
+        }
+      },
+      {
+        "korean": "약하다",
+        "japanese": "弱い",
+        "example": {
+          "korean": "그는 약합니다.",
+          "japanese": "彼は弱いです。"
+        }
+      },
+      {
+        "korean": "달다",
+        "japanese": "甘い",
+        "example": {
+          "korean": "사탕이 답니다.",
+          "japanese": "キャンディーが甘いです。"
+        }
+      },
+      {
+        "korean": "쓰다",
+        "japanese": "苦い",
+        "example": {
+          "korean": "약이 씁니다.",
+          "japanese": "薬が苦いです。"
+        }
+      },
+      {
+        "korean": "시다",
+        "japanese": "酸っぱい",
+        "example": {
+          "korean": "레몬이 십니다.",
+          "japanese": "レモンが酸っぱいです。"
+        }
+      },
+      {
+        "korean": "짜다",
+        "japanese": "塩辛い",
+        "example": {
+          "korean": "김치가 짭니다.",
+          "japanese": "キムチが塩辛いです。"
+        }
+      },
+      {
+        "korean": "차다",
+        "japanese": "冷たい",
+        "example": {
+          "korean": "물이 찹니다.",
+          "japanese": "水が冷たいです。"
+        }
+      },
+      {
+        "korean": "부드럽다",
+        "japanese": "柔らかい",
+        "example": {
+          "korean": "쿠션이 부드럽습니다.",
+          "japanese": "クッションが柔らかいです。"
+        }
+      },
+      {
+        "korean": "거칠다",
+        "japanese": "荒い",
+        "example": {
+          "korean": "손이 거칩니다.",
+          "japanese": "手が荒いです。"
+        }
+      },
+      {
+          "korean": "비싸다",
+          "japanese": "高い",
+          "example": {
+            "korean": "옷이 비쌉니다.",
+            "japanese": "服が高いです。"
+          }
+        },
+        {
+          "korean": "싸다",
+          "japanese": "安い",
+          "example": {
+            "korean": "책이 쌉니다.",
+            "japanese": "本が安いです。"
+          }
+        },
+        {
+          "korean": "불편하다",
+          "japanese": "不便だ",
+          "example": {
+            "korean": "의자가 불편합니다.",
+            "japanese": "椅子が不便です。"
+          }
+        },
+        {
+          "korean": "편리하다",
+          "japanese": "便利だ",
+          "example": {
+            "korean": "이 앱은 편리합니다.",
+            "japanese": "このアプリは便利です。"
+          }
+        },
+        {
+          "korean": "화려하다",
+          "japanese": "華やかだ",
+          "example": {
+            "korean": "드레스가 화려합니다.",
+            "japanese": "ドレスが華やかです。"
+          }
+        },
+        {
+          "korean": "수줍다",
+          "japanese": "恥ずかしい",
+          "example": {
+            "korean": "그녀는 수줍습니다.",
+            "japanese": "彼女は恥ずかしがり屋です。"
+          }
+        },
+        {
+          "korean": "착하다",
+          "japanese": "優しい",
+          "example": {
+            "korean": "그는 착합니다.",
+            "japanese": "彼は優しいです。"
+          }
+        },
+        {
+          "korean": "친절하다",
+          "japanese": "親切だ",
+          "example": {
+            "korean": "그녀는 친절합니다.",
+            "japanese": "彼女は親切です。"
+          }
+        },
+        {
+          "korean": "정직하다",
+          "japanese": "正直だ",
+          "example": {
+            "korean": "그는 정직합니다.",
+            "japanese": "彼は正直です。"
+          }
+        },
+        {
+          "korean": "부지런하다",
+          "japanese": "勤勉だ",
+          "example": {
+            "korean": "그녀는 부지런합니다.",
+            "japanese": "彼女は勤勉です。"
+          }
+        },
+        {
+          "korean": "게으르다",
+          "japanese": "怠ける",
+          "example": {
+            "korean": "나는 게으릅니다.",
+            "japanese": "私は怠け者です。"
+          }
+        },
+        {
+          "korean": "밝다",
+          "japanese": "明るい",
+          "example": {
+            "korean": "방이 밝습니다.",
+            "japanese": "部屋が明るいです。"
+          }
+        },
+        {
+          "korean": "어둡다",
+          "japanese": "暗い",
+          "example": {
+            "korean": "길이 어둡습니다.",
+            "japanese": "道が暗いです。"
+          }
+        },
+        {
+          "korean": "외롭다",
+          "japanese": "寂しい",
+          "example": {
+            "korean": "나는 외롭습니다.",
+            "japanese": "私は寂しいです。"
+          }
+        },
+        {
+          "korean": "단순하다",
+          "japanese": "単純だ",
+          "example": {
+            "korean": "문제가 단순합니다.",
+            "japanese": "問題が単純です。"
+          }
+        },
+        {
+          "korean": "복잡하다",
+          "japanese": "複雑だ",
+          "example": {
+            "korean": "길이 복잡합니다.",
+            "japanese": "道が複雑です。"
+          }
+        },
+        {
+          "korean": "두껍다",
+          "japanese": "厚い",
+          "example": {
+            "korean": "책이 두껍습니다.",
+            "japanese": "本が厚いです。"
+          }
+        },
+        {
+          "korean": "얇다",
+          "japanese": "薄い",
+          "example": {
+            "korean": "종이가 얇습니다.",
+            "japanese": "紙が薄いです。"
+          }
+        },
+        {
+          "korean": "따뜻하다",
+          "japanese": "暖かい",
+          "example": {
+            "korean": "봄은 따뜻합니다.",
+            "japanese": "春は暖かいです。"
+          }
+        },
+        {
+          "korean": "풍부하다",
+          "japanese": "豊富だ",
+          "example": {
+            "korean": "자원이 풍부합니다.",
+            "japanese": "資源が豊富です。"
+          }
+        },
+        {
+          "korean": "궁금하다",
+          "japanese": "気になる",
+          "example": {
+            "korean": "결과가 궁금합니다.",
+            "japanese": "結果が気になります。"
+          }
+        },
+        {
+          "korean": "희다",
+          "japanese": "白い",
+          "example": {
+            "korean": "눈이 희다.",
+            "japanese": "雪が白いです。"
+          }
+        },
+        {
+          "korean": "검다",
+          "japanese": "黒い",
+          "example": {
+            "korean": "머리가 검다.",
+            "japanese": "髪が黒いです。"
+          }
+        },
+        {
+          "korean": "노랗다",
+          "japanese": "黄色い",
+          "example": {
+            "korean": "꽃이 노랗습니다.",
+            "japanese": "花が黄色いです。"
+          }
+        },
+        {
+          "korean": "파랗다",
+          "japanese": "青い",
+          "example": {
+            "korean": "하늘이 파랗습니다.",
+            "japanese": "空が青いです。"
+          }
+        },
+        {
+          "korean": "빨갛다",
+          "japanese": "赤い",
+          "example": {
+            "korean": "사과가 빨갛습니다.",
+            "japanese": "りんごが赤いです。"
+          }
+        },
+        {
+          "korean": "다양하다",
+          "japanese": "多様だ",
+          "example": {
+            "korean": "음식이 다양합니다.",
+            "japanese": "料理が多様です。"
+          }
+        },
+        {
+          "korean": "똑똑하다",
+          "japanese": "賢い",
+          "example": {
+            "korean": "그녀는 똑똑합니다.",
+            "japanese": "彼女は賢いです。"
+          }
+        },
+        {
+          "korean": "멍청하다",
+          "japanese": "愚かだ",
+          "example": {
+            "korean": "그는 멍청합니다.",
+            "japanese": "彼は愚かです。"
+          }
+        },
+        {
+          "korean": "사랑스럽다",
+          "japanese": "愛らしい",
+          "example": {
+            "korean": "강아지가 사랑스럽습니다.",
+            "japanese": "子犬が愛らしいです。"
+          }
+        },
+        {
+          "korean": "신나다",
+          "japanese": "楽しい",
+          "example": {
+            "korean": "놀이공원에서 신납니다.",
+            "japanese": "遊園地で楽しいです。"
+          }
+        },
+        {
+          "korean": "지루하다",
+          "japanese": "退屈だ",
+          "example": {
+            "korean": "수업이 지루합니다.",
+            "japanese": "授業が退屈です。"
+          }
+        },
+        {
+          "korean": "부럽다",
+          "japanese": "羨ましい",
+          "example": {
+            "korean": "그의 성공이 부럽습니다.",
+            "japanese": "彼の成功が羨ましいです。"
+          }
+        },
+        {
+          "korean": "무섭다",
+          "japanese": "怖い",
+          "example": {
+            "korean": "영화가 무섭습니다.",
+            "japanese": "映画が怖いです。"
+          }
+        },
+        {
+          "korean": "잘생기다",
+          "japanese": "ハンサムだ",
+          "example": {
+            "korean": "그는 잘생겼습니다.",
+            "japanese": "彼はハンサムです。"
+          }
+        },
+        {
+          "korean": "못생기다",
+          "japanese": "不細工だ",
+          "example": {
+            "korean": "그는 못생겼습니다.",
+            "japanese": "彼は不細工です。"
+          }
+        },
+        {
+          "korean": "늦다",
+          "japanese": "遅い",
+          "example": {
+            "korean": "시간이 늦습니다.",
+            "japanese": "時間が遅いです。"
+          }
+        },
+        {
+          "korean": "이르다",
+          "japanese": "早い",
+          "example": {
+            "korean": "아침에 이릅니다.",
+            "japanese": "朝が早いです。"
+          }
+        },
+        {
+          "korean": "재미있다",
+          "japanese": "面白い",
+          "example": {
+            "korean": "영화가 재미있습니다.",
+            "japanese": "映画が面白いです。"
+          }
+        },
+        {
+          "korean": "재미없다",
+          "japanese": "つまらない",
+          "example": {
+            "korean": "책이 재미없습니다.",
+            "japanese": "本がつまらないです。"
+          }
+        },
+        {
+          "korean": "놀라다",
+          "japanese": "驚く",
+          "example": {
+            "korean": "그 소식에 놀랐습니다.",
+            "japanese": "その知らせに驚きました。"
+          }
+        },
+        {
+          "korean": "안타깝다",
+          "japanese": "残念だ",
+          "example": {
+            "korean": "그의 사연이 안타깝습니다.",
+            "japanese": "彼の話が残念です。"
+          }
+        },
+        {
+          "korean": "고맙다",
+          "japanese": "ありがたい",
+          "example": {
+            "korean": "도움이 고맙습니다.",
+            "japanese": "助けがありがたいです。"
+          }
+        },
+        {
+          "korean": "미안하다",
+          "japanese": "申し訳ない",
+          "example": {
+            "korean": "늦어서 미안합니다.",
+            "japanese": "遅れて申し訳ありません。"
+          }
+        },
+        {
+          "korean": "부끄럽다",
+          "japanese": "恥ずかしい",
+          "example": {
+            "korean": "실수해서 부끄럽습니다.",
+            "japanese": "間違えて恥ずかしいです。"
+          }
+        },
+        {
+          "korean": "유명하다",
+          "japanese": "有名だ",
+          "example": {
+            "korean": "그 배우는 유명합니다.",
+            "japanese": "その俳優は有名です。"
+          }
+        },
+        {
+          "korean": "알맞다",
+          "japanese": "適当だ",
+          "example": {
+            "korean": "이 크기가 알맞습니다.",
+            "japanese": "このサイズが適当です。"
+          }
+        },
+        {
+          "korean": "올바르다",
+          "japanese": "正しい",
+          "example": {
+            "korean": "올바른 선택입니다.",
+            "japanese": "正しい選択です。"
+          }
+        },
+        {
+          "korean": "예리하다",
+          "japanese": "鋭い",
+          "example": {
+            "korean": "칼이 예리합니다.",
+            "japanese": "ナイフが鋭いです。"
+          }
+        },
+        {
+          "korean": "사소하다",
+          "japanese": "些細だ",
+          "example": {
+            "korean": "그건 사소한 문제입니다.",
+            "japanese": "それは些細な問題です。"
+          }
+        } 
+    ],
+    "nouns": [
+      {
+        "korean": "사람",
+        "japanese": "人",
+        "example": {
+          "korean": "그는 좋은 사람입니다.",
+          "japanese": "彼は良い人です。"
+        }
+      },
+      {
+        "korean": "책",
+        "japanese": "本",
+        "example": {
+          "korean": "나는 책을 읽습니다.",
+          "japanese": "私は本を読みます。"
+        }
+      },
+      {
+        "korean": "학교",
+        "japanese": "学校",
+        "example": {
+          "korean": "그녀는 학교에 갑니다.",
+          "japanese": "彼女は学校に行きます。"
+        }
+      },
+      {
+        "korean": "음식",
+        "japanese": "食べ物",
+        "example": {
+          "korean": "음식이 맛있습니다.",
+          "japanese": "食べ物が美味しいです。"
+        }
+      },
+      {
+        "korean": "물",
+        "japanese": "水",
+        "example": {
+          "korean": "물을 마십니다.",
+          "japanese": "水を飲みます。"
+        }
+      },
+      {
+        "korean": "커피",
+        "japanese": "コーヒー",
+        "example": {
+          "korean": "아침에 커피를 마십니다.",
+          "japanese": "朝にコーヒーを飲みます。"
+        }
+      },
+      {
+        "korean": "차",
+        "japanese": "お茶",
+        "example": {
+          "korean": "차를 마시고 싶습니다.",
+          "japanese": "お茶を飲みたいです。"
+        }
+      },
+      {
+        "korean": "바다",
+        "japanese": "海",
+        "example": {
+          "korean": "여름에는 바다에 갑니다.",
+          "japanese": "夏には海に行きます。"
+        }
+      },
+      {
+        "korean": "산",
+        "japanese": "山",
+        "example": {
+          "korean": "산을 등반합니다.",
+          "japanese": "山を登ります。"
+        }
+      },
+      {
+        "korean": "집",
+        "japanese": "家",
+        "example": {
+          "korean": "집에 돌아갑니다.",
+          "japanese": "家に帰ります。"
+        }
+      },
+      {
+        "korean": "문",
+        "japanese": "ドア",
+        "example": {
+          "korean": "문을 열어주세요.",
+          "japanese": "ドアを開けてください。"
+        }
+      },
+      {
+        "korean": "창문",
+        "japanese": "窓",
+        "example": {
+          "korean": "창문을 닫습니다.",
+          "japanese": "窓を閉めます。"
+        }
+      },
+      {
+        "korean": "나무",
+        "japanese": "木",
+        "example": {
+          "korean": "정원에 나무가 있습니다.",
+          "japanese": "庭に木があります。"
+        }
+      },
+      {
+        "korean": "꽃",
+        "japanese": "花",
+        "example": {
+          "korean": "꽃이 아름답습니다.",
+          "japanese": "花が美しいです。"
+        }
+      },
+      {
+        "korean": "과일",
+        "japanese": "果物",
+        "example": {
+          "korean": "과일을 좋아합니다.",
+          "japanese": "果物が好きです。"
+        }
+      },
+      {
+        "korean": "사과",
+        "japanese": "りんご",
+        "example": {
+          "korean": "사과를 먹습니다.",
+          "japanese": "りんごを食べます。"
+        }
+      },
+      {
+        "korean": "바나나",
+        "japanese": "バナナ",
+        "example": {
+          "korean": "바나나가 맛있습니다.",
+          "japanese": "バナナが美味しいです。"
+        }
+      },
+      {
+        "korean": "포도",
+        "japanese": "ぶどう",
+        "example": {
+          "korean": "포도를 사러 갑니다.",
+          "japanese": "ぶどうを買いに行きます。"
+        }
+      },
+      {
+        "korean": "병원",
+        "japanese": "病院",
+        "example": {
+          "korean": "그는 병원에 있습니다.",
+          "japanese": "彼は病院にいます。"
+        }
+      },
+      {
+        "korean": "약국",
+        "japanese": "薬局",
+        "example": {
+          "korean": "약국에서 약을 삽니다.",
+          "japanese": "薬局で薬を買います。"
+        }
+      },
+      {
+        "korean": "가게",
+        "japanese": "店",
+        "example": {
+          "korean": "가게에서 물건을 삽니다.",
+          "japanese": "店で物を買います。"
+        }
+      },
+      {
+        "korean": "시장",
+        "japanese": "市場",
+        "example": {
+          "korean": "시장에 갑니다.",
+          "japanese": "市場に行きます。"
+        }
+      },
+      {
+        "korean": "상점",
+        "japanese": "商店",
+        "example": {
+          "korean": "그 상점은 크다.",
+          "japanese": "その商店は大きいです。"
+        }
+      },
+      {
+        "korean": "회사",
+        "japanese": "会社",
+        "example": {
+          "korean": "그녀는 회사에서 일합니다.",
+          "japanese": "彼女は会社で働きます。"
+        }
+      },
+      {
+        "korean": "은행",
+        "japanese": "銀行",
+        "example": {
+          "korean": "은행에 돈을 맡깁니다.",
+          "japanese": "銀行にお金を預けます。"
+        }
+      },
+      {
+        "korean": "도서관",
+        "japanese": "図書館",
+        "example": {
+          "korean": "도서관에서 공부합니다.",
+          "japanese": "図書館で勉強します。"
+        }
+      },
+      {
+        "korean": "공원",
+        "japanese": "公園",
+        "example": {
+          "korean": "공원에서 산책합니다.",
+          "japanese": "公園で散歩します。"
+        }
+      },
+      {
+        "korean": "놀이터",
+        "japanese": "遊び場",
+        "example": {
+          "korean": "아이들은 놀이터에서 놉니다.",
+          "japanese": "子供たちは遊び場で遊びます。"
+        }
+      },
+      {
+        "korean": "길",
+        "japanese": "道",
+        "example": {
+          "korean": "길을 걷습니다.",
+          "japanese": "道を歩きます。"
+        }
+      },
+      {
+        "korean": "거리",
+        "japanese": "通り",
+        "example": {
+          "korean": "거리가 혼잡합니다.",
+          "japanese": "通りが混雑しています。"
+        }
+      },
+      {
+        "korean": "자동차",
+        "japanese": "自動車",
+        "example": {
+          "korean": "나는 자동차를 운전합니다.",
+          "japanese": "私は自動車を運転します。"
+        }
+      },
+      {
+        "korean": "버스",
+        "japanese": "バス",
+        "example": {
+          "korean": "버스를 타고 갑니다.",
+          "japanese": "バスに乗って行きます。"
+        }
+      },
+      {
+        "korean": "기차",
+        "japanese": "電車",
+        "example": {
+          "korean": "기차를 기다립니다.",
+          "japanese": "電車を待ちます。"
+        }
+      },
+      {
+        "korean": "비행기",
+        "japanese": "飛行機",
+        "example": {
+          "korean": "비행기를 타고 여행합니다.",
+          "japanese": "飛行機に乗って旅行します。"
+        }
+      },
+      {
+        "korean": "배",
+        "japanese": "船",
+        "example": {
+          "korean": "배를 타고 바다를 건넙니다.",
+          "japanese": "船に乗って海を渡ります。"
+        }
+      },
+      {
+        "korean": "자전거",
+        "japanese": "自転車",
+        "example": {
+          "korean": "자전거를 탑니다.",
+          "japanese": "自転車に乗ります。"
+        }
+      },
+      {
+        "korean": "오토바이",
+        "japanese": "オートバイ",
+        "example": {
+          "korean": "오토바이를 운전합니다.",
+          "japanese": "オートバイを運転します。"
+        }
+      },
+      {
+        "korean": "침대",
+        "japanese": "ベッド",
+        "example": {
+          "korean": "침대에서 잠을 잡니다.",
+          "japanese": "ベッドで眠ります。"
+        }
+      },
+      {
+        "korean": "의자",
+        "japanese": "椅子",
+        "example": {
+          "korean": "의자에 앉습니다.",
+          "japanese": "椅子に座ります。"
+        }
+      },
+      {
+        "korean": "책상",
+        "japanese": "机",
+        "example": {
+          "korean": "책상에서 공부합니다.",
+          "japanese": "机で勉強します。"
+        }
+      },
+      {
+        "korean": "컴퓨터",
+        "japanese": "コンピュータ",
+        "example": {
+          "korean": "컴퓨터를 사용합니다.",
+          "japanese": "コンピュータを使います。"
+        }
+      },
+      {
+        "korean": "전화",
+        "japanese": "電話",
+        "example": {
+          "korean": "그녀에게 전화를 겁니다.",
+          "japanese": "彼女に電話をかけます。"
+        }
+      },
+      {
+        "korean": "인터넷",
+        "japanese": "インターネット",
+        "example": {
+          "korean": "인터넷에서 검색합니다.",
+          "japanese": "インターネットで検索します。"
+        }
+      },
+      {
+        "korean": "편지",
+        "japanese": "手紙",
+        "example": {
+          "korean": "그에게 편지를 보냅니다.",
+          "japanese": "彼に手紙を送ります。"
+        }
+      },
+      {
+        "korean": "신문",
+        "japanese": "新聞",
+        "example": {
+          "korean": "아침에 신문을 읽습니다.",
+          "japanese": "朝に新聞を読みます。"
+        }
+      },
+      {
+        "korean": "잡지",
+        "japanese": "雑誌",
+        "example": {
+          "korean": "새 잡지를 샀습니다.",
+          "japanese": "新しい雑誌を買いました。"
+        }
+      },
+      {
+        "korean": "영화",
+        "japanese": "映画",
+        "example": {
+          "korean": "영화를 보러 갑니다.",
+          "japanese": "映画を見に行きます。"
+        }
+      },
+      {
+        "korean": "드라마",
+        "japanese": "ドラマ",
+        "example": {
+          "korean": "드라마를 즐겨봅니다.",
+          "japanese": "ドラマを楽しんで見ます。"
+        }
+      },
+      {
+        "korean": "노래",
+        "japanese": "歌",
+        "example": {
+          "korean": "노래를 부릅니다.",
+          "japanese": "歌を歌います。"
+        }
+      },
+      {
+        "korean": "음악",
+        "japanese": "音楽",
+        "example": {
+          "korean": "음악을 듣습니다.",
+          "japanese": "音楽を聴きます。"
+        }
+      },
+      {
+        "korean": "게임",
+        "japanese": "ゲーム",
+        "example": {
+          "korean": "게임을 즐깁니다.",
+          "japanese": "ゲームを楽しみます。"
+        }
+      },
+      {
+        "korean": "운동",
+        "japanese": "運動",
+        "example": {
+          "korean": "아침에 운동을 합니다.",
+          "japanese": "朝に運動をします。"
+        }
+      },
+      {
+        "korean": "체육관",
+        "japanese": "体育館",
+        "example": {
+          "korean": "체육관에서 운동합니다.",
+          "japanese": "体育館で運動します。"
+        }
+      },
+      {
+        "korean": "수영장",
+        "japanese": "プール",
+        "example": {
+          "korean": "수영장에서 수영합니다.",
+          "japanese": "プールで泳ぎます。"
+        }
+      },
+      {
+        "korean": "볼펜",
+        "japanese": "ボールペン",
+        "example": {
+          "korean": "볼펜으로 씁니다.",
+          "japanese": "ボールペンで書きます。"
+        }
+      },
+      {
+        "korean": "연필",
+        "japanese": "鉛筆",
+        "example": {
+          "korean": "연필을 깎습니다.",
+          "japanese": "鉛筆を削ります。"
+        }
+      },
+      {
+        "korean": "지우개",
+        "japanese": "消しゴム",
+        "example": {
+          "korean": "지우개로 지웁니다.",
+          "japanese": "消しゴムで消します。"
+        }
+      },
+      {
+        "korean": "종이",
+        "japanese": "紙",
+        "example": {
+          "korean": "종이에 적습니다.",
+          "japanese": "紙に書きます。"
+        }
+      },
+      {
+        "korean": "시계",
+        "japanese": "時計",
+        "example": {
+          "korean": "시계를 봅니다.",
+          "japanese": "時計を見ます。"
+        }
+      },
+      {
+        "korean": "달력",
+        "japanese": "カレンダー",
+        "example": {
+          "korean": "달력을 확인합니다.",
+          "japanese": "カレンダーを確認します。"
+        }
+      },
+      {
+        "korean": "꽃병",
+        "japanese": "花瓶",
+        "example": {
+          "korean": "꽃병에 꽃을 꽂습니다.",
+          "japanese": "花瓶に花を挿します。"
+        }
+      },
+      {
+        "korean": "냉장고",
+        "japanese": "冷蔵庫",
+        "example": {
+          "korean": "냉장고에 음식을 넣습니다.",
+          "japanese": "冷蔵庫に食べ物を入れます。"
+        }
+      },
+      {
+        "korean": "텔레비전",
+        "japanese": "テレビ",
+        "example": {
+          "korean": "텔레비전을 봅니다.",
+          "japanese": "テレビを見ます。"
+        }
+      },
+      {
+        "korean": "라디오",
+        "japanese": "ラジオ",
+        "example": {
+          "korean": "라디오를 듣습니다.",
+          "japanese": "ラジオを聴きます。"
+        }
+      },
+      {
+        "korean": "휴대폰",
+        "japanese": "携帯電話",
+        "example": {
+          "korean": "휴대폰을 사용합니다.",
+          "japanese": "携帯電話を使います。"
+        }
+      },
+      {
+        "korean": "전화기",
+        "japanese": "電話機",
+        "example": {
+          "korean": "전화기를 사용합니다.",
+          "japanese": "電話機を使います。"
+        }
+      },
+      {
+        "korean": "우산",
+        "japanese": "傘",
+        "example": {
+          "korean": "비가 와서 우산을 씁니다.",
+          "japanese": "雨が降っているので傘をさします。"
+        }
+      },
+      {
+        "korean": "모자",
+        "japanese": "帽子",
+        "example": {
+          "korean": "모자를 씁니다.",
+          "japanese": "帽子をかぶります。"
+        }
+      },
+      {
+        "korean": "옷",
+        "japanese": "服",
+        "example": {
+          "korean": "새 옷을 입습니다.",
+          "japanese": "新しい服を着ます。"
+        }
+      },
+      {
+        "korean": "신발",
+        "japanese": "靴",
+        "example": {
+          "korean": "신발을 벗습니다.",
+          "japanese": "靴を脱ぎます。"
+        }
+      },
+      {
+        "korean": "양말",
+        "japanese": "靴下",
+        "example": {
+          "korean": "양말을 신습니다.",
+          "japanese": "靴下を履きます。"
+        }
+      },
+      {
+        "korean": "모기",
+        "japanese": "蚊",
+        "example": {
+          "korean": "모기가 물었습니다.",
+          "japanese": "蚊に刺されました。"
+        }
+      },
+      {
+        "korean": "개미",
+        "japanese": "蟻",
+        "example": {
+          "korean": "개미가 음식을 찾습니다.",
+          "japanese": "蟻が食べ物を探します。"
+        }
+      },
+      {
+        "korean": "새",
+        "japanese": "鳥",
+        "example": {
+          "korean": "새가 하늘을 날아갑니다.",
+          "japanese": "鳥が空を飛んでいます。"
+        }
+      },
+      {
+        "korean": "나비",
+        "japanese": "蝶",
+        "example": {
+          "korean": "나비가 꽃 위에 앉습니다.",
+          "japanese": "蝶が花の上にとまります。"
+        }
+      },
+      {
+        "korean": "고양이",
+        "japanese": "猫",
+        "example": {
+          "korean": "고양이가 잠을 잡니다.",
+          "japanese": "猫が寝ています。"
+        }
+      },
+      {
+        "korean": "강아지",
+        "japanese": "子犬",
+        "example": {
+          "korean": "강아지가 뛰어다닙니다.",
+          "japanese": "子犬が走り回ります。"
+        }
+      },
+      {
+        "korean": "말",
+        "japanese": "馬",
+        "example": {
+          "korean": "말을 타고 갑니다.",
+          "japanese": "馬に乗って行きます。"
+        }
+      },
+      {
+        "korean": "소",
+        "japanese": "牛",
+        "example": {
+          "korean": "소가 풀을 뜯어 먹습니다.",
+          "japanese": "牛が草を食べます。"
+        }
+      },
+      {
+        "korean": "닭",
+        "japanese": "鶏",
+        "example": {
+          "korean": "닭이 알을 낳습니다.",
+          "japanese": "鶏が卵を産みます。"
+        }
+      },
+      {
+        "korean": "돼지",
+        "japanese": "豚",
+        "example": {
+          "korean": "돼지가 울고 있습니다.",
+          "japanese": "豚が鳴いています。"
+        }
+      },
+      {
+        "korean": "양",
+        "japanese": "羊",
+        "example": {
+          "korean": "양이 풀을 먹습니다.",
+          "japanese": "羊が草を食べます。"
+        }
+      },
+      {
+        "korean": "토끼",
+        "japanese": "うさぎ",
+        "example": {
+          "korean": "토끼가 뛰어다닙니다.",
+          "japanese": "うさぎが跳び回ります。"
+        }
+      },
+      {
+        "korean": "사자",
+        "japanese": "ライオン",
+        "example": {
+          "korean": "사자가 크게 울부짖습니다.",
+          "japanese": "ライオンが大きく吠えます。"
+        }
+      },
+      {
+        "korean": "호랑이",
+        "japanese": "虎",
+        "example": {
+          "korean": "호랑이가 산을 내려옵니다.",
+          "japanese": "虎が山を下ります。"
+        }
+      },
+      {
+        "korean": "곰",
+        "japanese": "熊",
+        "example": {
+          "korean": "곰이 동굴에서 나옵니다.",
+          "japanese": "熊が洞窟から出てきます。"
+        }
+      },
+      {
+        "korean": "여우",
+        "japanese": "狐",
+        "example": {
+          "korean": "여우가 숲 속에 숨습니다.",
+          "japanese": "狐が森の中に隠れます。"
+        }
+      },
+      {
+        "korean": "늑대",
+        "japanese": "狼",
+        "example": {
+          "korean": "늑대가 무리를 이룹니다.",
+          "japanese": "狼が群れを作ります。"
+        }
+      },
+      {
+        "korean": "돌고래",
+        "japanese": "イルカ",
+        "example": {
+          "korean": "돌고래가 물속에서 헤엄칩니다.",
+          "japanese": "イルカが水の中を泳ぎます。"
+        }
+      },
+      {
+        "korean": "물고기",
+        "japanese": "魚",
+        "example": {
+          "korean": "물고기가 강에서 헤엄칩니다.",
+          "japanese": "魚が川で泳ぎます。"
+        }
+      },
+      {
+        "korean": "거북이",
+        "japanese": "亀",
+        "example": {
+          "korean": "거북이가 천천히 걸어갑니다.",
+          "japanese": "亀がゆっくり歩きます。"
+        }
+      },
+      {
+        "korean": "개구리",
+        "japanese": "カエル",
+        "example": {
+          "korean": "개구리가 연못에 뛰어듭니다.",
+          "japanese": "カエルが池に飛び込みます。"
+        }
+      },
+      {
+        "korean": "뱀",
+        "japanese": "蛇",
+        "example": {
+          "korean": "뱀이 길을 지나갑니다.",
+          "japanese": "蛇が道を横切ります。"
+        }
+      },
+      {
+        "korean": "사슴",
+        "japanese": "鹿",
+        "example": {
+          "korean": "사슴이 숲을 걷고 있습니다.",
+          "japanese": "鹿が森を歩いています。"
+        }
+      },
+      {
+        "korean": "감자",
+        "japanese": "ジャガイモ",
+        "example": {
+          "korean": "감자를 삶습니다.",
+          "japanese": "ジャガイモを茹でます。"
+        }
+      },
+      {
+        "korean": "토마토",
+        "japanese": "トマト",
+        "example": {
+          "korean": "토마토를 잘라 샐러드를 만듭니다.",
+          "japanese": "トマトを切ってサラダを作ります。"
+        }
+      },
+      {
+        "korean": "양파",
+        "japanese": "玉ねぎ",
+        "example": {
+          "korean": "양파를 볶습니다.",
+          "japanese": "玉ねぎを炒めます。"
+        }
+      },
+      {
+        "korean": "당근",
+        "japanese": "人参",
+        "example": {
+          "korean": "당근을 잘게 썹니다.",
+          "japanese": "人参を細かく切ります。"
+        }
+      },
+      {
+        "korean": "오이",
+        "japanese": "キュウリ",
+        "example": {
+          "korean": "오이를 얇게 썹니다.",
+          "japanese": "キュウリを薄く切ります。"
+        }
+      },
+      {
+        "korean": "피망",
+        "japanese": "ピーマン",
+        "example": {
+          "korean": "피망을 썰어 요리에 넣습니다.",
+          "japanese": "ピーマンを切って料理に入れます。"
+        }
+      },
+      {
+        "korean": "참외",
+        "japanese": "マクワウリ",
+        "example": {
+          "korean": "참외가 달고 맛있습니다.",
+          "japanese": "マクワウリが甘くて美味しいです。"
+        }
+      },
+      {
+        "korean": "배추",
+        "japanese": "白菜",
+        "example": {
+          "korean": "배추로 김치를 만듭니다.",
+          "japanese": "白菜でキムチを作ります。"
+        }
+      },
+      {
+        "korean": "가지",
+        "japanese": "ナス",
+        "example": {
+          "korean": "가지를 볶아 먹습니다.",
+          "japanese": "ナスを炒めて食べます。"
+        }
+      },
+      {
+        "korean": "고구마",
+        "japanese": "サツマイモ",
+        "example": {
+          "korean": "고구마를 구워 먹습니다.",
+          "japanese": "サツマイモを焼いて食べます。"
+        }
+      },
+      {
+        "korean": "마늘",
+        "japanese": "ニンニク",
+        "example": {
+          "korean": "마늘을 다져 요리에 넣습니다.",
+          "japanese": "ニンニクを刻んで料理に入れます。"
+        }
+      },
+      {
+        "korean": "생강",
+        "japanese": "生姜",
+        "example": {
+          "korean": "생강차를 마십니다.",
+          "japanese": "生姜茶を飲みます。"
+        }
+      },
+      {
+        "korean": "김치",
+        "japanese": "キムチ",
+        "example": {
+          "korean": "김치를 좋아합니다.",
+          "japanese": "キムチが好きです。"
+        }
+      },
+      {
+        "korean": "떡",
+        "japanese": "餅",
+        "example": {
+          "korean": "떡을 먹어봅니다.",
+          "japanese": "餅を食べてみます。"
+        }
+      },
+      {
+        "korean": "국수",
+        "japanese": "麺",
+        "example": {
+          "korean": "국수를 삶습니다.",
+          "japanese": "麺を茹でます。"
+        }
+      },
+      {
+        "korean": "고추",
+        "japanese": "唐辛子",
+        "example": {
+          "korean": "고추가 매우 맵습니다.",
+          "japanese": "唐辛子がとても辛いです。"
+        }
+      },
+      {
+        "korean": "두부",
+        "japanese": "豆腐",
+        "example": {
+          "korean": "두부를 볶아 먹습니다.",
+          "japanese": "豆腐を炒めて食べます。"
+        }
+      },
+      {
+        "korean": "쌀",
+        "japanese": "米",
+        "example": {
+          "korean": "쌀을 씻어 밥을 합니다.",
+          "japanese": "米を洗ってご飯を炊きます。"
+        }
+      },
+      {
+        "korean": "밥",
+        "japanese": "ご飯",
+        "example": {
+          "korean": "밥을 먹습니다.",
+          "japanese": "ご飯を食べます。"
+        }
+      },
+      {
+        "korean": "미역",
+        "japanese": "わかめ",
+        "example": {
+          "korean": "미역국을 끓입니다.",
+          "japanese": "わかめスープを作ります。"
+        }
+      },
+      {
+        "korean": "도시",
+        "japanese": "都市",
+        "example": {
+          "korean": "도시에서 생활합니다.",
+          "japanese": "都市で生活します。"
+        }
+      },
+      {
+        "korean": "시골",
+        "japanese": "田舎",
+        "example": {
+          "korean": "시골은 조용합니다.",
+          "japanese": "田舎は静かです。"
+        }
+      },
+      {
+        "korean": "지하철",
+        "japanese": "地下鉄",
+        "example": {
+          "korean": "지하철을 타고 출근합니다.",
+          "japanese": "地下鉄に乗って通勤します。"
+        }
+      },
+      {
+        "korean": "고속버스",
+        "japanese": "高速バス",
+        "example": {
+          "korean": "고속버스를 탑니다.",
+          "japanese": "高速バスに乗ります。"
+        }
+      },
+      {
+        "korean": "택시",
+        "japanese": "タクシー",
+        "example": {
+          "korean": "택시를 타고 집에 갑니다.",
+          "japanese": "タクシーに乗って家に帰ります。"
+        }
+      },
+      {
+        "korean": "열차",
+        "japanese": "列車",
+        "example": {
+          "korean": "열차가 역에 도착합니다.",
+          "japanese": "列車が駅に到着します。"
+        }
+      },
+      {
+        "korean": "날씨",
+        "japanese": "天気",
+        "example": {
+          "korean": "오늘 날씨가 좋습니다.",
+          "japanese": "今日は天気が良いです。"
+        }
+      },
+      {
+        "korean": "온도",
+        "japanese": "温度",
+        "example": {
+          "korean": "온도가 낮습니다.",
+          "japanese": "温度が低いです。"
+        }
+      },
+      {
+        "korean": "계절",
+        "japanese": "季節",
+        "example": {
+          "korean": "계절이 바뀌고 있습니다.",
+          "japanese": "季節が変わっています。"
+        }
+      },
+      {
+        "korean": "봄",
+        "japanese": "春",
+        "example": {
+          "korean": "봄에는 꽃이 핍니다.",
+          "japanese": "春には花が咲きます。"
+        }
+      },
+      {
+        "korean": "여름",
+        "japanese": "夏",
+        "example": {
+          "korean": "여름은 덥습니다.",
+          "japanese": "夏は暑いです。"
+        }
+      },
+      {
+        "korean": "가을",
+        "japanese": "秋",
+        "example": {
+          "korean": "가을에는 단풍이 아름답습니다.",
+          "japanese": "秋には紅葉が美しいです。"
+        }
+      },
+      {
+        "korean": "겨울",
+        "japanese": "冬",
+        "example": {
+          "korean": "겨울에는 눈이 옵니다.",
+          "japanese": "冬には雪が降ります。"
+        }
+      },
+      {
+        "korean": "하늘",
+        "japanese": "空",
+        "example": {
+          "korean": "하늘이 맑습니다.",
+          "japanese": "空が晴れています。"
+        }
+      },
+      {
+        "korean": "구름",
+        "japanese": "雲",
+        "example": {
+          "korean": "구름이 많습니다.",
+          "japanese": "雲が多いです。"
+        }
+      },
+      {
+        "korean": "태양",
+        "japanese": "太陽",
+        "example": {
+          "korean": "태양이 밝게 빛납니다.",
+          "japanese": "太陽が明るく輝いています。"
+        }
+      },
+      {
+        "korean": "달",
+        "japanese": "月",
+        "example": {
+          "korean": "달이 떠오릅니다.",
+          "japanese": "月が昇ります。"
+        }
+      },
+      {
+        "korean": "별",
+        "japanese": "星",
+        "example": {
+          "korean": "밤하늘에 별이 빛납니다.",
+          "japanese": "夜空に星が輝いています。"
+        }
+      },
+      {
+        "korean": "바람",
+        "japanese": "風",
+        "example": {
+          "korean": "바람이 시원합니다.",
+          "japanese": "風が涼しいです。"
+        }
+      },
+      {
+        "korean": "비",
+        "japanese": "雨",
+        "example": {
+          "korean": "비가 내리고 있습니다.",
+          "japanese": "雨が降っています。"
+        }
+      }
+    ],
+    "adverbs": [
+      {
+        "korean": "자주",
+        "japanese": "頻繁に",
+        "example": {
+          "korean": "그는 자주 여행을 갑니다.",
+          "japanese": "彼は頻繁に旅行に行きます。"
+        }
+      },
+      {
+        "korean": "가끔",
+        "japanese": "時々",
+        "example": {
+          "korean": "나는 가끔 영화를 봅니다.",
+          "japanese": "私は時々映画を見ます。"
+        }
+      },
+      {
+        "korean": "항상",
+        "japanese": "いつも",
+        "example": {
+          "korean": "그녀는 항상 웃고 있습니다.",
+          "japanese": "彼女はいつも笑っています。"
+        }
+      },
+      {
+        "korean": "매일",
+        "japanese": "毎日",
+        "example": {
+          "korean": "나는 매일 운동을 합니다.",
+          "japanese": "私は毎日運動をします。"
+        }
+      },
+      {
+        "korean": "빨리",
+        "japanese": "速く",
+        "example": {
+          "korean": "그는 일을 빨리 끝냈습니다.",
+          "japanese": "彼は仕事を速く終えました。"
+        }
+      },
+      {
+        "korean": "천천히",
+        "japanese": "ゆっくり",
+        "example": {
+          "korean": "천천히 걷는 것이 좋습니다.",
+          "japanese": "ゆっくり歩くのがいいです。"
+        }
+      },
+      {
+        "korean": "조용히",
+        "japanese": "静かに",
+        "example": {
+          "korean": "그는 조용히 책을 읽었습니다.",
+          "japanese": "彼は静かに本を読みました。"
+        }
+      },
+      {
+        "korean": "크게",
+        "japanese": "大きく",
+        "example": {
+          "korean": "그는 크게 웃었습니다.",
+          "japanese": "彼は大きく笑いました。"
+        }
+      },
+      {
+        "korean": "작게",
+        "japanese": "小さく",
+        "example": {
+          "korean": "그녀는 작게 말했습니다.",
+          "japanese": "彼女は小さく話しました。"
+        }
+      },
+      {
+        "korean": "바로",
+        "japanese": "すぐに",
+        "example": {
+          "korean": "그는 바로 대답했습니다.",
+          "japanese": "彼はすぐに答えました。"
+        }
+      },
+      {
+        "korean": "곧",
+        "japanese": "もうすぐ",
+        "example": {
+          "korean": "비가 곧 올 것 같습니다.",
+          "japanese": "雨がもうすぐ降りそうです。"
+        }
+      },
+      {
+        "korean": "이미",
+        "japanese": "すでに",
+        "example": {
+          "korean": "그는 이미 집에 갔습니다.",
+          "japanese": "彼はすでに家に帰りました。"
+        }
+      },
+      {
+        "korean": "아직",
+        "japanese": "まだ",
+        "example": {
+          "korean": "나는 아직 준비가 안 됐습니다.",
+          "japanese": "私はまだ準備ができていません。"
+        }
+      },
+      {
+        "korean": "절대",
+        "japanese": "絶対に",
+        "example": {
+          "korean": "나는 절대 포기하지 않습니다.",
+          "japanese": "私は絶対に諦めません。"
+        }
+      },
+      {
+        "korean": "아마",
+        "japanese": "多分",
+        "example": {
+          "korean": "아마 비가 올 것입니다.",
+          "japanese": "多分雨が降るでしょう。"
+        }
+      },
+      {
+        "korean": "물론",
+        "japanese": "もちろん",
+        "example": {
+          "korean": "물론, 나는 동의합니다.",
+          "japanese": "もちろん、私は同意します。"
+        }
+      },
+      {
+        "korean": "혹시",
+        "japanese": "もしかして",
+        "example": {
+          "korean": "혹시 그 사람을 아십니까?",
+          "japanese": "もしかしてその人をご存知ですか？"
+        }
+      },
+      {
+        "korean": "단지",
+        "japanese": "ただ",
+        "example": {
+          "korean": "단지 농담이었습니다.",
+          "japanese": "ただの冗談でした。"
+        }
+      },
+      {
+        "korean": "결국",
+        "japanese": "結局",
+        "example": {
+          "korean": "결국, 그는 이겼습니다.",
+          "japanese": "結局、彼は勝ちました。"
+        }
+      },
+      {
+        "korean": "드디어",
+        "japanese": "ついに",
+        "example": {
+          "korean": "드디어 목표를 달성했습니다.",
+          "japanese": "ついに目標を達成しました。"
+        }
+      },
+      {
+        "korean": "정말",
+        "japanese": "本当に",
+        "example": {
+          "korean": "정말 좋았습니다.",
+          "japanese": "本当に良かったです。"
+        }
+      },
+      {
+        "korean": "진짜",
+        "japanese": "本当",
+        "example": {
+          "korean": "그 이야기는 진짜인가요?",
+          "japanese": "その話は本当ですか？"
+        }
+      },
+      {
+        "korean": "일부러",
+        "japanese": "わざと",
+        "example": {
+          "korean": "그는 일부러 그랬습니다.",
+          "japanese": "彼はわざとそうしました。"
+        }
+      },
+      {
+        "korean": "자연스럽게",
+        "japanese": "自然に",
+        "example": {
+          "korean": "모든 것이 자연스럽게 이루어졌습니다.",
+          "japanese": "すべてが自然に行われました。"
+        }
+      },
+      {
+        "korean": "대체로",
+        "japanese": "大体",
+        "example": {
+          "korean": "그 계획은 대체로 성공적이었습니다.",
+          "japanese": "その計画は大体成功でした。"
+        }
+      },
+      {
+        "korean": "적어도",
+        "japanese": "少なくとも",
+        "example": {
+          "korean": "적어도 세 번은 시도해 보세요.",
+          "japanese": "少なくとも三回は試してみてください。"
+        }
+      },
+      {
+        "korean": "최소한",
+        "japanese": "最低限",
+        "example": {
+          "korean": "최소한의 비용으로 일을 마쳤습니다.",
+          "japanese": "最低限の費用で仕事を終えました。"
+        }
+      },
+      {
+        "korean": "마침내",
+        "japanese": "ついに",
+        "example": {
+          "korean": "마침내 목표를 이루었습니다.",
+          "japanese": "ついに目標を達成しました。"
+        }
+      },
+      {
+        "korean": "사실",
+        "japanese": "実際",
+        "example": {
+          "korean": "사실, 그는 그곳에 있었습니다.",
+          "japanese": "実際、彼はそこにいました。"
+        }
+      },
+      {
+        "korean": "확실히",
+        "japanese": "確かに",
+        "example": {
+          "korean": "확실히 좋은 선택입니다.",
+          "japanese": "確かに良い選択です。"
+        }
+      },
+      {
+        "korean": "간단히",
+        "japanese": "簡単に",
+        "example": {
+          "korean": "문제를 간단히 해결했습니다.",
+          "japanese": "問題を簡単に解決しました。"
+        }
+      },
+      {
+        "korean": "구체적으로",
+        "japanese": "具体的に",
+        "example": {
+          "korean": "구체적으로 설명해 주세요.",
+          "japanese": "具体的に説明してください。"
+        }
+      },
+      {
+        "korean": "솔직히",
+        "japanese": "正直に",
+        "example": {
+          "korean": "솔직히 말해서, 나는 그 계획에 반대합니다.",
+          "japanese": "正直に言うと、私はその計画に反対です。"
+        }
+      },
+      {
+        "korean": "정확히",
+        "japanese": "正確に",
+        "example": {
+          "korean": "정확히 무엇을 원하는지 말해 주세요.",
+          "japanese": "正確に何を望んでいるのか教えてください。"
+        }
+      },
+      {
+        "korean": "명확히",
+        "japanese": "明確に",
+        "example": {
+          "korean": "명확히 이해했습니다.",
+          "japanese": "明確に理解しました。"
+        }
+      },
+      {
+        "korean": "약간",
+        "japanese": "少し",
+        "example": {
+          "korean": "약간의 변화가 필요합니다.",
+          "japanese": "少しの変化が必要です。"
+        }
+      },
+      {
+        "korean": "많이",
+        "japanese": "たくさん",
+        "example": {
+          "korean": "많이 먹어도 됩니다.",
+          "japanese": "たくさん食べてもいいです。"
+        }
+      },
+      {
+        "korean": "적게",
+        "japanese": "少なく",
+        "example": {
+          "korean": "적게 먹는 것이 좋습니다.",
+          "japanese": "少なく食べる方がいいです。"
+        }
+      },
+      {
+        "korean": "가볍게",
+        "japanese": "軽く",
+        "example": {
+          "korean": "가볍게 운동하세요.",
+          "japanese": "軽く運動してください。"
+        }
+      },
+      {
+        "korean": "무겁게",
+        "japanese": "重く",
+        "example": {
+          "korean": "무겁게 짐을 들지 마세요.",
+          "japanese": "重く荷物を持たないでください。"
+        }
+      },
+      {
+        "korean": "행복하게",
+        "japanese": "幸せに",
+        "example": {
+          "korean": "행복하게 지내세요.",
+          "japanese": "幸せに過ごしてください。"
+        }
+      },
+      {
+        "korean": "기쁘게",
+        "japanese": "喜んで",
+        "example": {
+          "korean": "기쁘게 그 소식을 들었습니다.",
+          "japanese": "喜んでその知らせを聞きました。"
+        }
+      },
+      {
+        "korean": "슬프게",
+        "japanese": "悲しく",
+        "example": {
+          "korean": "그 소식은 슬프게 만들었습니다.",
+          "japanese": "その知らせは悲しくさせました。"
+        }
+      },
+      {
+        "korean": "화나게",
+        "japanese": "怒らせて",
+        "example": {
+          "korean": "그의 행동은 사람들을 화나게 했습니다.",
+          "japanese": "彼の行動は人々を怒らせました。"
+        }
+      },
+      {
+        "korean": "즐겁게",
+        "japanese": "楽しく",
+        "example": {
+          "korean": "즐겁게 여행했습니다.",
+          "japanese": "楽しく旅行しました。"
+        }
+      },
+      {
+        "korean": "조심스럽게",
+        "japanese": "慎重に",
+        "example": {
+          "korean": "조심스럽게 다뤄야 합니다.",
+          "japanese": "慎重に扱わなければなりません。"
+        }
+      },
+      {
+        "korean": "따뜻하게",
+        "japanese": "暖かく",
+        "example": {
+          "korean": "따뜻하게 입으세요.",
+          "japanese": "暖かく着てください。"
+        }
+      },
+      {
+        "korean": "춥게",
+        "japanese": "寒く",
+        "example": {
+          "korean": "밖이 춥게 느껴집니다.",
+          "japanese": "外が寒く感じます。"
+        }
+      },
+      {
+        "korean": "쉽게",
+        "japanese": "簡単に",
+        "example": {
+          "korean": "그 문제를 쉽게 해결했습니다.",
+          "japanese": "その問題を簡単に解決しました。"
+        }
+      },
+      {
+        "korean": "어렵게",
+        "japanese": "難しく",
+        "example": {
+          "korean": "어렵게 생각하지 마세요.",
+          "japanese": "難しく考えないでください。"
+        }
+      },
+      {
+        "korean": "대부분",
+        "japanese": "大部分",
+        "example": {
+          "korean": "대부분의 사람들은 그 의견에 동의합니다.",
+          "japanese": "大部分の人はその意見に同意します。"
+        }
+      }      
+    ],
+    "conjunctions": [
+      {
+        "korean": "그리고",
+        "japanese": "そして",
+        "example": {
+          "korean": "나는 공부를 했습니다. 그리고 책을 읽었습니다.",
+          "japanese": "私は勉強をしました。そして本を読みました。"
+        }
+      },
+      {
+        "korean": "하지만",
+        "japanese": "しかし",
+        "example": {
+          "korean": "나는 노력했습니다. 하지만 실패했습니다.",
+          "japanese": "私は努力しました。しかし失敗しました。"
+        }
+      },
+      {
+        "korean": "그러나",
+        "japanese": "しかしながら",
+        "example": {
+          "korean": "그는 열심히 일했습니다. 그러나 결과는 좋지 않았습니다.",
+          "japanese": "彼は一生懸命働きました。しかしながら、結果は良くありませんでした。"
+        }
+      },
+      {
+        "korean": "그래서",
+        "japanese": "だから",
+        "example": {
+          "korean": "비가 많이 왔습니다. 그래서 계획이 취소되었습니다.",
+          "japanese": "雨がたくさん降りました。だから計画が中止されました。"
+        }
+      },
+      {
+        "korean": "그러므로",
+        "japanese": "したがって",
+        "example": {
+          "korean": "시간이 부족합니다. 그러므로 서둘러야 합니다.",
+          "japanese": "時間が足りません。したがって急がなければなりません。"
+        }
+      },
+      {
+        "korean": "그렇지만",
+        "japanese": "それでも",
+        "example": {
+          "korean": "나는 피곤했습니다. 그렇지만 일을 끝냈습니다.",
+          "japanese": "私は疲れていました。それでも仕事を終えました。"
+        }
+      },
+      {
+        "korean": "또한",
+        "japanese": "また",
+        "example": {
+          "korean": "그는 친절했습니다. 또한 똑똑했습니다.",
+          "japanese": "彼は親切でした。また賢かったです。"
+        }
+      },
+      {
+        "korean": "따라서",
+        "japanese": "従って",
+        "example": {
+          "korean": "모두가 찬성했습니다. 따라서 계획은 승인되었습니다.",
+          "japanese": "全員が賛成しました。従って計画は承認されました。"
+        }
+      },
+      {
+        "korean": "즉",
+        "japanese": "つまり",
+        "example": {
+          "korean": "그는 정직합니다. 즉, 거짓말을 하지 않습니다.",
+          "japanese": "彼は正直です。つまり嘘をつきません。"
+        }
+      },
+      {
+        "korean": "만약",
+        "japanese": "もし",
+        "example": {
+          "korean": "만약 비가 오면, 우리는 취소할 것입니다.",
+          "japanese": "もし雨が降れば、私たちは中止します。"
+        }
+      },
+      {
+        "korean": "혹은",
+        "japanese": "または",
+        "example": {
+          "korean": "커피 혹은 차를 마시겠습니까?",
+          "japanese": "コーヒーまたはお茶を飲みますか？"
+        }
+      },
+      {
+        "korean": "혹시",
+        "japanese": "もしかして",
+        "example": {
+          "korean": "혹시 그 사람을 아십니까?",
+          "japanese": "もしかしてその人をご存知ですか？"
+        }
+      },
+      {
+        "korean": "왜냐하면",
+        "japanese": "なぜなら",
+        "example": {
+          "korean": "나는 가지 않았습니다. 왜냐하면 몸이 아팠기 때문입니다.",
+          "japanese": "私は行きませんでした。なぜなら体調が悪かったからです。"
+        }
+      },
+      {
+        "korean": "때문에",
+        "japanese": "ために",
+        "example": {
+          "korean": "비 때문에 계획이 취소되었습니다.",
+          "japanese": "雨のために計画が中止されました。"
+        }
+      },
+      {
+        "korean": "이어서",
+        "japanese": "続いて",
+        "example": {
+          "korean": "회의에 이어서 발표가 있었습니다.",
+          "japanese": "会議に続いて発表がありました。"
+        }
+      },
+      {
+        "korean": "그리고서",
+        "japanese": "それから",
+        "example": {
+          "korean": "일을 끝냈습니다. 그리고서 집에 갔습니다.",
+          "japanese": "仕事を終えました。それから家に帰りました。"
+        }
+      },
+      {
+        "korean": "그래도",
+        "japanese": "それでも",
+        "example": {
+          "korean": "비가 왔습니다. 그래도 우리는 나갔습니다.",
+          "japanese": "雨が降りました。それでも私たちは出かけました。"
+        }
+      },
+      {
+        "korean": "더구나",
+        "japanese": "さらに",
+        "example": {
+          "korean": "그는 늦었습니다. 더구나 사과도 하지 않았습니다.",
+          "japanese": "彼は遅れました。さらに謝りもしませんでした。"
+        }
+      },
+      {
+        "korean": "그런데",
+        "japanese": "ところが",
+        "example": {
+          "korean": "나는 집에 있었습니다. 그런데 누군가가 문을 두드렸습니다.",
+          "japanese": "私は家にいました。ところが誰かがドアをノックしました。"
+        }
+      },
+      {
+        "korean": "차라리",
+        "japanese": "むしろ",
+        "example": {
+          "korean": "차라리 혼자가 낫습니다.",
+          "japanese": "むしろ一人の方がいいです。"
+        }
+      },
+      {
+        "korean": "게다가",
+        "japanese": "加えて",
+        "example": {
+          "korean": "그는 똑똑합니다. 게다가 성실합니다.",
+          "japanese": "彼は賢いです。加えて誠実です。"
+        }
+      },
+      {
+        "korean": "결국",
+        "japanese": "結局",
+        "example": {
+          "korean": "결국 그는 성공했습니다.",
+          "japanese": "結局彼は成功しました。"
+        }
+      },
+      {
+        "korean": "더불어",
+        "japanese": "ともに",
+        "example": {
+          "korean": "그는 친구들과 더불어 여행을 갔습니다.",
+          "japanese": "彼は友人たちとともに旅行に行きました。"
+        }
+      },
+      {
+        "korean": "비록",
+        "japanese": "たとえ",
+        "example": {
+          "korean": "비록 힘들어도, 포기하지 않겠습니다.",
+          "japanese": "たとえ辛くても、諦めません。"
+        }
+      }      
+    ],
+    "particles": [
+      {
+        "korean": "은/는",
+        "japanese": "は",
+        "example": {
+          "korean": "나는 학생입니다.",
+          "japanese": "私は学生です。"
+        }
+      },
+      {
+        "korean": "이/가",
+        "japanese": "が",
+        "example": {
+          "korean": "비가 옵니다.",
+          "japanese": "雨が降ります。"
+        }
+      },
+      {
+        "korean": "을/를",
+        "japanese": "を",
+        "example": {
+          "korean": "책을 읽습니다.",
+          "japanese": "本を読みます。"
+        }
+      },
+      {
+        "korean": "에",
+        "japanese": "に",
+        "example": {
+          "korean": "학교에 갑니다.",
+          "japanese": "学校に行きます。"
+        }
+      },
+      {
+        "korean": "에서",
+        "japanese": "で",
+        "example": {
+          "korean": "집에서 공부합니다.",
+          "japanese": "家で勉強します。"
+        }
+      },
+      {
+        "korean": "에게",
+        "japanese": "に",
+        "example": {
+          "korean": "친구에게 선물을 줍니다.",
+          "japanese": "友達にプレゼントを渡します。"
+        }
+      },
+      {
+        "korean": "한테",
+        "japanese": "に",
+        "example": {
+          "korean": "동생한테 물어봤습니다.",
+          "japanese": "弟に聞きました。"
+        }
+      },
+      {
+        "korean": "로/으로",
+        "japanese": "へ",
+        "example": {
+          "korean": "버스로 갑니다.",
+          "japanese": "バスで行きます。"
+        }
+      },
+      {
+        "korean": "도",
+        "japanese": "も",
+        "example": {
+          "korean": "나도 가고 싶어요.",
+          "japanese": "私も行きたいです。"
+        }
+      },
+      {
+        "korean": "만",
+        "japanese": "だけ",
+        "example": {
+          "korean": "그 책만 읽었어요.",
+          "japanese": "その本だけ読みました。"
+        }
+      },
+      {
+        "korean": "밖에",
+        "japanese": "しか",
+        "example": {
+          "korean": "돈이 천 원밖에 없어요.",
+          "japanese": "お金が千ウォンしかありません。"
+        }
+      },
+      {
+        "korean": "까지",
+        "japanese": "まで",
+        "example": {
+          "korean": "집까지 걸어갔습니다.",
+          "japanese": "家まで歩きました。"
+        }
+      },
+      {
+        "korean": "조차",
+        "japanese": "さえ",
+        "example": {
+          "korean": "물조차 없었어요.",
+          "japanese": "水さえありませんでした。"
+        }
+      },
+      {
+        "korean": "마저",
+        "japanese": "までも",
+        "example": {
+          "korean": "친구마저 떠났어요.",
+          "japanese": "友達までも去りました。"
+        }
+      },
+      {
+        "korean": "이나",
+        "japanese": "または",
+        "example": {
+          "korean": "사과나 배를 주세요.",
+          "japanese": "りんごまたは梨をください。"
+        }
+      },
+      {
+        "korean": "부터",
+        "japanese": "から",
+        "example": {
+          "korean": "내일부터 시작합니다.",
+          "japanese": "明日から始めます。"
+        }
+      },
+      {
+        "korean": "처럼",
+        "japanese": "のように",
+        "example": {
+          "korean": "그는 영웅처럼 행동합니다.",
+          "japanese": "彼は英雄のように行動します。"
+        }
+      },
+      {
+        "korean": "대로",
+        "japanese": "通りに",
+        "example": {
+          "korean": "말한 대로 하세요.",
+          "japanese": "言った通りにしてください。"
+        }
+      },
+      {
+        "korean": "마다",
+        "japanese": "ごとに",
+        "example": {
+          "korean": "매일마다 운동합니다.",
+          "japanese": "毎日ごとに運動します。"
+        }
+      },
+      {
+        "korean": "보다",
+        "japanese": "より",
+        "example": {
+          "korean": "형보다 키가 큽니다.",
+          "japanese": "兄より背が高いです。"
+        }
+      },
+      {
+        "korean": "까지는",
+        "japanese": "までは",
+        "example": {
+          "korean": "집까지는 걸어갈 수 있어요.",
+          "japanese": "家までは歩けます。"
+        }
+      },
+      {
+        "korean": "동안",
+        "japanese": "間",
+        "example": {
+          "korean": "여행 동안 즐거웠습니다.",
+          "japanese": "旅行の間、楽しかったです。"
+        }
+      },
+      {
+        "korean": "밖으로",
+        "japanese": "外に",
+        "example": {
+          "korean": "밖으로 나가세요.",
+          "japanese": "外に出てください。"
+        }
+      },
+      {
+        "korean": "아래로",
+        "japanese": "下に",
+        "example": {
+          "korean": "계단 아래로 내려가세요.",
+          "japanese": "階段の下に降りてください。"
+        }
+      },
+      {
+        "korean": "위로",
+        "japanese": "上に",
+        "example": {
+          "korean": "산 위로 올라가세요.",
+          "japanese": "山の上に登ってください。"
+        }
+      },
+      {
+        "korean": "곁으로",
+        "japanese": "そばに",
+        "example": {
+          "korean": "그의 곁으로 다가갔습니다.",
+          "japanese": "彼のそばに近づきました。"
+        }
+      },
+      {
+        "korean": "속으로",
+        "japanese": "中に",
+        "example": {
+          "korean": "상자 속으로 물건을 넣었습니다.",
+          "japanese": "箱の中に物を入れました。"
+        }
+      }      
+    ],
+    "pronouns": [
+      {
+        "korean": "나",
+        "japanese": "私",
+        "example": {
+          "korean": "나는 학생입니다.",
+          "japanese": "私は学生です。"
+        }
+      },
+      {
+        "korean": "너",
+        "japanese": "君",
+        "example": {
+          "korean": "너는 무엇을 하고 있니?",
+          "japanese": "君は何をしているの？"
+        }
+      },
+      {
+        "korean": "그",
+        "japanese": "彼",
+        "example": {
+          "korean": "그는 친절합니다.",
+          "japanese": "彼は親切です。"
+        }
+      },
+      {
+        "korean": "그녀",
+        "japanese": "彼女",
+        "example": {
+          "korean": "그녀는 예쁩니다.",
+          "japanese": "彼女は綺麗です。"
+        }
+      },
+      {
+        "korean": "우리",
+        "japanese": "私たち",
+        "example": {
+          "korean": "우리는 친구입니다.",
+          "japanese": "私たちは友達です。"
+        }
+      },
+      {
+        "korean": "너희",
+        "japanese": "君たち",
+        "example": {
+          "korean": "너희는 어디에 가니?",
+          "japanese": "君たちはどこに行くの？"
+        }
+      },
+      {
+        "korean": "저",
+        "japanese": "私",
+        "example": {
+          "korean": "저는 학생입니다.",
+          "japanese": "私は学生です。"
+        }
+      },
+      {
+        "korean": "이것",
+        "japanese": "これ",
+        "example": {
+          "korean": "이것은 무엇입니까?",
+          "japanese": "これは何ですか？"
+        }
+      },
+      {
+        "korean": "저것",
+        "japanese": "あれ",
+        "example": {
+          "korean": "저것은 사과입니다.",
+          "japanese": "あれはりんごです。"
+        }
+      },
+      {
+        "korean": "그것",
+        "japanese": "それ",
+        "example": {
+          "korean": "그것은 책입니다.",
+          "japanese": "それは本です。"
+        }
+      },
+      {
+        "korean": "여기",
+        "japanese": "ここ",
+        "example": {
+          "korean": "여기가 내 방입니다.",
+          "japanese": "ここが私の部屋です。"
+        }
+      },
+      {
+        "korean": "저기",
+        "japanese": "あそこ",
+        "example": {
+          "korean": "저기가 공원입니다.",
+          "japanese": "あそこが公園です。"
+        }
+      },
+      {
+        "korean": "거기",
+        "japanese": "そこ",
+        "example": {
+          "korean": "거기에 앉으세요.",
+          "japanese": "そこに座ってください。"
+        }
+      },
+      {
+        "korean": "모두",
+        "japanese": "皆",
+        "example": {
+          "korean": "모두가 참석했습니다.",
+          "japanese": "皆が出席しました。"
+        }
+      },
+      {
+        "korean": "각자",
+        "japanese": "各自",
+        "example": {
+          "korean": "각자의 역할이 있습니다.",
+          "japanese": "各自の役割があります。"
+        }
+      },
+      {
+        "korean": "누구",
+        "japanese": "誰",
+        "example": {
+          "korean": "누구를 찾으세요?",
+          "japanese": "誰を探していますか？"
+        }
+      },
+      {
+        "korean": "무엇",
+        "japanese": "何",
+        "example": {
+          "korean": "무엇을 하고 있습니까?",
+          "japanese": "何をしていますか？"
+        }
+      },
+      {
+        "korean": "어디",
+        "japanese": "どこ",
+        "example": {
+          "korean": "어디에 가고 싶습니까?",
+          "japanese": "どこに行きたいですか？"
+        }
+      },
+      {
+        "korean": "언제",
+        "japanese": "いつ",
+        "example": {
+          "korean": "언제 시간이 있습니까?",
+          "japanese": "いつ時間がありますか？"
+        }
+      },
+      {
+        "korean": "어느",
+        "japanese": "どの",
+        "example": {
+          "korean": "어느 책을 읽을 거예요?",
+          "japanese": "どの本を読みますか？"
+        }
+      },
+      {
+        "korean": "나 자신",
+        "japanese": "私自身",
+        "example": {
+          "korean": "나는 나 자신을 믿습니다.",
+          "japanese": "私は私自身を信じます。"
+        }
+      },
+      {
+        "korean": "너 자신",
+        "japanese": "君自身",
+        "example": {
+          "korean": "너 자신을 믿어야 해.",
+          "japanese": "君自身を信じなければならない。"
+        }
+      }      
+    ],
+    "numerals": [
+      {
+        "korean": "일",
+        "japanese": "1",
+        "example": {
+          "korean": "나는 사과를 일 개 먹었습니다.",
+          "japanese": "私はリンゴを1個食べました。"
+        }
+      },
+      {
+        "korean": "이",
+        "japanese": "2",
+        "example": {
+          "korean": "내일은 이 번 시험이 있습니다.",
+          "japanese": "明日は2回目の試験があります。"
+        }
+      },
+      {
+        "korean": "삼",
+        "japanese": "3",
+        "example": {
+          "korean": "삼 시간 동안 기다렸습니다.",
+          "japanese": "3時間待ちました。"
+        }
+      },
+      {
+        "korean": "사",
+        "japanese": "4",
+        "example": {
+          "korean": "나는 사 권의 책을 빌렸습니다.",
+          "japanese": "私は4冊の本を借りました。"
+        }
+      },
+      {
+        "korean": "오",
+        "japanese": "5",
+        "example": {
+          "korean": "우리 가족은 모두 오 명입니다.",
+          "japanese": "私の家族は全部で5人です。"
+        }
+      },
+      {
+        "korean": "육",
+        "japanese": "6",
+        "example": {
+          "korean": "육 월은 여름의 시작입니다.",
+          "japanese": "6月は夏の始まりです。"
+        }
+      },
+      {
+        "korean": "칠",
+        "japanese": "7",
+        "example": {
+          "korean": "나는 칠 시에 일어납니다.",
+          "japanese": "私は7時に起きます。"
+        }
+      },
+      {
+        "korean": "팔",
+        "japanese": "8",
+        "example": {
+          "korean": "팔 월은 매우 덥습니다.",
+          "japanese": "8月はとても暑いです。"
+        }
+      },
+      {
+        "korean": "구",
+        "japanese": "9",
+        "example": {
+          "korean": "구 시에 수업이 시작됩니다.",
+          "japanese": "9時に授業が始まります。"
+        }
+      },
+      {
+        "korean": "십",
+        "japanese": "10",
+        "example": {
+          "korean": "십 분만 기다려 주세요.",
+          "japanese": "10分だけ待ってください。"
+        }
+      }
+    ]
+  }
+}

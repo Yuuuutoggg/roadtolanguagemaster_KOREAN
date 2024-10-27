@@ -1,0 +1,565 @@
+/* Google Fontsの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+JP&display=swap');
+
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ボディとHTMLのスタイル */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans JP', sans-serif; /* 可憐な印象のフォント */
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* パステル調の背景グラデーション */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #333; /* 読みやすい濃い色 */
+    overflow-x: hidden;
+    user-select: none; /* ユーザー選択不可 */
+}
+
+/* タイトルのスタイル */
+h1, h2 {
+    font-family: 'Caveat', cursive; /* 手書き風フォントで可憐な印象 */
+    color: #6a1b9a; /* パステルパープル */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 15px 20px; /* 縦横のパディングを調整 */
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px; /* 丸みを帯びたボタン */
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #ff9a9e; /* パステルピンク */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    max-width: 350px; /* 最大横幅を設定 */
+    width: 100%; /* 幅を親コンテナに合わせる */
+    /* height: 60px; ボタンの固定高さを削除 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal; /* テキストの折り返しを許可 */
+    overflow: visible; /* はみ出しを許可 */
+    text-overflow: clip; /* テキストの省略を無効化 */
+    word-wrap: break-word; /* 単語の折り返しを許可 */
+    min-height: 50px; /* 最小高さを設定 */
+}
+
+button:hover {
+    background-color: #fad0c4; /* ホバー時に少し明るく */
+}
+
+/* アイコンとテキストの間に余白を追加 */
+button i {
+    margin-right: 8px; /* アイコンとテキストの間に余白を追加 */
+}
+
+/* クイズの選択肢ボタン */
+.quiz-choice-button, .user-quiz-choice-button {
+    padding: 15px 20px; /* 縦横のパディングを調整 */
+    margin: 10px 0;
+    font-size: 1em;
+    border: 2px solid #ff9a9e;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #6a1b9a;
+    transition: background-color 0.3s, transform 0.2s;
+    max-width: 350px; /* 最大幅を設定 */
+    width: 100%; /* 幅を親コンテナに合わせる */
+    /* height: 60px; 固定高さを削除 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal; /* テキストの折り返しを許可 */
+    overflow: visible; /* はみ出しを許可 */
+    text-overflow: clip; /* テキストの省略を無効化 */
+    word-wrap: break-word; /* 単語の折り返しを許可 */
+    min-height: 50px; /* 最小高さを設定 */
+}
+
+.quiz-choice-button:hover, .user-quiz-choice-button:hover {
+    background-color: #ffe6e6;
+    transform: scale(1.02); /* 動きを少なく */
+}
+
+/* ボタングループのスタイル */
+.button-group {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 中央揃え */
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.button-group button {
+    flex: none; /* フレックス成長を無効化 */
+    width: 100%; /* 幅を親コンテナに合わせる */
+    max-width: 350px;
+    /* height: 60px; 固定高さを削除 */
+    font-size: 1em;
+}
+
+/* 中央揃えボタングループのスタイル */
+.button-group.centered-buttons {
+    flex-direction: column; /* ボタンを縦に並べる */
+    align-items: center; /* ボタンを中央揃えにする */
+    gap: 20px; /* ボタン間のスペースを増やす */
+}
+
+.button-group.centered-buttons button {
+    width: 100%; /* 幅を親コンテナに合わせる */
+    max-width: 350px; /* 最大幅を設定 */
+    min-width: 200px; /* 最小幅を設定 */
+}
+
+/* 親コンテナのスタイル */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 入力フィールドのスタイル */
+input[type="text"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 1em;
+    border: 2px solid #ff9a9e;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #6a1b9a;
+    outline: none;
+}
+
+/* 共通のスクリーンスタイル */
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 10rem 20px; /* パディングを減らしてコンテンツ部分を大きく */
+    text-align: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95); /* 半透明の背景を少し不透明に */
+    margin: 20px auto; /* マージンを減らしてコンテンツを中央に配置 */
+    width: 90%; /* コンテンツの幅を拡大 */
+    max-width: 1600px; /* 最大幅を拡大 */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* モーダルのスタイル */
+.modal, .custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content, .custom-modal .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* リストのスタイル */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li p {
+    margin: 5px 0;
+}
+
+/* スクロール対象部分 */
+.scrollable-content {
+    max-height: 400px; /* 固定高さでスクロール可能に */
+    overflow-y: auto;
+    padding: 0 1rem;
+}
+
+/* 固定ボタンのスタイル */
+.fixed-footer {
+    position: fixed;
+    bottom: 200px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #6a1b9a;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    max-width: 300px; /* 最大幅を設定 */
+    width: 100%; /* 幅を調整 */
+}
+
+.fixed-footer i {
+    font-size: 1.2em;
+    margin-right: 0.5rem;
+}
+
+/* 音量調節スライダーのスタイル */
+.volume-control {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.volume-control label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #6a1b9a;
+}
+
+.volume-control input[type='range'] {
+    width: 70%;
+    max-width: 400px;
+}
+
+/* 単語表示のスタイル */
+#word-display {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #6a1b9a;
+}
+
+/* クイズの解答一覧リストアイテム */
+#quizSummaryList li.correct, #userQuizSummaryList li.correct {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+#quizSummaryList li.incorrect, #userQuizSummaryList li.incorrect {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+/* タイピング練習入力フィールドのスタイル */
+#user-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 1.3em;
+    border: 2px solid #ff9a9e;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    border-color: #6a1b9a;
+    outline: none;
+}
+
+/* スコア表示のスタイル */
+#finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #6a1b9a;
+}
+
+/* タイマーとスコアの表示 */
+#currentTimerText, #currentScoreText, #currentProgress {
+    font-size: 1.3em;
+    margin: 10px 0;
+    color: #6a1b9a;
+}
+
+/* アプリ情報のスタイル */
+#appInfoScreen p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* フォームのスタイル */
+.add-word-screen input, .edit-word-screen input {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+/* ユーザーガイドリストのスタイル */
+.user-guide-screen ul {
+    text-align: left;
+    color: #555;
+}
+
+.user-guide-screen ul li {
+    margin: 10px 0;
+}
+
+
+/* レスポンシブデザイン */
+
+/* スマホ向け */
+@media (max-width: 767px) {
+    /* タイトルのスタイル */
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    /* ボタンのスタイル */
+    button {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        max-width: 100%;
+        min-width: 200px;
+    }
+
+    /* クイズの選択肢ボタン */
+    .quiz-choice-button, .user-quiz-choice-button {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        max-width: 100%;
+        min-width: 200px;
+    }
+
+    /* ボタングループのスタイル */
+    .button-group.centered-buttons button {
+        width: 100%;
+    }
+
+    /* 入力フィールドのスタイル */
+    input[type="text"] {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    /* スコア表示のスタイル */
+    #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
+        font-size: 1.2em;
+        margin: 15px 0;
+    }
+
+    /* タイマーとスコアの表示 */
+    #currentTimerText, #currentScoreText, #currentProgress {
+        font-size: 1.1em;
+        margin: 8px 0;
+    }
+}
+
+/* タブレット向け */
+@media (min-width: 768px)  {
+    /* ボディとHTMLのスタイル */
+    body, html {
+        font-size: 1.1em; /* フォントサイズをやや大きく */
+    }
+
+    /* タイトルのスタイル */
+    h1 {
+        font-size: 2.5em; /* フォントサイズを拡大 */
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    /* ボタンのスタイル */
+    button {
+        max-width: 400px; /* 最大幅を拡大 */
+        padding: 15px 20px; /* パディングを調整 */
+        font-size: 1.1em; /* フォントサイズを拡大 */
+        min-width: 200px; /* 最小幅を設定 */
+    }
+
+    /* クイズの選択肢ボタン */
+    .quiz-choice-button, .user-quiz-choice-button {
+        max-width: 400px; /* 最大幅を拡大 */
+        padding: 15px 20px; /* パディングを調整 */
+        font-size: 1.1em;
+        min-width: 200px; /* 最小幅を設定 */
+    }
+
+    /* ボタングループのスタイル */
+    .button-group {
+        gap: 20px; /* ギャップを拡大 */
+        margin-top: 25px;
+    }
+
+    .button-group button {
+        width: 250px; /* ボタンの幅を固定 */
+    }
+
+    .button-group.centered-buttons button {
+        width: 250px; /* ボタンの幅を固定 */
+    }
+
+    /* 入力フィールドのスタイル */
+    input[type="text"] {
+        padding: 20px; /* パディングを増加 */
+        font-size: 1.2em; /* フォントサイズを拡大 */
+    }
+
+    /* スコア表示のスタイル */
+    #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
+        font-size: 2em; /* フォントサイズを拡大 */
+        margin: 25px 0;
+    }
+
+    /* タイマーとスコアの表示 */
+    #currentTimerText, #currentScoreText, #currentProgress {
+        font-size: 1.5em;
+        margin: 15px 0;
+    }
+
+    #userWordList .word-list-item,
+    /* 間違えた単語の一覧 */
+    #incorrectWordsList .word-list-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 横方向の中央揃え */
+      text-align: center;   /* テキストの中央揃え */
+      padding: 10px 0;      /* 上下のパディングを調整 */
+    }
+  
+    /* ボタンのスタイルを調整（必要に応じて） */
+    #userWordList .word-list-item button,
+    #incorrectWordsList .word-list-item button {
+      margin-top: 10px; /* ボタンとテキストの間に余白を追加 */
+      padding: 8px 16px; /* パディングを調整 */
+      font-size: 0.9em;   /* フォントサイズを調整 */
+    }
+}
+
+/* デスクトップ向け */
+@media (min-width: 1025px) {
+    /* ボディとHTMLのスタイル */
+    body, html {
+        font-size: 1.2em; /* フォントサイズをさらに大きく */
+    }
+
+    /* タイトルのスタイル */
+    h1 {
+        font-size: 3em;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    /* ボタンのスタイル */
+    button {
+        max-width: 450px; /* 最大幅をさらに拡大 */
+        padding: 20px 24px; /* パディングを調整 */
+        font-size: 1.2em; /* フォントサイズを拡大 */
+        min-width: 200px; /* 最小幅を設定 */
+    }
+
+    /* クイズの選択肢ボタン */
+    .quiz-choice-button, .user-quiz-choice-button {
+        max-width: 450px; /* 最大幅をさらに拡大 */
+        padding: 20px 24px; /* パディングを調整 */
+        font-size: 1.2em;
+        min-width: 200px; /* 最小幅を設定 */
+    }
+
+    /* ボタングループのスタイル */
+    .button-group {
+        gap: 25px; /* ギャップを拡大 */
+        margin-top: 30px;
+    }
+
+    .button-group button {
+        width: 300px; /* ボタンの幅を固定 */
+    }
+
+    .button-group.centered-buttons button {
+        width: 300px; /* ボタンの幅を固定 */
+    }
+
+    /* 入力フィールドのスタイル */
+    input[type="text"] {
+        padding: 20px;
+        font-size: 1.4em;
+    }
+
+    /* スコア表示のスタイル */
+    #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
+        font-size: 2.5em;
+        margin: 25px 0;
+    }
+
+    /* タイマーとスコアの表示 */
+    #currentTimerText, #currentScoreText, #currentProgress {
+        font-size: 1.5em;
+        margin: 15px 0;
+    }
+/* 追加した単語の一覧 */
+#userWordList .word-list-item,
+/* 間違えた単語の一覧 */
+#incorrectWordsList .word-list-item {
+  padding: 15px 0; /* 上下のパディングをさらに調整 */
+}
+
+/* ボタンのスタイルを調整（必要に応じて） */
+#userWordList .word-list-item button,
+#incorrectWordsList .word-list-item button {
+  padding: 10px 20px; /* パディングを調整 */
+  font-size: 1em;      /* フォントサイズを調整 */
+}
+
+}
