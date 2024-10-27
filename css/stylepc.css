@@ -487,80 +487,80 @@ li p {
 @media (min-width: 1025px) {
     /* ボディとHTMLのスタイル */
     body, html {
-        font-size: 0.9em; /* フォントサイズをさらに小さく */
+        font-size: 1.02em; /* フォントサイズを調整 */
     }
 
     /* タイトルのスタイル */
     h1 {
-        font-size: 2.25em;
-        margin-bottom: 18.75px;
+        font-size: 2.55em;
+        margin-bottom: 21.25px;
     }
 
     h2 {
-        font-size: 1.875em;
-        margin-bottom: 15px;
+        font-size: 2.125em;
+        margin-bottom: 17px;
     }
 
     /* ボタンのスタイル */
     button {
-        max-width: 337.5px; /* 最大幅を縮小 */
-        padding: 15px 18px; /* パディングを調整 */
-        font-size: 0.9em; /* フォントサイズを縮小 */
-        min-width: 150px; /* 最小幅を縮小 */
+        max-width: 382.5px; /* 最大幅を調整 */
+        padding: 17px 20.4px; /* パディングを調整 */
+        font-size: 1.02em; /* フォントサイズを調整 */
+        min-width: 170px; /* 最小幅を調整 */
     }
 
     /* クイズの選択肢ボタン */
     .quiz-choice-button, .user-quiz-choice-button {
-        max-width: 337.5px; /* 最大幅を縮小 */
-        padding: 15px 18px; /* パディングを調整 */
-        font-size: 0.9em;
-        min-width: 150px; /* 最小幅を縮小 */
+        max-width: 382.5px; /* 最大幅を調整 */
+        padding: 17px 20.4px; /* パディングを調整 */
+        font-size: 1.02em;
+        min-width: 170px; /* 最小幅を調整 */
     }
 
     /* ボタングループのスタイル */
     .button-group {
-        gap: 18.75px; /* ギャップを縮小 */
-        margin-top: 22.5px;
+        gap: 21.25px; /* ギャップを調整 */
+        margin-top: 25.5px;
     }
 
     .button-group button {
-        width: 225px; /* ボタンの幅を縮小 */
+        width: 255px; /* ボタンの幅を調整 */
     }
 
     .button-group.centered-buttons button {
-        width: 225px; /* ボタンの幅を縮小 */
+        width: 255px; /* ボタンの幅を調整 */
     }
 
     /* 入力フィールドのスタイル */
     input[type="text"] {
-        padding: 15px;
-        font-size: 1.05em;
+        padding: 17px;
+        font-size: 1.19em;
     }
 
     /* スコア表示のスタイル */
     #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
-        font-size: 1.875em;
-        margin: 18.75px 0;
+        font-size: 2.125em;
+        margin: 21.25px 0;
     }
 
     /* タイマーとスコアの表示 */
     #currentTimerText, #currentScoreText, #currentProgress {
-        font-size: 1.125em;
-        margin: 11.25px 0;
+        font-size: 1.275em;
+        margin: 12.75px 0;
     }
 
     /* 追加した単語の一覧 */
     #userWordList .word-list-item,
     /* 間違えた単語の一覧 */
     #incorrectWordsList .word-list-item {
-        padding: 11.25px 0; /* 上下のパディングを調整 */
+        padding: 12.75px 0; /* 上下のパディングを調整 */
     }
 
     /* ボタンのスタイルを調整（必要に応じて） */
     #userWordList .word-list-item button,
     #incorrectWordsList .word-list-item button {
-        padding: 7.5px 15px; /* パディングを調整 */
-        font-size: 0.75em;   /* フォントサイズを調整 */
+        padding: 8.5px 17px; /* パディングを調整 */
+        font-size: 0.85em;   /* フォントサイズを調整 */
     }
 }
 
