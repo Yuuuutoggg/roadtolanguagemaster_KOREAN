@@ -61,10 +61,10 @@ function addUserWord() {
   localStorage.setItem('userWordList', JSON.stringify(userWordList));
   showCustomAlert('単語を追加しました。');
   
-  // Use an existing function to navigate back to the menu
-  backToUserCreatedMenu(); // Replaces the undefined function
+  // 単語リストを更新して画面に反映
   updateUserWordList();
 }
+
 
 
 
