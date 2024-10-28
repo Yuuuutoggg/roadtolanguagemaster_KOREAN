@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓国語マスター - 設定</title>
+  <meta name="description" content="韓国語学習アプリ『単語の道』の設定ページです。サウンド設定やプライバシーポリシー、アプリ情報などを管理できます。">
+  <link rel="stylesheet" href="css/stylepc.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+  <div class="app-container">
+
+    <!-- カスタムアラートモーダル -->
+    <div class="custom-modal" id="customAlertModal" style="display: none;">
+      <div class="modal-content">
+        <p id="alertMessage">アラートメッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="closeCustomAlert()">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カスタム確認モーダル -->
+    <div class="modal" id="customConfirmModal" style="display: none;">
+      <div class="modal-content">
+        <p id="confirmMessage">確認メッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="confirmYesCustom()">はい</button>
+          <button onclick="confirmNoCustom()">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 設定画面 -->
+    <div class="screen fade-in settings-screen" id="settingsScreen">
+      <h2>設定</h2>
+      <div class="content">
+        <div class="button-group centered-buttons">
+          <button onclick="toggleSound()">
+            <i class="" id="soundIcon"></i>
+            サウンド: <span id="soundStatus">オン</span>
+          </button>
+          <!-- 音量調節スライダー -->
+          <div class="volume-control" id="volumeControl" style="display: block;">
+            <label for="volumeSlider">音量調節:</label>
+            <input
+              id="volumeSlider"
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+              oninput="setVolume(this.value)"
+            />
+          </div>
+          <a href="terms_of_use.html" class="button"><i class="fas fa-file-alt"></i> 利用規約</a>
+          <a href="privacy_policy.html" class="button"><i class="fas fa-user-secret"></i> プライバシーポリシー</a>
+          <a href="app_info.html" class="button"><i class="fas fa-info-circle"></i> アプリ情報</a>
+          <a href="contact.html" class="button"><i class="fas fa-envelope"></i> お問い合わせ</a>
+          <a href="index.html" class="button"><i class="fas fa-arrow-left"></i> 戻る</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 利用規約画面 -->
+    <div class="screen fade-in terms-of-use-screen" id="termsOfUseScreen" style="display: none;">
+      <h2>利用規約</h2>
+      <div class="content scrollable-content">
+        <p>
+          利用規約の全文は、<a href="https://app-terms-and-privacy.netlify.app/terms_of_service.html" target="_blank" rel="noopener noreferrer">こちら</a>からご覧いただけます。
+        </p>
+      </div>
+      <div class="button-group centered-buttons">
+        <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
+      </div>
+    </div>
+
+    <!-- プライバシーポリシー画面 -->
+    <div class="screen fade-in privacy-policy-screen" id="privacyPolicyScreen" style="display: none;">
+      <h2>プライバシーポリシー</h2>
+      <div class="content scrollable-content">
+        <p>
+          プライバシーポリシーの全文は、<a href="https://app-terms-and-privacy.netlify.app/privacy_policy.html" target="_blank" rel="noopener noreferrer">こちら</a>からご覧いただけます。
+        </p>
+      </div>
+      <div class="button-group centered-buttons">
+        <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
+      </div>
+    </div>
+
+    <!-- アプリ情報画面 -->
+    <div class="screen fade-in app-info-screen" id="appInfoScreen" style="display: none;">
+      <h2>アプリ情報</h2>
+      <div class="content">
+        <p>アプリ名: 韓国語タイピング＆学習アプリ</p>
+        <p>バージョン: <span id="appVersion">1.0.0</span></p>
+        <div class="button-group centered-buttons">
+          <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ画面 -->
+    <div class="screen fade-in contact-screen" id="contactScreen" style="display: none;">
+      <h2>お問い合わせ</h2>
+      <div class="content">
+        <p>ご質問やご意見がございましたら<br>以下のメールアドレスまでご連絡ください。</p>
+        <p>Email: <a href="mailto:languagemaster_app@gmail.com">languagemasterapp&#64;gmail.com</a></p>
+        <div class="button-group centered-buttons">
+          <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- スクリプトファイルの読み込み -->
+  <!--<script src="script.js"></script>-->
+  <script src="js/main.js"></script>
+  <script src="js/setting.js"></script>
+</body>
+</html>

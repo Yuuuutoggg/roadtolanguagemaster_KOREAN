@@ -1,0 +1,63 @@
+<!-- add_word.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓国語マスター - 単語を追加する</title>
+  <meta name="description" content="韓国語学習アプリ『単語の道』の単語追加ページです。自分の学習に合わせて単語を自由に追加しましょう。">
+  <link rel="stylesheet" href="css/stylepc.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+  <div class="app-container">
+
+    <!-- カスタムアラートモーダル -->
+    <div class="custom-modal" id="customAlertModal" style="display: none;">
+      <div class="modal-content">
+        <p id="alertMessage">アラートメッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="closeCustomAlert()">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カスタム確認モーダル -->
+    <div class="modal" id="customConfirmModal" style="display: none;">
+      <div class="modal-content">
+        <p id="confirmMessage">確認メッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="confirmYesCustom()">はい</button>
+          <button onclick="confirmNoCustom()">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 単語追加画面 -->
+    <div class="screen fade-in add-word-screen" id="addWordScreen">
+      <h2>単語を追加する</h2>
+      <div class="content">
+        <input type="text" placeholder="韓国語の単語" id="userWordKorean">
+        <input type="text" placeholder="日本語訳" id="userWordJapanese">
+        <input type="text" placeholder="例文（韓国語） ※任意" id="userWordExampleKorean">
+        <input type="text" placeholder="例文（日本語） ※任意" id="userWordExampleJapanese">
+        <!-- ボタンを中央揃えにするためのラッパー -->
+        <div class="button-group centered-buttons">
+          <button onclick="addUserWord()"><i class="fas fa-save"></i> 単語を追加する</button>
+          <a href="user_created.html" class="button"><i class="fas fa-times"></i> キャンセル</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- スクリプトファイルの読み込み -->
+  <!--<script src="script.js"></script>-->
+  <script src="js/main.js"></script>
+  <script src="js/learning.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/practice.js"></script>
+  <script src="js/userCreated.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓国語マスター - 単語学習</title>
+  <meta name="description" content="韓国語学習アプリ『単語の道』の単語学習ページです。動詞、形容詞、名詞など、様々な品詞を学び、韓国語の語彙力を強化しましょう。">
+  <link rel="stylesheet" href="css/stylepc.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+  <div class="app-container">
+
+    <!-- カスタムアラートモーダル -->
+    <div class="custom-modal" id="customAlertModal" style="display: none;">
+      <div class="modal-content">
+        <p id="alertMessage">アラートメッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="closeCustomAlert()">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カスタム確認モーダル -->
+    <div class="modal" id="customConfirmModal" style="display: none;">
+      <div class="modal-content">
+        <p id="confirmMessage">確認メッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="confirmYesCustom()">はい</button>
+          <button onclick="confirmNoCustom()">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- learning.html -->
+    <!-- 学習モードの品詞選択画面 -->
+    <div class="screen fade-in part-of-speech-selection-screen" id="partOfSpeechSelectionScreen">
+      <h2>学びたい品詞を<br>選んでください</h2>
+      <div class="content">
+        <div class="button-group centered-buttons">
+          <button onclick="selectPartOfSpeech('verbs')">動詞</button>
+          <button onclick="selectPartOfSpeech('adjectives')">形容詞</button>
+          <button onclick="selectPartOfSpeech('nouns')">名詞</button>
+          <button onclick="selectPartOfSpeech('adverbs')">副詞</button>
+          <button onclick="selectPartOfSpeech('conjunctions')">接続詞</button>
+          <button onclick="selectPartOfSpeech('particles')">助詞</button>
+          <button onclick="selectPartOfSpeech('pronouns')">代名詞</button>
+          <button onclick="selectPartOfSpeech('numerals')">数詞</button>
+          <button onclick="viewStudyingWords()"><i class="fas fa-list"></i> 勉強中の単語の一覧を見る</button>
+          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学習モードのレベル選択画面 -->
+    <div class="screen fade-in learning-level-selection-screen" id="learningLevelSelectionScreen" style="display: none;">
+      <h2>難易度を選択してください</h2>
+      <div class="content">
+        <div class="button-group centered-buttons">
+          <button onclick="selectLearningLevel('beginner')">初級</button>
+          <button onclick="selectLearningLevel('intermediate')">中級</button>
+          <button onclick="selectLearningLevel('advanced')">上級</button>
+          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学習モード画面 -->
+    <div class="screen fade-in learning-mode-screen" id="learningModeScreen" style="display: none;">
+      <h2>学習モード</h2>
+      <div class="content">
+        <!-- 追加: 現在の単語番号を表示 -->
+        <p class="learning-text" id="learningProgress">単語 1 / 10</p>
+        <p class="learning-text" id="learningKoreanWord">韓国語: 단어</p>
+        <p class="learning-text" id="learningJapaneseTranslation">日本語訳: 単語</p>
+        <p class="learning-text" id="learningExampleKorean">例文 (韓国語): 예문</p>
+        <p class="learning-text" id="learningExampleJapanese">例文訳 (日本語): 例文訳</p>
+        <div class="button-group centered-buttons">
+          <button onclick="addToStudyingList()"><i class="fas fa-plus-circle"></i> 勉強中</button>
+          <!-- 追加: 「前へ」ボタンを追加 -->
+          <button onclick="prevLearningWord()" id="prevLearningWordButton" disabled>
+            <i class="fas fa-arrow-left"></i> 前の単語
+          </button>
+          <button onclick="nextLearningWord()" id="nextLearningWordButton" disabled>
+            <i class="fas fa-arrow-right"></i> 次の単語
+          </button>
+          <button onclick="endLearningMode()"><i class="fas fa-times-circle"></i> 終了</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 勉強中の単語の一覧 (モーダルとして修正) -->
+    <div class="custom-modal studying-words-screen" id="studyingWordsScreen" style="display: none;">
+      <div class="modal-content">
+        <h2>勉強中の単語</h2>
+        <div class="content scrollable-content">
+          <ul id="studyingWordsList">
+            <li>勉強中の単語がありません。</li>
+          </ul>
+        </div>
+        <div class="button-group centered-buttons">
+          <button onclick="closeStudyingWords()" class="fixed-footer"><i class="fas fa-times"></i> 閉じる</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- スクリプトファイルの読み込み -->
+  <!--<script src="script.js"></script>-->
+  <script src="js/main.js"></script>
+  <script src="js/learning.js"></script>
+</body>
+</html>
