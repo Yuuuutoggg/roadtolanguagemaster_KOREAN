@@ -63,6 +63,35 @@ button {
     min-height: 50px; /* 最小高さを設定 */
 }
 
+a.button {
+    padding: 15px 20px; /* 縦横のパディングを調整 */
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px; /* 丸みを帯びたボタン */
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #ff9a9e; /* パステルピンク */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    max-width: 350px; /* 最大横幅を設定 */
+    width: 100%; /* 幅を親コンテナに合わせる */
+    /* height: 60px; ボタンの固定高さを削除 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal; /* テキストの折り返しを許可 */
+    overflow: visible; /* はみ出しを許可 */
+    text-overflow: clip; /* テキストの省略を無効化 */
+    word-wrap: break-word; /* 単語の折り返しを許可 */
+    min-height: 50px; /* 最小高さを設定 */
+    text-decoration: none;
+}
+
+a.button:hover {
+    background-color: #fad0c4; /* ホバー時の色変更 */
+}
+
 button:hover {
     background-color: #fad0c4; /* ホバー時に少し明るく */
 }
@@ -561,6 +590,9 @@ li p {
   padding: 10px 20px; /* パディングを調整 */
   font-size: 1em;      /* フォントサイズを調整 */
 }
+
+}
+
 
 }
 
