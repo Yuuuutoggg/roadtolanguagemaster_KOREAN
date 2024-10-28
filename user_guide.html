@@ -1,0 +1,64 @@
+<!-- user_guide.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓国語マスター - 使い方ガイド</title>
+  <meta name="description" content="韓国語学習アプリ『単語の道』の使い方ガイドページです。ユーザー作成モードの機能や使い方について詳しく説明します。">
+  <link rel="stylesheet" href="css/stylepc.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9196286609097521"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9196286609097521">
+</head>
+<body oncontextmenu="return false;">
+  <div class="app-container">
+
+    <!-- カスタムアラートモーダル -->
+    <div class="custom-modal" id="customAlertModal" style="display: none;">
+      <div class="modal-content">
+        <p id="alertMessage">アラートメッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="closeCustomAlert()">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カスタム確認モーダル -->
+    <div class="modal" id="customConfirmModal" style="display: none;">
+      <div class="modal-content">
+        <p id="confirmMessage">確認メッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="confirmYesCustom()">はい</button>
+          <button onclick="confirmNoCustom()">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 使い方ガイド画面 -->
+    <div class="screen fade-in user-guide-screen" id="userGuideScreen">
+      <h2>使い方ガイド</h2>
+      <div class="content">
+        <p>ユーザー作成モードでは、自分で単語を追加し、クイズを作成することができます。</p>
+        <ul>
+          <li><strong>単語を追加する：</strong>韓国語の単語と日本語訳を入力して単語を追加します。例文は任意です。</li>
+          <li><strong>追加した単語の一覧を見る：</strong>自分が追加した単語を確認・編集・削除できます。</li>
+          <li><strong>ユーザー作成クイズを始める：</strong>追加した単語からクイズを行います。4つ以上の単語が必要です。</li>
+          <li><strong>注意：</strong>ローカルストレージにデータが保存されます。ブラウザのキャッシュクリア等でデータが消える可能性があります。</li>
+        </ul>
+        <div class="button-group centered-buttons">
+          <a href="user_created.html" class="button"><i class="fas fa-arrow-left"></i> 戻る</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- スクリプトファイルの読み込み -->
+  <!--<script src="script.js"></script>-->
+  <script src="js/main.js"></script>
+  <script src="js/userCreated.js"></script>
+</body>
+</html>
