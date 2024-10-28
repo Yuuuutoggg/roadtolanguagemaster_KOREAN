@@ -66,7 +66,14 @@ function addUserWord() {
 }
 
 function updateUserWordList() {
-  const listElement = document.getElementById('userWordList');
+  const pathname = location.pathname;
+  let listElement;
+
+  if (pathname.includes('add_word.html')) {
+    listElement = document.getElementById('addWordList');
+  } else if (pathname.includes('user_word_list.html')) {
+    listElement = document.getElementById('userWordList');
+  }
 
   if (!listElement) {
     console.error('単語一覧の要素が見つかりません');
