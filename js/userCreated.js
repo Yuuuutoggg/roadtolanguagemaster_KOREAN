@@ -14,7 +14,6 @@ function showUserCreatedMenu() {
   hideAllScreens();
   showScreen('userCreatedMenuScreen');
 }
-
   
   // 単語追加画面を表示
   function showAddWordScreen() {
@@ -39,7 +38,6 @@ function showCustomAlert(message) {
   }
 }
 
-// 単語を追加する関数
 function addUserWord() {
   const korean = document.getElementById('userWordKorean').value.trim();
   const japanese = document.getElementById('userWordJapanese').value.trim();
@@ -62,9 +60,12 @@ function addUserWord() {
 
   localStorage.setItem('userWordList', JSON.stringify(userWordList));
   showCustomAlert('単語を追加しました。');
-  showUserCreatedMenuScreen();
+  
+  // Use an existing function to navigate back to the menu
+  backToUserCreatedMenu(); // Replaces the undefined function
   updateUserWordList();
 }
+
 
 
 // DOMContentLoadedイベントリスナー
