@@ -47,11 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
       userWordList = JSON.parse(savedWords);
   }
 
-  // ページごとの処理
-  const pathname = location.pathname;
-
   // 単語追加ページの場合
+  const pathname = location.pathname;
   if (pathname.includes('add_word.html')) {
+      // グローバルスコープでaddUserWordを定義
       window.addUserWord = function() {
           console.log('addUserWord function called'); // デバッグ用
 
