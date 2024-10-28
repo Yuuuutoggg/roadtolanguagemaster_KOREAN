@@ -15,11 +15,6 @@ function showUserCreatedMenu() {
   showScreen('userCreatedMenuScreen');
 }
 
-// ユーザー作成メニュー画面を表示する関数
-function showUserCreatedMenuScreen() {
-  hideAllScreens();
-  showScreen('userCreatedMenuScreen');
-}
   
   // 単語追加画面を表示
   function showAddWordScreen() {
