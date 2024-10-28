@@ -49,6 +49,7 @@ function addUserWord() {
     return;
   }
 
+  // 新しい単語をリストに追加
   userWordList.push({
     korean: korean,
     japanese: japanese,
@@ -58,66 +59,20 @@ function addUserWord() {
     },
   });
 
+  // ローカルストレージに保存
   localStorage.setItem('userWordList', JSON.stringify(userWordList));
+
+  // 単語リストを更新
+  updateUserWordList();
+
+  // 成功メッセージの表示
   showCustomAlert('単語を追加しました。');
 
-  // 追加した単語をユーザーの一覧に更新
-  updateUserWordList();
-}
-
-function updateUserWordList() {
-  const pathname = location.pathname;
-  let listElement;
-
-  if (pathname.includes('add_word.html')) {
-    listElement = document.getElementById('addWordList');
-  } else if (pathname.includes('user_word_list.html')) {
-    listElement = document.getElementById('userWordList');
-  }
-
-  if (!listElement) {
-    console.error('単語一覧の要素が見つかりません');
-    return;
-  }
-
-  listElement.innerHTML = '';
-
-  if (userWordList.length === 0) {
-    const li = document.createElement('li');
-    li.textContent = '追加した単語がありません。';
-    listElement.appendChild(li);
-  } else {
-    userWordList.forEach((word, index) => {
-      const li = document.createElement('li');
-      li.className = 'word-list-item';
-
-      const div = document.createElement('div');
-      div.className = 'word-details';
-
-      const pKorean = document.createElement('p');
-      pKorean.innerHTML = `<strong>韓国語:</strong> ${word.korean}`;
-      div.appendChild(pKorean);
-
-      const pJapanese = document.createElement('p');
-      pJapanese.innerHTML = `<strong>日本語訳:</strong> ${word.japanese}`;
-      div.appendChild(pJapanese);
-
-      if (word.example?.korean) {
-        const pExampleKorean = document.createElement('p');
-        pExampleKorean.innerHTML = `<strong>例文 (韓国語):</strong> ${word.example.korean}`;
-        div.appendChild(pExampleKorean);
-      }
-
-      if (word.example?.japanese) {
-        const pExampleJapanese = document.createElement('p');
-        pExampleJapanese.innerHTML = `<strong>例文訳 (日本語):</strong> ${word.example.japanese}`;
-        div.appendChild(pExampleJapanese);
-      }
-
-      li.appendChild(div);
-      listElement.appendChild(li);
-    });
-  }
+  // フォームをリセット
+  document.getElementById('userWordKorean').value = '';
+  document.getElementById('userWordJapanese').value = '';
+  document.getElementById('userWordExampleKorean').value = '';
+  document.getElementById('userWordExampleJapanese').value = '';
 }
 
 
