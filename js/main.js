@@ -5,13 +5,6 @@ let selectedMode = sessionStorage.getItem('selectedMode') || '';
 
 let learningWordList = [];
 let learningWordIndex = 0;
-
-let userWordList = [];
-let userQuizQuestions = [];
-let currentUserQuizQuestionIndex = 0;
-let userQuizScore = 0;
-let editingWordIndex = null;
-
 // カスタムアラートモーダル用のプロパティ
 let alertMessage = '';
 
@@ -85,11 +78,6 @@ function commonReset() {
 
   learningWordList = [];
   learningWordIndex = 0;
-  userWordList = [];
-  userQuizQuestions = [];
-  currentUserQuizQuestionIndex = 0;
-  userQuizScore = 0;
-  editingWordIndex = null;
 
   // 画面の表示状態をリセット
   hideAllScreens();
