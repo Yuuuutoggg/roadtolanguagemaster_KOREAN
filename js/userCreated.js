@@ -17,33 +17,43 @@ function showUserCreatedMenu() {
     document.getElementById('userWordExampleJapanese').value = '';
   }
   
-  // 単語を追加する関数
-  function addUserWord() {
-    const korean = document.getElementById('userWordKorean').value.trim();
-    const japanese = document.getElementById('userWordJapanese').value.trim();
-    const exampleKorean = document.getElementById('userWordExampleKorean').value.trim();
-    const exampleJapanese = document.getElementById('userWordExampleJapanese').value.trim();
-  
-    if (!korean || !japanese) {
-      showCustomAlert('韓国語の単語と日本語訳は必須です。');
-      return;
-    }
-  
-    userWordList.push({
-      korean: korean,
-      japanese: japanese,
-      example: {
-        korean: exampleKorean || undefined,
-        japanese: exampleJapanese || undefined,
-      },
-    });
-  
-    localStorage.setItem('userWordList', JSON.stringify(userWordList));
-    showCustomAlert('単語を追加しました。');
-    showUserCreatedMenuScreen();
-    updateUserWordList();
+  // user_created.htmlでのみ動作するように条件分岐を追加
+document.addEventListener('DOMContentLoaded', () => {
+  if (location.pathname.includes('user_created.html')) {
+      // 単語を追加する関数
+      function addUserWord() {
+          const korean = document.getElementById('userWordKorean').value.trim();
+          const japanese = document.getElementById('userWordJapanese').value.trim();
+          const exampleKorean = document.getElementById('userWordExampleKorean').value.trim();
+          const exampleJapanese = document.getElementById('userWordExampleJapanese').value.trim();
+          
+          // 入力チェック
+          if (!korean || !japanese) {
+              showCustomAlert('韓国語の単語と日本語訳は必須です。');
+              return;
+          }
+
+          // 単語リストに追加
+          userWordList.push({
+              korean: korean,
+              japanese: japanese,
+              example: {
+                  korean: exampleKorean || undefined,
+                  japanese: exampleJapanese || undefined,
+              },
+          });
+
+          // ローカルストレージに保存
+          localStorage.setItem('userWordList', JSON.stringify(userWordList));
+          showCustomAlert('単語を追加しました。');
+
+          // メニュー画面に戻る処理とリストの更新
+          showUserCreatedMenu();
+          updateUserWordList();
+      }
   }
-  
+});
+
   // 追加した単語の一覧画面を表示
   function showUserWordList() {
     hideAllScreens();
