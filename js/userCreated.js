@@ -38,72 +38,77 @@ function showCustomAlert(message) {
   }
 }
 
+// 単語を追加する関数
+function addUserWord() {
+  const korean = document.getElementById('userWordKorean').value.trim();
+  const japanese = document.getElementById('userWordJapanese').value.trim();
+  const exampleKorean = document.getElementById('userWordExampleKorean').value.trim();
+  const exampleJapanese = document.getElementById('userWordExampleJapanese').value.trim();
+
+  if (!korean || !japanese) {
+    showCustomAlert('韓国語の単語と日本語訳は必須です。');
+    return;
+  }
+
+  userWordList.push({
+    korean: korean,
+    japanese: japanese,
+    example: {
+      korean: exampleKorean || undefined,
+      japanese: exampleJapanese || undefined,
+    },
+  });
+
+  localStorage.setItem('userWordList', JSON.stringify(userWordList));
+  showCustomAlert('単語を追加しました。');
+  showUserCreatedMenuScreen();
+  updateUserWordList();
+}
+
+
+// DOMContentLoadedイベントリスナー
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('userCreated.js fully loaded and DOMContentLoaded triggered');
+  console.log('userCreated.js fully loaded and DOMContentLoaded triggered');
 
-    // ローカルストレージから単語リストを読み込む
-    const savedWords = localStorage.getItem('userWordList');
-    if (savedWords) {
-        userWordList = JSON.parse(savedWords);
-    }
+  // ローカルストレージから単語リストを読み込む
+  const savedWords = localStorage.getItem('userWordList');
+  if (savedWords) {
+      userWordList = JSON.parse(savedWords);
+  }
 
-    // 単語追加ページの場合
-    const pathname = location.pathname;
-    if (pathname.includes('add_word.html')) {
-        // グローバルスコープでaddUserWordを定義
-        window.addUserWord = function() {
-            console.log('addUserWord function called'); // デバッグ用
+  // 現在のページパスを取得
+  const pathname = location.pathname;
 
-            const korean = document.getElementById('userWordKorean').value.trim();
-            const japanese = document.getElementById('userWordJapanese').value.trim();
+  // 単語追加ページの場合の処理
+  if (pathname.includes('add_word.html')) {
+      // ボタンの有効化をDOMContentLoaded後に行う
+      const addButton = document.querySelector('#addWordScreen button');
+      if (addButton) {
+          addButton.addEventListener('click', window.addUserWord);
+      }
+  }
 
-            if (!korean || !japanese) {
-                showCustomAlert('韓国語の単語と日本語訳は必須です。');
-                return;
-            }
+  // 単語一覧ページの場合の処理
+  if (pathname.includes('user_word_list.html')) {
+      updateUserWordList();
+  }
 
-            // 新しい単語をリストに追加
-            userWordList.push({
-                korean: korean,
-                japanese: japanese,
-                example: {
-                    korean: document.getElementById('userWordExampleKorean').value.trim() || undefined,
-                    japanese: document.getElementById('userWordExampleJapanese').value.trim() || undefined,
-                },
-            });
+  // 編集ページの場合の処理
+  if (pathname.includes('edit_word.html')) {
+      const wordData = sessionStorage.getItem('editingWordData');
+      const editingWordIndex = sessionStorage.getItem('editingWordIndex');
 
-            // ローカルストレージに保存
-            localStorage.setItem('userWordList', JSON.stringify(userWordList));
-            showCustomAlert('単語を追加しました。');
+      if (wordData && editingWordIndex !== null) {
+          const word = JSON.parse(wordData);
 
-            // 入力フィールドをリセット
-            document.getElementById('userWordKorean').value = '';
-            document.getElementById('userWordJapanese').value = '';
-            document.getElementById('userWordExampleKorean').value = '';
-            document.getElementById('userWordExampleJapanese').value = '';
-        };
-    }
-
-    // 単語一覧ページの場合
-    if (pathname.includes('user_word_list.html')) {
-        updateUserWordList();
-    }
-
-    // 編集ページの場合
-    if (pathname.includes('edit_word.html')) {
-        const wordData = sessionStorage.getItem('editingWordData');
-        const editingWordIndex = sessionStorage.getItem('editingWordIndex');
-
-        if (wordData && editingWordIndex !== null) {
-            const word = JSON.parse(wordData);
-
-            document.getElementById('editWordKorean').value = word.korean;
-            document.getElementById('editWordJapanese').value = word.japanese;
-            document.getElementById('editWordExampleKorean').value = word.example?.korean || '';
-            document.getElementById('editWordExampleJapanese').value = word.example?.japanese || '';
-        }
-    }
+          document.getElementById('editWordKorean').value = word.korean;
+          document.getElementById('editWordJapanese').value = word.japanese;
+          document.getElementById('editWordExampleKorean').value = word.example?.korean || '';
+          document.getElementById('editWordExampleJapanese').value = word.example?.japanese || '';
+      }
+  }
 });
+
 
 
 
