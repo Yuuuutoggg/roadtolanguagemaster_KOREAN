@@ -36,6 +36,8 @@ function showCustomAlert(message) {
   }
 }
 
+
+
 // 単語を追加する関数
 function addUserWord() {
   const korean = document.getElementById('userWordKorean').value.trim();
@@ -65,7 +67,7 @@ function addUserWord() {
   showCustomAlert('単語を追加しました。');
 
   // 単語一覧を更新
-  updateUserWordList(); 
+  updateUserWordList();
 
   // フォームをリセット
   document.getElementById('userWordKorean').value = '';
@@ -209,17 +211,25 @@ function deleteUserWord(index) {
 // DOMContentLoadedイベントリスナー
 document.addEventListener('DOMContentLoaded', () => {
   console.log('userCreated.js fully loaded and DOMContentLoaded triggered');
+
+  // 現在のページパスを取得
   const pathname = location.pathname;
 
+  // 単語追加ページの場合の処理
   if (pathname.includes('add_word.html')) {
     const addButton = document.querySelector('#addWordScreen button');
     if (addButton) {
       addButton.addEventListener('click', addUserWord);
     }
-  } else if (pathname.includes('user_word_list.html')) {
+  }
+
+  // 単語一覧ページの場合の処理
+  if (pathname.includes('user_word_list.html')) {
+    // ページ読み込み後に単語リストを更新
     updateUserWordList();
   }
 });
+
 
 
 // クイズ開始関数
