@@ -1,5 +1,15 @@
-// 勉強中リストの初期化（修正後）
+// learning.js
+
+// 勉強中リストの初期化
 let studyingList = JSON.parse(localStorage.getItem('studyingList')) || [];
+
+// 選択されたレベルと品詞の取得
+let selectedLevel = sessionStorage.getItem('selectedLevel') || '';
+let selectedPartOfSpeech = sessionStorage.getItem('selectedPartOfSpeech') || '';
+
+// 学習単語リストとインデックスの初期化
+let learningWordList = [];
+let learningWordIndex = 0;
 
 // 品詞選択後にレベル選択画面に遷移する関数
 function selectPartOfSpeech(partOfSpeech) {
@@ -20,7 +30,7 @@ function selectPartOfSpeech(partOfSpeech) {
   }
 }
 
-
+// 難易度選択関数
 function selectLearningLevel(level) {
   selectedLevel = level;
   sessionStorage.setItem('selectedLevel', level);
@@ -28,36 +38,31 @@ function selectLearningLevel(level) {
   fetchLearningWords();
 }
 
-
-
 // 学習モードの単語読み込み関数
 function fetchLearningWords() {
   if (!location.pathname.includes('learning.html')) return; // learning.htmlでのみ実行
 
-  const fileName = getFileName(selectedLevel);
+  const fileName = MainApp.getFileName(selectedLevel);
   fetch(`data/${fileName}`)
     .then((response) => response.json())
     .then((data) => {
       // 指定された品詞の単語リストを取得
       learningWordList = data[selectedLevel][selectedPartOfSpeech] || [];
       if (learningWordList.length === 0) {
-        showCustomAlert('選択した品詞と難易度に対応する単語がありません。');
+        MainApp.showCustomAlert('選択した品詞と難易度に対応する単語がありません。');
         return;
       }
       // 単語をシャッフル
-      shuffleArray(learningWordList);
+      MainApp.shuffleArray(learningWordList);
       learningWordIndex = 0;
       // 最初の単語を表示
       showLearningWord();
       // 学習モード画面を表示
-      const learningModeScreen = document.getElementById('learningModeScreen');
-      if (learningModeScreen) {
-        showScreen('learningModeScreen');
-      }
+      MainApp.showScreen('learningModeScreen');
     })
     .catch((error) => {
       console.error('学習モードの単語データの読み込みに失敗しました:', error);
-      showCustomAlert('学習モードの単語データの読み込みに失敗しました。');
+      MainApp.showCustomAlert('学習モードの単語データの読み込みに失敗しました。');
     });
 }
 
@@ -89,7 +94,7 @@ function showLearningWord() {
           exampleJapaneseElement.textContent = `例文訳 (日本語): ${word.example?.japanese || 'なし'}`;
       }
   } else {
-      showCustomAlert('これ以上単語がありません。');
+      MainApp.showCustomAlert('これ以上単語がありません。');
   }
 
   updateLearningNavigationButtons();
@@ -101,7 +106,7 @@ function nextLearningWord() {
     learningWordIndex++;
     showLearningWord();
   } else {
-    showCustomAlert('これ以上単語がありません。');
+    MainApp.showCustomAlert('これ以上単語がありません。');
   }
 }
 
@@ -111,7 +116,7 @@ function prevLearningWord() {
     learningWordIndex--;
     showLearningWord();
   } else {
-    showCustomAlert('これ以上前の単語はありません。');
+    MainApp.showCustomAlert('これ以上前の単語はありません。');
   }
 }
 
@@ -121,17 +126,17 @@ function addToStudyingList() {
   if (!studyingList.some((word) => word.korean === currentWord.korean)) {
     studyingList.push(currentWord);
     localStorage.setItem('studyingList', JSON.stringify(studyingList));
-    showCustomAlert('この単語を勉強中リストに追加しました！');
+    MainApp.showCustomAlert('この単語を勉強中リストに追加しました！');
     updateStudyingWordsList();
   } else {
-    showCustomAlert('この単語は既に勉強中リストに含まれています。');
+    MainApp.showCustomAlert('この単語は既に勉強中リストに含まれています。');
   }
 }
 
 // 学習モードの終了関数
 function endLearningMode() {
-  hideAllScreens();
-  showScreen('partOfSpeechSelectionScreen');
+  MainApp.hideAllScreens();
+  MainApp.showScreen('partOfSpeechSelectionScreen');
 }
 
 // 学習モード用のナビゲーションボタンの更新関数
@@ -149,7 +154,6 @@ function updateLearningNavigationButtons() {
       nextButton.disabled = learningWordIndex >= learningWordList.length - 1;
   }
 }
-
 
 // 学習モードの勉強中リストを更新・表示する関数
 function updateStudyingWordsList() {
@@ -201,12 +205,10 @@ function updateStudyingWordsList() {
   }
 }
 
-
 // 勉強中単語画面を表示する関数
 function viewStudyingWords() {
     document.getElementById('studyingWordsScreen').style.display = 'flex';
 }
-
 
 // 勉強中リストから単語を削除する関数
 function removeFromStudyingList(index) {
@@ -217,7 +219,6 @@ function removeFromStudyingList(index) {
   // リストを再表示
   updateStudyingWordsList();
 }
-
 
 // 勉強中単語画面を閉じる関数
 function closeStudyingWords() {
