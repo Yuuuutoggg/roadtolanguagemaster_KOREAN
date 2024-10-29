@@ -202,7 +202,7 @@ function updateStudyingWordsList() {
 
 // 勉強中単語画面を表示する関数
 function viewStudyingWords() {
-    MainApp.showStudyingWords(); // 修正: showStudyingWords を MainApp のメソッドとして呼び出し
+    document.getElementById('studyingWordsScreen').style.display = 'flex'; // 修正: MainApp.showStudyingWords を直接操作に変更
 }
 
 // 初期化処理（learning.js専用）
