@@ -1,7 +1,7 @@
 console.log('userCreated.js loaded');
 
 
-let userWordList = [];
+let userWordList = JSON.parse(localStorage.getItem('userWordList')) || [];
 let userQuizQuestions = [];
 let currentUserQuizQuestionIndex = 0;
 let userQuizScore = 0;
