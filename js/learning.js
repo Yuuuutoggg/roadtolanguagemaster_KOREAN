@@ -205,6 +205,11 @@ function viewStudyingWords() {
     document.getElementById('studyingWordsScreen').style.display = 'flex'; // 修正: MainApp.showStudyingWords を直接操作に変更
 }
 
+// 勉強中単語画面を閉じる関数
+MainApp.closeStudyingWords = function() {
+    document.getElementById('studyingWordsScreen').style.display = 'none';
+};
+
 // 初期化処理（learning.js専用）
 document.addEventListener('DOMContentLoaded', () => {
   if (location.pathname.includes('learning.html')) {
