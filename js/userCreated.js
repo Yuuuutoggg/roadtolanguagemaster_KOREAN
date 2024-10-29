@@ -237,6 +237,168 @@ function startUserQuiz() {
   showUserQuizQuestion();
 }
 
+// クイズの質問を表示する関数
+function showUserQuizQuestion() {
+  console.log('showUserQuizQuestion called'); // デバッグ用
+
+  // クイズが終了した場合
+  if (currentUserQuizQuestionIndex >= userQuizQuestions.length) {
+    endUserQuiz();
+    return;
+  }
+
+  const question = userQuizQuestions[currentUserQuizQuestionIndex];
+  const choices = getUserQuizChoices(question);
+
+  // 必要な要素を取得
+  const questionTextElement = document.getElementById('quizQuestionText');
+  const feedbackTextElement = document.getElementById('quizFeedbackText');
+  const scoreTextElement = document.getElementById('quizScoreText');
+  const quizChoicesDiv = document.getElementById('quizChoices');
+
+  // エラーチェック
+  if (!questionTextElement || !feedbackTextElement || !scoreTextElement || !quizChoicesDiv) {
+    console.error('Quiz elements not found');
+    return;
+  }
+
+  // 質問と選択肢を表示
+  questionTextElement.textContent = `「${question.korean}」の意味は？`;
+  feedbackTextElement.textContent = '';
+  scoreTextElement.textContent = `スコア: ${userQuizScore}`;
+
+  quizChoicesDiv.innerHTML = '';
+  choices.forEach(choice => {
+    const button = document.createElement('button');
+    button.className = 'user-quiz-choice-button';
+    button.textContent = choice;
+    button.onclick = () => handleUserQuizChoice(choice);
+    quizChoicesDiv.appendChild(button);
+  });
+
+  console.log('Question displayed:', question); // デバッグメッセージ
+}
+
+// 選択肢を生成する関数
+function getUserQuizChoices(correctQuestion) {
+  let incorrectChoices = userWordList.filter(word => word.japanese !== correctQuestion.japanese);
+
+  // 最大3つの不正解選択肢を抽出
+  incorrectChoices = MainApp.shuffleArray(incorrectChoices).slice(0, 3);
+
+  // 正解選択肢を追加
+  const choices = incorrectChoices.map(word => word.japanese);
+  choices.push(correctQuestion.japanese);
+
+  console.log('Choices generated:', choices); // デバッグメッセージ
+  return MainApp.shuffleArray(choices);
+}
+
+// 選択された選択肢を処理する関数
+function handleUserQuizChoice(selectedChoice) {
+  const question = userQuizQuestions[currentUserQuizQuestionIndex];
+  const isCorrect = selectedChoice === question.japanese;
+
+  userAnswers.push({
+    korean: question.korean,
+    selected: selectedChoice,
+    correct: question.japanese,
+    isCorrect: isCorrect,
+  });
+
+  if (isCorrect) {
+    userQuizScore++;
+  }
+
+  // フィードバックの表示
+  const feedbackTextElement = document.getElementById('quizFeedbackText');
+  feedbackTextElement.textContent = isCorrect ? '〇' : '✖';
+
+  // スコアの更新
+  const scoreTextElement = document.getElementById('quizScoreText');
+  scoreTextElement.textContent = `スコア: ${userQuizScore}`;
+
+  // 次の質問に進む
+  currentUserQuizQuestionIndex++;
+  setTimeout(() => showUserQuizQuestion(), 500); // 短い遅延で次の質問を表示
+}
+
+// クイズを終了する関数
+function endUserQuiz() {
+  console.log('endUserQuiz called'); // デバッグ用
+
+  // クイズ画面を非表示にする
+  MainApp.hideAllScreens();
+
+  // 結果画面を表示する
+  populateUserQuizSummary(); 
+  MainApp.showScreen('userQuizResultScreen');
+}
+
+// クイズの結果を表示する関数
+function populateUserQuizSummary() {
+  console.log('populateUserQuizSummary called'); // デバッグ用
+
+  const list = document.getElementById('userQuizSummaryList');
+
+  // エラーチェック
+  if (!list) {
+    console.error('Element with ID "userQuizSummaryList" not found');
+    return;
+  }
+
+  list.innerHTML = '';
+
+  if (userAnswers.length === 0) {
+    const li = document.createElement('li');
+    li.textContent = '解答がありません。';
+    list.appendChild(li);
+  } else {
+    userAnswers.forEach((answer, index) => {
+      const li = document.createElement('li');
+      li.className = answer.isCorrect ? 'correct' : 'incorrect';
+
+      const pQuestion = document.createElement('p');
+      pQuestion.textContent = `Q${index + 1}: 「${answer.korean}」の意味は？`;
+      li.appendChild(pQuestion);
+
+      const pYourAnswer = document.createElement('p');
+      pYourAnswer.textContent = `あなたの答え: ${answer.selected}`;
+      li.appendChild(pYourAnswer);
+
+      const pCorrect = document.createElement('p');
+      pCorrect.textContent = `正解: ${answer.correct}`;
+      li.appendChild(pCorrect);
+
+      const pResult = document.createElement('p');
+      pResult.textContent = `結果: ${answer.isCorrect ? '正解' : '不正解'}`;
+      li.appendChild(pResult);
+
+      list.appendChild(li);
+    });
+  }
+
+  const finalScoreText = document.getElementById('userQuizFinalScoreText');
+  if (finalScoreText) {
+    finalScoreText.textContent = `最終スコア: ${userQuizScore} / ${userQuizQuestions.length}`;
+  }
+}
+
+// 再試行ボタンの処理
+function retryUserQuiz() {
+  console.log('retryUserQuiz called'); // デバッグ用
+
+  // クイズのリセット
+  userQuizScore = 0;
+  currentUserQuizQuestionIndex = 0;
+  userAnswers = [];
+
+  // 結果画面を非表示にする
+  MainApp.hideAllScreens();
+
+  // クイズ開始前画面を表示する
+  MainApp.showScreen('userQuizStartScreen');
+}
   // ... 以降のクイズ関連関数も同様に名前空間内に配置
 
   // ========================
