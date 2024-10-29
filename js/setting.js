@@ -49,6 +49,7 @@ function toggleSound() {
   isSoundOn = !isSoundOn;
   localStorage.setItem('isSoundOn', JSON.stringify(isSoundOn));
   updateSoundStatus();
+  MainApp.hideAllScreens(); // Assuming you want to hide screens when toggling sound
 }
 
 // 音量を設定する関数
@@ -72,64 +73,75 @@ function updateSoundStatus() {
   }
 }
 
-
-
 // 設定ボタンをクリックしたときの処理
 function showSettings() {
-    hideAllScreens();
-    showScreen('settingsScreen');
-  }
-  
-  // 設定画面で「戻る」ボタンをクリックしたときの処理
-  function closeSettings() {
-    hideAllScreens();
-    showScreen('modeSelectionScreen');
-  }
+  MainApp.hideAllScreens();
+  MainApp.showScreen('settingsScreen');
+}
+
+// 設定画面で「戻る」ボタンをクリックしたときの処理
+function closeSettings() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('modeSelectionScreen');
+}
 
 // 利用規約画面を表示
 function showTermsOfUse() {
-    hideAllScreens();
-    showScreen('termsOfUseScreen');
-  }
-  
-  // 利用規約画面を閉じる
-  function closeTermsOfUse() {
-    hideAllScreens();
-    showScreen('settingsScreen');
-  }
-  
-  // プライバシーポリシー画面を表示
-  function showPrivacyPolicy() {
-    hideAllScreens();
-    showScreen('privacyPolicyScreen');
-  }
-  
-  // プライバシーポリシー画面を閉じる
-  function closePrivacyPolicy() {
-    hideAllScreens();
-    showScreen('settingsScreen');
-  }
-  
-  // アプリ情報画面を表示
-  function showAppInfo() {
-    hideAllScreens();
-    showScreen('appInfoScreen');
-  }
-  
-  // アプリ情報画面を閉じる
-  function closeAppInfo() {
-    hideAllScreens();
-    showScreen('settingsScreen');
-  }
-  
-  // お問い合わせ画面を表示
-  function contactUs() {
-    hideAllScreens();
-    showScreen('contactScreen');
-  }
-  
-  // お問い合わせ画面を閉じる
-  function closeContact() {
-    hideAllScreens();
-    showScreen('settingsScreen');
-  }
+  MainApp.hideAllScreens();
+  MainApp.showScreen('termsOfUseScreen');
+}
+
+// 利用規約画面を閉じる
+function closeTermsOfUse() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('settingsScreen');
+}
+
+// プライバシーポリシー画面を表示
+function showPrivacyPolicy() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('privacyPolicyScreen');
+}
+
+// プライバシーポリシー画面を閉じる
+function closePrivacyPolicy() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('settingsScreen');
+}
+
+// アプリ情報画面を表示
+function showAppInfo() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('appInfoScreen');
+}
+
+// アプリ情報画面を閉じる
+function closeAppInfo() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('settingsScreen');
+}
+
+// お問い合わせ画面を表示
+function contactUs() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('contactScreen');
+}
+
+// お問い合わせ画面を閉じる
+function closeContact() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('settingsScreen');
+}
+
+// グローバル関数としてMainAppのメソッドを割り当て
+function closeCustomAlert() {
+  MainApp.closeCustomAlert();
+}
+
+function confirmYesCustom() {
+  MainApp.confirmYesCustom();
+}
+
+function confirmNoCustom() {
+  MainApp.confirmNoCustom();
+}
