@@ -502,21 +502,41 @@ function initializeEditWordPage() {
   // ページ初期化を実行
   initializePages();
 
-// 公開する関数
-return {
-  showAlert,
-  closeAlert,
-  showConfirm,
-  addUserWord,
-  updateUserWordList,
-  editUserWord,
-  confirmDeleteWord,
-  deleteWord,
-  saveEditedWord,
-  startUserQuiz,
-  retryUserQuiz,              // 追加
-  backToUserCreatedMenu,      // 追加
-  // 他の公開関数もここに追加
-};
+
+
+  return {
+    showAlert,
+    closeAlert,
+    showConfirm,
+    addUserWord,
+    updateUserWordList,
+    editUserWord,
+    confirmDeleteWord,
+    deleteWord,
+    saveEditedWord,
+    startUserQuiz,
+    retryUserQuiz,              // 追加
+    backToUserCreatedMenu,      // 追加
+    closeCustomConfirm,         // 追加
+    // 他の公開関数もここに追加
+  };
+  
 
 })(MainApp);
+
+  // グローバル関数を定義
+  window.closeCustomAlert = UserCreatedApp.closeAlert;
+
+  window.confirmYesCustom = function() {
+      if (MainApp.confirmYesCallback) {
+          MainApp.confirmYesCallback();
+      }
+      UserCreatedApp.closeCustomConfirm();
+  };
+  
+  window.confirmNoCustom = function() {
+      if (MainApp.confirmNoCallback) {
+          MainApp.confirmNoCallback();
+      }
+      UserCreatedApp.closeCustomConfirm();
+  };
