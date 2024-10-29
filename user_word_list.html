@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>韓国語マスター - 追加した単語の一覧</title>
+  <meta name="description" content="韓国語学習アプリ『単語の道』の追加単語一覧ページです。追加した単語を確認・編集・削除できます。">
+  <link rel="stylesheet" href="css/stylepc.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9196286609097521"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9196286609097521">
+</head>
+<body oncontextmenu="return false;">
+  <div class="app-container">
+
+    <!-- カスタムアラートモーダル -->
+    <div class="custom-modal" id="customAlertModal" style="display: none;" role="alertdialog" aria-labelledby="alertMessage">
+      <div class="modal-content">
+        <p id="alertMessage">アラートメッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="closeCustomAlert()">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カスタム確認モーダル -->
+    <div class="modal" id="customConfirmModal" style="display: none;" role="dialog" aria-labelledby="confirmMessage">
+      <div class="modal-content">
+        <p id="confirmMessage">確認メッセージ</p>
+        <div class="button-group centered-buttons">
+          <button onclick="confirmYesCustom()">はい</button>
+          <button onclick="confirmNoCustom()">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 追加した単語の一覧 -->
+    <div class="screen fade-in" id="userWordListScreen">
+      <h2>追加した単語の一覧</h2>
+      <div class="content scrollable-content">
+        <ul id="userWordList">
+          <!-- 単語リストがここに動的に追加される -->
+        </ul>
+      </div>
+      <div class="button-group centered-buttons">
+        <a href="user_created.html" class="button"><i class="fas fa-arrow-left"></i> 戻る</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- スクリプトファイルの読み込み -->
+  <script src="js/main.js"></script>
+  <script src="js/userCreated.js"></script>
+</body>
+</html>
