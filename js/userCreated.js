@@ -49,6 +49,9 @@ function addUserWord() {
     return;
   }
 
+  // ローカルストレージから現在の単語リストを取得
+  let userWordList = JSON.parse(localStorage.getItem('userWordList')) || [];
+
   // 新しい単語をリストに追加
   userWordList.push({
     korean: korean,
@@ -61,9 +64,6 @@ function addUserWord() {
 
   // ローカルストレージに保存
   localStorage.setItem('userWordList', JSON.stringify(userWordList));
-
-  // 単語リストを更新
-  updateUserWordList();
 
   // 成功メッセージの表示
   showCustomAlert('単語を追加しました。');
