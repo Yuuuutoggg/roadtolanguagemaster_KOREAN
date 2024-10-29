@@ -21,13 +21,13 @@ function selectPartOfSpeech(partOfSpeech) {
 }
 
 
-// 難易度選択関数
 function selectLearningLevel(level) {
   selectedLevel = level;
   sessionStorage.setItem('selectedLevel', level);
-  hideAllScreens();
+  MainApp.hideAllScreens();
   fetchLearningWords();
 }
+
 
 
 // 学習モードの単語読み込み関数
