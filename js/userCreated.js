@@ -67,7 +67,7 @@ function addUserWord() {
   showCustomAlert('単語を追加しました。');
 
   // 単語一覧を即座に更新
-  updateUserWordList();
+
 
   // フォームをリセット
   document.getElementById('userWordKorean').value = '';
