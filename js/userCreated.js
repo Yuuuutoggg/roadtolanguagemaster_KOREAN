@@ -164,7 +164,7 @@ const UserCreatedApp = (function(MainApp) {
     updateUserWordList();
   }
 
-  // 編集した単語を保存する関数
+// 編集した単語を保存する関数
 function saveEditedWord() {
   const koreanElement = document.getElementById('editWordKorean');
   const japaneseElement = document.getElementById('editWordJapanese');
@@ -192,8 +192,14 @@ function saveEditedWord() {
     return;
   }
 
+  const wordIndex = parseInt(index, 10);
+  if (isNaN(wordIndex) || wordIndex < 0 || wordIndex >= userWordList.length) {
+    showAlert('編集する単語のインデックスが無効です。');
+    return;
+  }
+
   // 単語を更新
-  userWordList[index] = {
+  userWordList[wordIndex] = {
     korean: korean,
     japanese: japanese,
     example: {
@@ -215,6 +221,15 @@ function saveEditedWord() {
   // リダイレクト
   window.location.href = 'user_word_list.html';
 }
+
+// 閉じるアラート関数
+function closeAlert() {
+  MainApp.closeCustomAlert();
+}
+
+// 追加: グローバルに closeCustomAlert を定義
+window.closeCustomAlert = closeAlert;
+
 
   // ========================
   // クイズ機能
@@ -526,10 +541,8 @@ return {
   startUserQuiz,
   retryUserQuiz,              // 追加
   backToUserCreatedMenu,      // 追加
-  confirmYesCustom,           // 追加
-  confirmNoCustom,            // 追加
+  
   // 他の公開関数もここに追加
 };
-
 
 })(MainApp);
