@@ -1,5 +1,4 @@
-// main.js
-const MainApp = (function() {
+window.MainApp = (function() {
   // グローバル変数の宣言
   let selectedMode = sessionStorage.getItem('selectedMode') || ''; 
   let learningWordList = [];

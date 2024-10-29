@@ -20,13 +20,13 @@ function selectPartOfSpeech(partOfSpeech) {
   // 現在の画面を非表示
   const partOfSpeechScreen = document.getElementById('partOfSpeechSelectionScreen');
   if (partOfSpeechScreen) {
-      partOfSpeechScreen.style.display = 'none';
+    partOfSpeechScreen.style.display = 'none';
   }
 
   // レベル選択画面を表示
   const levelSelectionScreen = document.getElementById('learningLevelSelectionScreen');
   if (levelSelectionScreen) {
-      levelSelectionScreen.style.display = 'flex';
+    levelSelectionScreen.style.display = 'flex';
   }
 }
 
@@ -71,30 +71,30 @@ function showLearningWord() {
   if (!location.pathname.includes('learning.html')) return; // learning.htmlでのみ実行
 
   if (learningWordIndex >= 0 && learningWordIndex < learningWordList.length) {
-      const word = learningWordList[learningWordIndex];
-      const progressElement = document.getElementById('learningProgress');
-      const koreanWordElement = document.getElementById('learningKoreanWord');
-      const japaneseTranslationElement = document.getElementById('learningJapaneseTranslation');
-      const exampleKoreanElement = document.getElementById('learningExampleKorean');
-      const exampleJapaneseElement = document.getElementById('learningExampleJapanese');
-      
-      if (progressElement) {
-          progressElement.textContent = `単語 ${learningWordIndex + 1} / ${learningWordList.length}`;
-      }
-      if (koreanWordElement) {
-          koreanWordElement.textContent = `韓国語: ${word.korean}`;
-      }
-      if (japaneseTranslationElement) {
-          japaneseTranslationElement.textContent = `日本語訳: ${word.japanese}`;
-      }
-      if (exampleKoreanElement) {
-          exampleKoreanElement.textContent = `例文 (韓国語): ${word.example?.korean || 'なし'}`;
-      }
-      if (exampleJapaneseElement) {
-          exampleJapaneseElement.textContent = `例文訳 (日本語): ${word.example?.japanese || 'なし'}`;
-      }
+    const word = learningWordList[learningWordIndex];
+    const progressElement = document.getElementById('learningProgress');
+    const koreanWordElement = document.getElementById('learningKoreanWord');
+    const japaneseTranslationElement = document.getElementById('learningJapaneseTranslation');
+    const exampleKoreanElement = document.getElementById('learningExampleKorean');
+    const exampleJapaneseElement = document.getElementById('learningExampleJapanese');
+    
+    if (progressElement) {
+      progressElement.textContent = `単語 ${learningWordIndex + 1} / ${learningWordList.length}`;
+    }
+    if (koreanWordElement) {
+      koreanWordElement.textContent = `韓国語: ${word.korean}`;
+    }
+    if (japaneseTranslationElement) {
+      japaneseTranslationElement.textContent = `日本語訳: ${word.japanese}`;
+    }
+    if (exampleKoreanElement) {
+      exampleKoreanElement.textContent = `例文 (韓国語): ${word.example?.korean || 'なし'}`;
+    }
+    if (exampleJapaneseElement) {
+      exampleJapaneseElement.textContent = `例文訳 (日本語): ${word.example?.japanese || 'なし'}`;
+    }
   } else {
-      MainApp.showCustomAlert('これ以上単語がありません。');
+    MainApp.showCustomAlert('これ以上単語がありません。');
   }
 
   updateLearningNavigationButtons();
@@ -147,11 +147,11 @@ function updateLearningNavigationButtons() {
   const nextButton = document.getElementById('nextLearningWordButton');
 
   if (prevButton) {
-      prevButton.disabled = learningWordIndex <= 0;
+    prevButton.disabled = learningWordIndex <= 0;
   }
 
   if (nextButton) {
-      nextButton.disabled = learningWordIndex >= learningWordList.length - 1;
+    nextButton.disabled = learningWordIndex >= learningWordList.length - 1;
   }
 }
 
@@ -207,7 +207,8 @@ function updateStudyingWordsList() {
 
 // 勉強中単語画面を表示する関数
 function viewStudyingWords() {
-    document.getElementById('studyingWordsScreen').style.display = 'flex';
+  MainApp.hideAllScreens(); // 既存の画面を隠す場合
+  document.getElementById('studyingWordsScreen').style.display = 'flex';
 }
 
 // 勉強中リストから単語を削除する関数
@@ -222,7 +223,7 @@ function removeFromStudyingList(index) {
 
 // 勉強中単語画面を閉じる関数
 function closeStudyingWords() {
-    document.getElementById('studyingWordsScreen').style.display = 'none';
+  document.getElementById('studyingWordsScreen').style.display = 'none';
 }
 
 // 初期化処理（learning.js専用）
