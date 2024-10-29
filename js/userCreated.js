@@ -399,6 +399,14 @@ function retryUserQuiz() {
   // クイズ開始前画面を表示する
   MainApp.showScreen('userQuizStartScreen');
 }
+
+// クイズ機能の終了後メニューに戻る関数
+function backToUserCreatedMenu() {
+  MainApp.hideAllScreens();
+  MainApp.showScreen('userQuizStartScreen'); // 必要に応じて他のメニュー画面IDに変更
+}
+
+
   // ... 以降のクイズ関連関数も同様に名前空間内に配置
 
   // ========================
@@ -475,18 +483,21 @@ function retryUserQuiz() {
   // ページ初期化を実行
   initializePages();
 
-  // 公開する関数
-  return {
-    showAlert,
-    closeAlert,
-    showConfirm,
-    addUserWord,
-    updateUserWordList,
-    editUserWord,
-    confirmDeleteWord,
-    deleteWord,
-    saveEditedWord,
-    startUserQuiz,
-    // 他の公開関数もここに追加
-  };
+// 公開する関数
+return {
+  showAlert,
+  closeAlert,
+  showConfirm,
+  addUserWord,
+  updateUserWordList,
+  editUserWord,
+  confirmDeleteWord,
+  deleteWord,
+  saveEditedWord,
+  startUserQuiz,
+  retryUserQuiz,              // 追加
+  backToUserCreatedMenu,      // 追加
+  // 他の公開関数もここに追加
+};
+
 })(MainApp);
