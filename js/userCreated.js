@@ -172,47 +172,83 @@ const UserCreatedApp = (function(MainApp) {
     updateUserWordList();
   }
 
-  // 編集した単語を保存する関数
-  function saveEditedWord() {
-    const korean = document.getElementById('editWordKorean').value.trim();
-    const japanese = document.getElementById('editWordJapanese').value.trim();
-    const exampleKorean = document.getElementById('editExampleKorean').value.trim();
-    const exampleJapanese = document.getElementById('editExampleJapanese').value.trim();
+// 編集した単語を保存する関数
+function saveEditedWord() {
+  const korean = document.getElementById('editWordKorean').value.trim();
+  const japanese = document.getElementById('editWordJapanese').value.trim();
+  const exampleKorean = document.getElementById('editWordExampleKorean').value.trim(); // 修正
+  const exampleJapanese = document.getElementById('editWordExampleJapanese').value.trim(); // 修正
 
-    if (!korean || !japanese) {
-      showAlert('韓国語の単語と日本語訳は必須です。');
-      return;
-    }
-
-    const index = localStorage.getItem('editingWordIndex');
-    if (index === null) {
-      showAlert('編集する単語が見つかりません。');
-      return;
-    }
-
-    // 単語を更新
-    userWordList[index] = {
-      korean: korean,
-      japanese: japanese,
-      example: {
-        korean: exampleKorean || '',
-        japanese: exampleJapanese || '',
-      },
-    };
-
-    // ローカルストレージに保存
-    localStorage.setItem('userWordList', JSON.stringify(userWordList));
-
-    // 編集フラグをクリア
-    localStorage.removeItem('editingWordIndex');
-    localStorage.removeItem('editingWordData');
-
-    // 成功メッセージの表示
-    showAlert('単語を更新しました。');
-
-    // リダイレクト
-    window.location.href = 'user_word_list.html';
+  if (!korean || !japanese) {
+    showAlert('韓国語の単語と日本語訳は必須です。');
+    return;
   }
+
+  const index = localStorage.getItem('editingWordIndex');
+  if (index === null) {
+    showAlert('編集する単語が見つかりません。');
+    return;
+  }
+
+  // 単語を更新
+  userWordList[index] = {
+    korean: korean,
+    japanese: japanese,
+    example: {
+      korean: exampleKorean || '',
+      japanese: exampleJapanese || '',
+    },
+  };
+
+  // ローカルストレージに保存
+  localStorage.setItem('userWordList', JSON.stringify(userWordList));
+
+  // 編集フラグをクリア
+  localStorage.removeItem('editingWordIndex');
+  localStorage.removeItem('editingWordData');
+
+  // 成功メッセージの表示
+  showAlert('単語を更新しました。');
+
+  // リダイレクト
+  window.location.href = 'user_word_list.html';
+}
+
+// 編集ページを初期化する
+function initializeEditWordPage() {
+  console.log('Initializing edit word page...');
+  const editingWordData = JSON.parse(localStorage.getItem('editingWordData'));
+  const editingWordIndex = localStorage.getItem('editingWordIndex');
+
+  if (editingWordData === null || editingWordIndex === null) {
+    showAlert('編集する単語が見つかりません。');
+    window.location.href = 'user_word_list.html';
+    return;
+  }
+
+  const koreanElement = document.getElementById('editWordKorean');
+  const japaneseElement = document.getElementById('editWordJapanese');
+  const exampleKoreanElement = document.getElementById('editWordExampleKorean'); // 修正
+  const exampleJapaneseElement = document.getElementById('editWordExampleJapanese'); // 修正
+
+  if (!koreanElement || !japaneseElement || !exampleKoreanElement || !exampleJapaneseElement) {
+    showAlert('フォームの要素が正しく読み込まれていません。');
+    return;
+  }
+
+  koreanElement.value = editingWordData.korean || '';
+  japaneseElement.value = editingWordData.japanese || '';
+  
+  // 例文の存在を確認してから値を設定
+  if (editingWordData.example) {
+    exampleKoreanElement.value = editingWordData.example.korean || '';
+    exampleJapaneseElement.value = editingWordData.example.japanese || '';
+  } else {
+    exampleKoreanElement.value = '';
+    exampleJapaneseElement.value = '';
+  }
+}
+
 
   // ========================
   // クイズ機能
