@@ -164,72 +164,47 @@ const UserCreatedApp = (function(MainApp) {
     updateUserWordList();
   }
 
-// 編集した単語を保存する関数
-function saveEditedWord() {
-  const koreanElement = document.getElementById('editWordKorean');
-  const japaneseElement = document.getElementById('editWordJapanese');
-  const exampleKoreanElement = document.getElementById('editExampleKorean');
-  const exampleJapaneseElement = document.getElementById('editExampleJapanese');
+  // 編集した単語を保存する関数
+  function saveEditedWord() {
+    const korean = document.getElementById('editWordKorean').value.trim();
+    const japanese = document.getElementById('editWordJapanese').value.trim();
+    const exampleKorean = document.getElementById('editExampleKorean').value.trim();
+    const exampleJapanese = document.getElementById('editExampleJapanese').value.trim();
 
-  if (!koreanElement || !japaneseElement || !exampleKoreanElement || !exampleJapaneseElement) {
-    showAlert('フォームの要素が正しく読み込まれていません。');
-    return;
+    if (!korean || !japanese) {
+      showAlert('韓国語の単語と日本語訳は必須です。');
+      return;
+    }
+
+    const index = localStorage.getItem('editingWordIndex');
+    if (index === null) {
+      showAlert('編集する単語が見つかりません。');
+      return;
+    }
+
+    // 単語を更新
+    userWordList[index] = {
+      korean: korean,
+      japanese: japanese,
+      example: {
+        korean: exampleKorean || '',
+        japanese: exampleJapanese || '',
+      },
+    };
+
+    // ローカルストレージに保存
+    localStorage.setItem('userWordList', JSON.stringify(userWordList));
+
+    // 編集フラグをクリア
+    localStorage.removeItem('editingWordIndex');
+    localStorage.removeItem('editingWordData');
+
+    // 成功メッセージの表示
+    showAlert('単語を更新しました。');
+
+    // リダイレクト
+    window.location.href = 'user_word_list.html';
   }
-
-  const korean = koreanElement.value.trim();
-  const japanese = japaneseElement.value.trim();
-  const exampleKorean = exampleKoreanElement.value.trim();
-  const exampleJapanese = exampleJapaneseElement.value.trim();
-
-  if (!korean || !japanese) {
-    showAlert('韓国語の単語と日本語訳は必須です。');
-    return;
-  }
-
-  const index = localStorage.getItem('editingWordIndex');
-  if (index === null) {
-    showAlert('編集する単語が見つかりません。');
-    return;
-  }
-
-  const wordIndex = parseInt(index, 10);
-  if (isNaN(wordIndex) || wordIndex < 0 || wordIndex >= userWordList.length) {
-    showAlert('編集する単語のインデックスが無効です。');
-    return;
-  }
-
-  // 単語を更新
-  userWordList[wordIndex] = {
-    korean: korean,
-    japanese: japanese,
-    example: {
-      korean: exampleKorean || '',
-      japanese: exampleJapanese || '',
-    },
-  };
-
-  // ローカルストレージに保存
-  localStorage.setItem('userWordList', JSON.stringify(userWordList));
-
-  // 編集フラグをクリア
-  localStorage.removeItem('editingWordIndex');
-  localStorage.removeItem('editingWordData');
-
-  // 成功メッセージの表示
-  showAlert('単語を更新しました。');
-
-  // リダイレクト
-  window.location.href = 'user_word_list.html';
-}
-
-// 閉じるアラート関数
-function closeAlert() {
-  MainApp.closeCustomAlert();
-}
-
-// 追加: グローバルに closeCustomAlert を定義
-window.closeCustomAlert = closeAlert;
-
 
   // ========================
   // クイズ機能
@@ -541,7 +516,6 @@ return {
   startUserQuiz,
   retryUserQuiz,              // 追加
   backToUserCreatedMenu,      // 追加
-  
   // 他の公開関数もここに追加
 };
 
