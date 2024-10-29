@@ -419,23 +419,31 @@ function backToUserCreatedMenu() {
     updateUserWordList();
   }
 
-  // 編集ページを初期化する
-  function initializeEditWordPage() {
-    console.log('Initializing edit word page...');
-    const editingWordData = JSON.parse(localStorage.getItem('editingWordData'));
-    const editingWordIndex = localStorage.getItem('editingWordIndex');
+// 編集ページを初期化する
+function initializeEditWordPage() {
+  console.log('Initializing edit word page...');
+  const editingWordData = JSON.parse(localStorage.getItem('editingWordData'));
+  const editingWordIndex = localStorage.getItem('editingWordIndex');
 
-    if (editingWordData === null || editingWordIndex === null) {
-      showAlert('編集する単語が見つかりません。');
-      window.location.href = 'user_word_list.html';
-      return;
-    }
-
-    document.getElementById('editWordKorean').value = editingWordData.korean;
-    document.getElementById('editWordJapanese').value = editingWordData.japanese;
-    document.getElementById('editExampleKorean').value = editingWordData.example.korean;
-    document.getElementById('editExampleJapanese').value = editingWordData.example.japanese;
+  if (editingWordData === null || editingWordIndex === null) {
+    showAlert('編集する単語が見つかりません。');
+    window.location.href = 'user_word_list.html';
+    return;
   }
+
+  document.getElementById('editWordKorean').value = editingWordData.korean || '';
+  document.getElementById('editWordJapanese').value = editingWordData.japanese || '';
+  
+  // 例文の存在を確認してから値を設定
+  if (editingWordData.example) {
+    document.getElementById('editWordExampleKorean').value = editingWordData.example.korean || '';
+    document.getElementById('editWordExampleJapanese').value = editingWordData.example.japanese || '';
+  } else {
+    document.getElementById('editWordExampleKorean').value = '';
+    document.getElementById('editWordExampleJapanese').value = '';
+  }
+}
+
 
   // ユーザーガイドページの初期化（必要に応じて追加）
 
