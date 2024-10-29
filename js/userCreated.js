@@ -165,46 +165,56 @@ const UserCreatedApp = (function(MainApp) {
   }
 
   // 編集した単語を保存する関数
-  function saveEditedWord() {
-    const korean = document.getElementById('editWordKorean').value.trim();
-    const japanese = document.getElementById('editWordJapanese').value.trim();
-    const exampleKorean = document.getElementById('editExampleKorean').value.trim();
-    const exampleJapanese = document.getElementById('editExampleJapanese').value.trim();
+function saveEditedWord() {
+  const koreanElement = document.getElementById('editWordKorean');
+  const japaneseElement = document.getElementById('editWordJapanese');
+  const exampleKoreanElement = document.getElementById('editExampleKorean');
+  const exampleJapaneseElement = document.getElementById('editExampleJapanese');
 
-    if (!korean || !japanese) {
-      showAlert('韓国語の単語と日本語訳は必須です。');
-      return;
-    }
-
-    const index = localStorage.getItem('editingWordIndex');
-    if (index === null) {
-      showAlert('編集する単語が見つかりません。');
-      return;
-    }
-
-    // 単語を更新
-    userWordList[index] = {
-      korean: korean,
-      japanese: japanese,
-      example: {
-        korean: exampleKorean || '',
-        japanese: exampleJapanese || '',
-      },
-    };
-
-    // ローカルストレージに保存
-    localStorage.setItem('userWordList', JSON.stringify(userWordList));
-
-    // 編集フラグをクリア
-    localStorage.removeItem('editingWordIndex');
-    localStorage.removeItem('editingWordData');
-
-    // 成功メッセージの表示
-    showAlert('単語を更新しました。');
-
-    // リダイレクト
-    window.location.href = 'user_word_list.html';
+  if (!koreanElement || !japaneseElement || !exampleKoreanElement || !exampleJapaneseElement) {
+    showAlert('フォームの要素が正しく読み込まれていません。');
+    return;
   }
+
+  const korean = koreanElement.value.trim();
+  const japanese = japaneseElement.value.trim();
+  const exampleKorean = exampleKoreanElement.value.trim();
+  const exampleJapanese = exampleJapaneseElement.value.trim();
+
+  if (!korean || !japanese) {
+    showAlert('韓国語の単語と日本語訳は必須です。');
+    return;
+  }
+
+  const index = localStorage.getItem('editingWordIndex');
+  if (index === null) {
+    showAlert('編集する単語が見つかりません。');
+    return;
+  }
+
+  // 単語を更新
+  userWordList[index] = {
+    korean: korean,
+    japanese: japanese,
+    example: {
+      korean: exampleKorean || '',
+      japanese: exampleJapanese || '',
+    },
+  };
+
+  // ローカルストレージに保存
+  localStorage.setItem('userWordList', JSON.stringify(userWordList));
+
+  // 編集フラグをクリア
+  localStorage.removeItem('editingWordIndex');
+  localStorage.removeItem('editingWordData');
+
+  // 成功メッセージの表示
+  showAlert('単語を更新しました。');
+
+  // リダイレクト
+  window.location.href = 'user_word_list.html';
+}
 
   // ========================
   // クイズ機能
@@ -431,18 +441,29 @@ function initializeEditWordPage() {
     return;
   }
 
-  document.getElementById('editWordKorean').value = editingWordData.korean || '';
-  document.getElementById('editWordJapanese').value = editingWordData.japanese || '';
+  const koreanElement = document.getElementById('editWordKorean');
+  const japaneseElement = document.getElementById('editWordJapanese');
+  const exampleKoreanElement = document.getElementById('editExampleKorean');
+  const exampleJapaneseElement = document.getElementById('editExampleJapanese');
+
+  if (!koreanElement || !japaneseElement || !exampleKoreanElement || !exampleJapaneseElement) {
+    showAlert('フォームの要素が正しく読み込まれていません。');
+    return;
+  }
+
+  koreanElement.value = editingWordData.korean || '';
+  japaneseElement.value = editingWordData.japanese || '';
   
   // 例文の存在を確認してから値を設定
   if (editingWordData.example) {
-    document.getElementById('editWordExampleKorean').value = editingWordData.example.korean || '';
-    document.getElementById('editWordExampleJapanese').value = editingWordData.example.japanese || '';
+    exampleKoreanElement.value = editingWordData.example.korean || '';
+    exampleJapaneseElement.value = editingWordData.example.japanese || '';
   } else {
-    document.getElementById('editWordExampleKorean').value = '';
-    document.getElementById('editWordExampleJapanese').value = '';
+    exampleKoreanElement.value = '';
+    exampleJapaneseElement.value = '';
   }
 }
+
 
 
   // ユーザーガイドページの初期化（必要に応じて追加）
