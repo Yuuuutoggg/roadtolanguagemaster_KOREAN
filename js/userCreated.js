@@ -209,33 +209,33 @@ const UserCreatedApp = (function(MainApp) {
   // ========================
   // クイズ機能
   // ========================
+// クイズを開始する関数
+function startUserQuiz() {
+  console.log('startUserQuiz called'); // デバッグメッセージ
 
-  // クイズを開始する関数
-  function startUserQuiz() {
-    console.log('startUserQuiz called'); // デバッグメッセージ
-  
-    // クイズの単語が4つ未満の場合はアラートを表示
-    if (userWordList.length < 4) {
-      showAlert('クイズを始めるには、最低4つの単語が必要です。');
-      return;
-    }
-  
-    // クイズ用の単語リストをシャッフル
-    userQuizQuestions = MainApp.shuffleArray([...userWordList]);
-    userQuizScore = 0;
-    currentUserQuizQuestionIndex = 0;
-    userAnswers = [];
-  
-    console.log('Quiz initialized with questions:', userQuizQuestions); // デバッグメッセージ
-  
-    // 現在の画面を隠す
-    MainApp.hideAllScreens();
-  
-    // クイズ画面を動的に生成
-    createQuizScreen();
-    showUserQuizQuestion();
+  // クイズの単語が4つ未満の場合はアラートを表示
+  if (userWordList.length < 4) {
+    showAlert('クイズを始めるには、最低4つの単語が必要です。');
+    return;
   }
-  
+
+  // クイズ用の単語リストをシャッフル
+  userQuizQuestions = MainApp.shuffleArray([...userWordList]);
+  userQuizScore = 0;
+  currentUserQuizQuestionIndex = 0;
+  userAnswers = [];
+
+  console.log('Quiz initialized with questions:', userQuizQuestions); // デバッグメッセージ
+
+  // 現在の画面を隠す
+  MainApp.hideAllScreens();
+
+  // クイズ画面を表示する（既存のHTML要素を使用）
+  MainApp.showScreen('userQuizScreen');
+
+  // クイズを開始する
+  showUserQuizQuestion();
+}
 
   // ... 以降のクイズ関連関数も同様に名前空間内に配置
 
