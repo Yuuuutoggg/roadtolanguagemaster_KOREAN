@@ -526,7 +526,10 @@ return {
   startUserQuiz,
   retryUserQuiz,              // 追加
   backToUserCreatedMenu,      // 追加
+  confirmYesCustom,           // 追加
+  confirmNoCustom,            // 追加
   // 他の公開関数もここに追加
 };
+
 
 })(MainApp);
