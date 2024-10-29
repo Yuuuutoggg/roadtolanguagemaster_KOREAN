@@ -38,6 +38,7 @@ function showCustomAlert(message) {
   }
 }
 
+// 単語を追加する関数
 function addUserWord() {
   const korean = document.getElementById('userWordKorean').value.trim();
   const japanese = document.getElementById('userWordJapanese').value.trim();
@@ -49,10 +50,7 @@ function addUserWord() {
     return;
   }
 
-  // ローカルストレージから現在の単語リストを取得
-  let userWordList = JSON.parse(localStorage.getItem('userWordList')) || [];
-
-  // 新しい単語をリストに追加
+  // 新しい単語をグローバルな userWordList に追加
   userWordList.push({
     korean: korean,
     japanese: japanese,
@@ -130,71 +128,75 @@ document.addEventListener('DOMContentLoaded', () => {
     showScreen('userWordListScreen');
   }
   
-  function updateUserWordList() {
-    const list = document.getElementById('userWordList');
+// 単語一覧を更新する関数
+function updateUserWordList() {
+  // 最新のローカルストレージから単語リストを取得
+  userWordList = JSON.parse(localStorage.getItem('userWordList')) || [];
 
-    // 要素が存在するか確認
-    if (!list) {
-        console.error('Element with ID "userWordList" not found');
-        return;
-    }
+  const list = document.getElementById('userWordList');
 
-    list.innerHTML = '';
+  // 要素が存在するか確認
+  if (!list) {
+      console.error('Element with ID "userWordList" not found');
+      return;
+  }
 
-    if (userWordList.length === 0) {
-        const li = document.createElement('li');
-        li.textContent = '追加した単語がありません。';
-        list.appendChild(li);
-    } else {
-        userWordList.forEach((word, index) => {
-            const li = document.createElement('li');
-            li.className = 'word-list-item';
+  list.innerHTML = '';
 
-            const div = document.createElement('div');
-            div.className = 'word-details';
+  if (userWordList.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = '追加した単語がありません。';
+      list.appendChild(li);
+  } else {
+      userWordList.forEach((word, index) => {
+          const li = document.createElement('li');
+          li.className = 'word-list-item';
 
-            // 韓国語の単語
-            const pKorean = document.createElement('p');
-            pKorean.innerHTML = `<strong>韓国語:</strong> ${word.korean}`;
-            div.appendChild(pKorean);
+          const div = document.createElement('div');
+          div.className = 'word-details';
 
-            // 日本語訳
-            const pJapanese = document.createElement('p');
-            pJapanese.innerHTML = `<strong>日本語訳:</strong> ${word.japanese}`;
-            div.appendChild(pJapanese);
+          // 韓国語の単語
+          const pKorean = document.createElement('p');
+          pKorean.innerHTML = `<strong>韓国語:</strong> ${word.korean}`;
+          div.appendChild(pKorean);
 
-            // 例文（韓国語）
-            if (word.example?.korean) {
-                const pExampleKorean = document.createElement('p');
-                pExampleKorean.innerHTML = `<strong>例文 (韓国語):</strong> ${word.example.korean}`;
-                div.appendChild(pExampleKorean);
-            }
+          // 日本語訳
+          const pJapanese = document.createElement('p');
+          pJapanese.innerHTML = `<strong>日本語訳:</strong> ${word.japanese}`;
+          div.appendChild(pJapanese);
 
-            // 例文訳（日本語）
-            if (word.example?.japanese) {
-                const pExampleJapanese = document.createElement('p');
-                pExampleJapanese.innerHTML = `<strong>例文訳 (日本語):</strong> ${word.example.japanese}`;
-                div.appendChild(pExampleJapanese);
-            }
+          // 例文（韓国語）
+          if (word.example?.korean) {
+              const pExampleKorean = document.createElement('p');
+              pExampleKorean.innerHTML = `<strong>例文 (韓国語):</strong> ${word.example.korean}`;
+              div.appendChild(pExampleKorean);
+          }
 
-            // 編集ボタンの追加
-            const editButton = document.createElement('button');
-            editButton.textContent = '編集';
-            editButton.className = 'edit-button';
-            editButton.onclick = () => editUserWord(index);
-            div.appendChild(editButton);
+          // 例文訳（日本語）
+          if (word.example?.japanese) {
+              const pExampleJapanese = document.createElement('p');
+              pExampleJapanese.innerHTML = `<strong>例文訳 (日本語):</strong> ${word.example.japanese}`;
+              div.appendChild(pExampleJapanese);
+          }
 
-            // 削除ボタンの追加
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = '削除';
-            deleteButton.className = 'delete-button';
-            deleteButton.onclick = () => deleteUserWord(index);
-            div.appendChild(deleteButton);
+          // 編集ボタンの追加
+          const editButton = document.createElement('button');
+          editButton.textContent = '編集';
+          editButton.className = 'edit-button';
+          editButton.onclick = () => editUserWord(index);
+          div.appendChild(editButton);
 
-            li.appendChild(div);
-            list.appendChild(li);
-        });
-    }
+          // 削除ボタンの追加
+          const deleteButton = document.createElement('button');
+          deleteButton.textContent = '削除';
+          deleteButton.className = 'delete-button';
+          deleteButton.onclick = () => deleteUserWord(index);
+          div.appendChild(deleteButton);
+
+          li.appendChild(div);
+          list.appendChild(li);
+      });
+  }
 }
 
 
