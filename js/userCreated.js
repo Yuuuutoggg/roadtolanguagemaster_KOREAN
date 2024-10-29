@@ -66,7 +66,7 @@ function addUserWord() {
   // 成功メッセージの表示
   showCustomAlert('単語を追加しました。');
 
-  // 単語一覧を更新
+  // 単語一覧を即座に更新
   updateUserWordList();
 
   // フォームをリセット
@@ -159,44 +159,6 @@ function editUserWord(index) {
   window.location.href = 'edit_word.html';
 }
 
-// 単語を保存する関数
-function saveEditedWord() {
-  const editingWordIndex = sessionStorage.getItem('editingWordIndex');
-  if (editingWordIndex === null) {
-    console.error('Editing index not found');
-    return;
-  }
-
-  const korean = document.getElementById('editWordKorean').value.trim();
-  const japanese = document.getElementById('editWordJapanese').value.trim();
-  const exampleKorean = document.getElementById('editWordExampleKorean').value.trim();
-  const exampleJapanese = document.getElementById('editWordExampleJapanese').value.trim();
-
-  if (!korean || !japanese) {
-    showCustomAlert('韓国語の単語と日本語訳は必須です。');
-    return;
-  }
-
-  userWordList[editingWordIndex] = {
-    korean: korean,
-    japanese: japanese,
-    example: {
-      korean: exampleKorean || undefined,
-      japanese: exampleJapanese || undefined,
-    },
-  };
-
-  localStorage.setItem('userWordList', JSON.stringify(userWordList));
-  showCustomAlert('単語が更新されました。');
-
-  // 単語一覧の更新
-  updateUserWordList();
-
-  setTimeout(() => {
-    window.location.href = 'user_word_list.html';
-  }, 1000);
-}
-
 // 単語を削除する関数
 function deleteUserWord(index) {
   console.log(`Deleting word at index: ${index}`);
@@ -208,27 +170,36 @@ function deleteUserWord(index) {
   updateUserWordList();
 }
 
-// DOMContentLoadedイベントリスナー
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('userCreated.js fully loaded and DOMContentLoaded triggered');
+// ユーザーが単語一覧画面に来た時に呼び出される関数
+function showUserWordList() {
+  console.log('Showing user word list screen and updating list...');
+  hideAllScreens();
+  const listScreen = document.getElementById('userWordListScreen');
+  if (listScreen) {
+    listScreen.style.display = 'flex'; // 単語一覧画面を表示
+    updateUserWordList(); // 単語リストを更新
+  } else {
+    console.error('Element with ID "userWordListScreen" not found');
+  }
+}
 
-  // 現在のページパスを取得
+// すべての画面を非表示にする関数
+function hideAllScreens() {
+  const screens = document.querySelectorAll('.screen');
+  screens.forEach(screen => {
+    screen.style.display = 'none';
+  });
+}
+
+// 単語一覧ページを初期化する
+(function initializeUserWordListPage() {
+  console.log('Initializing user word list page...');
   const pathname = location.pathname;
-
-  // 単語追加ページの場合の処理
-  if (pathname.includes('add_word.html')) {
-    const addButton = document.querySelector('#addWordScreen button');
-    if (addButton) {
-      addButton.addEventListener('click', addUserWord);
-    }
-  }
-
-  // 単語一覧ページの場合の処理
+  
   if (pathname.includes('user_word_list.html')) {
-    // ページ読み込み後に単語リストを更新
-    updateUserWordList();
+    showUserWordList(); // 単語一覧ページに直接アクセスした場合も初期化
   }
-});
+})();
 
 
 
