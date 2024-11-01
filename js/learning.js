@@ -147,7 +147,7 @@ function prevLearningWord() {
 }
 
 // 学習モードで「勉強中」リストに単語を追加する関数
-function addToStudyingList() {
+MainApp.addToStudyingList = function() {
   const currentWord = learningWordList[learningWordIndex];
   if (!studyingList.some((word) => word.korean === currentWord.korean)) {
     studyingList.push(currentWord);
@@ -157,7 +157,7 @@ function addToStudyingList() {
   } else {
     MainApp.showCustomAlert('この単語は既に勉強中リストに含まれています。');
   }
-}
+};
 
 // 学習モードの終了関数
 function endLearningMode() {
@@ -183,7 +183,7 @@ function updateLearningNavigationButtons() {
 }
 
 // 学習モードの勉強中リストを更新・表示する関数
-function updateStudyingWordsList() {
+MainApp.updateStudyingWordsList = function() {
   if (!location.pathname.includes('learning')) return; // learning.htmlでのみ実行
 
   const list = document.getElementById('studyingWordsList');
@@ -196,7 +196,7 @@ function updateStudyingWordsList() {
     li.textContent = '勉強中の単語がありません。';
     list.appendChild(li);
   } else {
-    studyingList.forEach((word, index) => { // インデックスを取得
+    studyingList.forEach((word, index) => {
       const li = document.createElement('li');
       li.className = 'word-list-item';
 
@@ -224,13 +224,26 @@ function updateStudyingWordsList() {
       const deleteButton = document.createElement('button');
       deleteButton.textContent = '削除';
       deleteButton.className = 'delete-button'; // スタイル用クラス
-      deleteButton.onclick = () => MainApp.removeFromStudyingList(index); // 修正: removeFromStudyingList を MainApp のメソッドとして呼び出し
+      deleteButton.onclick = () => MainApp.removeFromStudyingList(index);
       li.appendChild(deleteButton);
 
       list.appendChild(li);
     });
   }
-}
+};
+
+// 勉強中リストから単語を削除する関数
+MainApp.removeFromStudyingList = function(index) {
+  if (index >= 0 && index < studyingList.length) {
+    studyingList.splice(index, 1);
+    localStorage.setItem('studyingList', JSON.stringify(studyingList));
+    MainApp.showCustomAlert('単語が勉強中リストから削除されました。');
+    MainApp.updateStudyingWordsList();
+  } else {
+    MainApp.showCustomAlert('無効なインデックスです。');
+  }
+};
+
 
 // 勉強中単語画面を表示する関数
 function viewStudyingWords() {
