@@ -8,9 +8,10 @@ let timeLeft = 60;
 let timer = null;
 
 // セッションストレージから必要なデータを取得
-let selectedPracticeMode = sessionStorage.getItem('selectedPracticeMode') || '';
-let selectedLevel = sessionStorage.getItem('selectedLevel') || '';
-let selectedPartOfSpeech = sessionStorage.getItem('selectedPartOfSpeech') || '';
+selectedPracticeMode = sessionStorage.getItem('selectedPracticeMode') || '';
+selectedLevel = sessionStorage.getItem('selectedLevel') || '';
+selectedPartOfSpeech = sessionStorage.getItem('selectedPartOfSpeech') || '';
+
 
 // タイピング練習開始関数
 function startTypingPractice() {
@@ -26,7 +27,7 @@ function startTypingPractice() {
 
     loadWords();
 
-    showScreen('typingPracticeScreen');
+    MainApp.showScreen('typingPracticeScreen'); // 修正箇所
 
     // タイムアタックモードの場合のみタイマーを表示
     if (selectedPracticeMode === 'timeattack') {
@@ -40,7 +41,7 @@ function startTypingPractice() {
 function loadWords() {
     let fileName = '';
     if (selectedPracticeMode === 'timeattack' || selectedPracticeMode === 'partofspeech') {
-        fileName = getFileName(selectedLevel);
+        fileName = MainApp.getFileName(selectedLevel); // 修正箇所
     }
 
     fetch(`data/${fileName}`)
@@ -58,16 +59,16 @@ function loadWords() {
             }
 
             if (currentWordList.length === 0) {
-                showCustomAlert('選択したレベルや品詞に対応する単語がありません。');
+                MainApp.showCustomAlert('選択したレベルや品詞に対応する単語がありません。'); // 修正箇所
                 return;
             }
 
-            shuffleArray(currentWordList);
+            currentWordList = MainApp.shuffleArray(currentWordList); // 修正箇所
             showNextWord();
         })
         .catch((error) => {
             console.error('単語データの読み込みに失敗しました:', error);
-            showCustomAlert('単語データの読み込みに失敗しました。');
+            MainApp.showCustomAlert('単語データの読み込みに失敗しました。'); // 修正箇所
         });
 }
 
@@ -142,7 +143,7 @@ function endTypingPractice(reason) {
     if (timer) {
         clearInterval(timer);
     }
-    hideAllScreens();
+    MainApp.hideAllScreens(); // 修正箇所
 
     let message = '';
     if (reason === 'completed') {
@@ -156,7 +157,7 @@ function endTypingPractice(reason) {
         finalScoreMessage.textContent = message;
     }
 
-    showScreen('scoreScreen');
+    MainApp.showScreen('scoreScreen'); // 修正箇所
 }
 
 // スコアをX（Twitter）で共有する関数
@@ -169,17 +170,17 @@ function postToX() {
 
 // ゲームをリトライする関数
 function retryGame() {
-    hideAllScreens();
+    MainApp.hideAllScreens(); // 修正箇所
     startTypingPractice();
 }
 
 // レベル選択画面に戻る関数
 function goToLevelSelection() {
-    hideAllScreens();
+    MainApp.hideAllScreens(); // 修正箇所
     if (selectedPracticeMode === 'timeattack') {
-        showScreen('timeAttackLevelSelectionScreen');
+        MainApp.showScreen('timeAttackLevelSelectionScreen'); // 修正箇所
     } else if (selectedPracticeMode === 'partofspeech') {
-        showScreen('difficultySelectionScreen');
+        MainApp.showScreen('difficultySelectionScreen'); // 修正箇所
     }
 }
 
@@ -187,7 +188,7 @@ function goToLevelSelection() {
 document.addEventListener('DOMContentLoaded', () => {
     // practice.htmlが読み込まれたときに初期画面を表示
     if (location.pathname.includes('practice.html')) {
-        showScreen('koreanKeyboardWarningScreen'); // 初期画面は韓国語キーボード警告画面
+        MainApp.showScreen('koreanKeyboardWarningScreen'); // 修正箇所
     }
 
     const userInput = document.getElementById('user-input');
@@ -214,11 +215,11 @@ function selectPracticeMode(practiceMode) {
     }
 
     sessionStorage.setItem('selectedPracticeMode', practiceMode); // 選択モードをセッションストレージに保存
-    hideAllScreens();
+    MainApp.hideAllScreens(); // 修正箇所
     if (practiceMode === 'timeattack') {
-        showScreen('timeAttackLevelSelectionScreen');
+        MainApp.showScreen('timeAttackLevelSelectionScreen'); // 修正箇所
     } else if (practiceMode === 'partofspeech') {
-        showScreen('practicePartOfSpeechSelectionScreen');
+        MainApp.showScreen('practicePartOfSpeechSelectionScreen'); // 修正箇所
     }
 }
 
@@ -226,7 +227,7 @@ function selectPracticeMode(practiceMode) {
 function selectDifficulty(level) {
     console.log(`選択された難易度: ${level}`);
     sessionStorage.setItem('selectedLevel', level); // 選択レベルをセッションストレージに保存
-    hideAllScreens();
+    MainApp.hideAllScreens(); // 修正箇所
     startTypingPractice();
 }
 
@@ -234,28 +235,19 @@ function selectDifficulty(level) {
 function selectPartOfSpeech(partOfSpeech) {
     console.log(`選択された品詞: ${partOfSpeech}`);
     sessionStorage.setItem('selectedPartOfSpeech', partOfSpeech); // 選択した品詞をセッションストレージに保存
-    hideAllScreens();
-    showScreen('difficultySelectionScreen'); // 難易度選択画面に遷移
+    MainApp.hideAllScreens(); // 修正箇所
+    MainApp.showScreen('difficultySelectionScreen'); // 修正箇所
 }
 
 // 韓国語キーボード警告を確認する関数
 function acknowledgeKoreanKeyboard() {
-    hideAllScreens();
-    showScreen('practiceModeSelectionScreen'); // キーボード警告を理解した後に練習モード選択画面を表示
+    MainApp.hideAllScreens(); // 修正箇所
+    MainApp.showScreen('practiceModeSelectionScreen'); // 修正箇所
 }
 
 // 学習中の単語リストを表示する関数（必要に応じて実装）
 function viewStudyingWords() {
     // 勉強中の単語一覧を表示する処理をここに追加
     // 例: 別の画面を表示する、モーダルを開くなど
-    showCustomAlert('現在勉強中の単語一覧を表示する機能は未実装です。');
-}
-
-// 単語シャッフル関数
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+    MainApp.showCustomAlert('現在勉強中の単語一覧を表示する機能は未実装です。'); // 修正箇所
 }
