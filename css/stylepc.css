@@ -673,3 +673,37 @@ li p {
   .app-container {
     padding-top: 60px;
   }
+
+
+
+/* フォームのスタイル */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1em;
+    border: 2px solid #ff9a9e;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s;
+  }
+  
+  .contact-form input[type="text"]:focus,
+  .contact-form input[type="email"]:focus,
+  .contact-form textarea:focus {
+    border-color: #6a1b9a;
+    outline: none;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- （省略されたヘッダー情報） -->
+</head>
+<body>
+
+<!-- ヘッダーの追加 -->
+<header class="site-header">
+  <!-- （ナビゲーションメニュー） -->
+</header>
+
+<div class="app-container">
+  <div class="screen fade-in" id="contactScreen">
+    <h1>お問い合わせ</h1>
+    <div class="content">
+      <p>ご意見やご質問がございましたら、以下のフォームよりお送りください。</p>
+      <form action="send_email.php" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="お名前" required>
+        <input type="email" name="email" placeholder="メールアドレス" required>
+        <textarea name="message" placeholder="お問い合わせ内容" rows="5" required></textarea>
+        <div class="button-group centered-buttons">
+          <button type="submit"><i class="fas fa-paper-plane"></i> 送信する</button>
+        </div>
+      </form>
+      <div class="button-group centered-buttons">
+        <a href="index.html" class="button"><i class="fas fa-home"></i> ホームに戻る</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- スクリプトファイルの読み込み -->
+<script src="js/main.js"></script>
+</body>
+</html>
