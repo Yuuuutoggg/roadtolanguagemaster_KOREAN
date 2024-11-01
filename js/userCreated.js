@@ -135,14 +135,12 @@ const UserCreatedApp = (function(MainApp) {
         div.appendChild(editButton);
 
         // 削除ボタンの追加
+        // 削除ボタンを作成
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '削除';
         deleteButton.className = 'delete-button';
-        deleteButton.onclick = () => confirmDeleteWord(index);
+        deleteButton.onclick = () => deleteWord(index); // 直接削除を呼び出す
         div.appendChild(deleteButton);
-
-        li.appendChild(div);
-        list.appendChild(li);
       });
     }
     console.log('User word list updated successfully'); // デバッグ用
@@ -431,19 +429,19 @@ const UserCreatedApp = (function(MainApp) {
     const editingWordIndex = localStorage.getItem('editingWordIndex');
 
     if (editingWordData === null || editingWordIndex === null) {
-      showAlert('編集する単語が見つかりません。');
-      window.location.href = 'user_word_list.html';
-      return;
+        showAlert('編集する単語が見つかりません。');
+        window.location.href = 'user_word_list.html';
+        return;
     }
 
     const koreanElement = document.getElementById('editWordKorean');
     const japaneseElement = document.getElementById('editWordJapanese');
-    const exampleKoreanElement = document.getElementById('editExampleKorean');
-    const exampleJapaneseElement = document.getElementById('editExampleJapanese');
+    const exampleKoreanElement = document.getElementById('editWordExampleKorean'); // 正しい ID に修正
+    const exampleJapaneseElement = document.getElementById('editWordExampleJapanese'); // 正しい ID に修正
 
     if (!koreanElement || !japaneseElement || !exampleKoreanElement || !exampleJapaneseElement) {
-      showAlert('フォームの要素が正しく読み込まれていません。');
-      return;
+        showAlert('フォームの要素が正しく読み込まれていません。');
+        return;
     }
 
     koreanElement.value = editingWordData.korean || '';
@@ -451,13 +449,14 @@ const UserCreatedApp = (function(MainApp) {
     
     // 例文の存在を確認してから値を設定
     if (editingWordData.example) {
-      exampleKoreanElement.value = editingWordData.example.korean || '';
-      exampleJapaneseElement.value = editingWordData.example.japanese || '';
+        exampleKoreanElement.value = editingWordData.example.korean || '';
+        exampleJapaneseElement.value = editingWordData.example.japanese || '';
     } else {
-      exampleKoreanElement.value = '';
-      exampleJapaneseElement.value = '';
+        exampleKoreanElement.value = '';
+        exampleJapaneseElement.value = '';
     }
-  }
+}
+
 
   // ユーザーガイドページの初期化（必要に応じて追加）
 
@@ -507,20 +506,6 @@ const UserCreatedApp = (function(MainApp) {
 
   // グローバル関数を定義（モジュール内部で定義）
   window.closeCustomAlert = closeAlert;
-
-  window.confirmYesCustom = function() {
-      if (MainApp.confirmYesCallback) {
-          MainApp.confirmYesCallback();
-      }
-      closeCustomConfirm();
-  };
-      
-  window.confirmNoCustom = function() {
-      if (MainApp.confirmNoCallback) {
-          MainApp.confirmNoCallback();
-      }
-      closeCustomConfirm();
-  };
 
   return {
     showAlert,

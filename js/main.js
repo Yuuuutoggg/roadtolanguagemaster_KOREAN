@@ -120,8 +120,6 @@ const MainApp = (function() {
     showCustomConfirm,
     showCustomAlert,
     closeCustomAlert,
-    confirmYesCustom,
-    confirmNoCustom,
     resetApp,
     commonReset,
     backToUserCreatedMenu,
