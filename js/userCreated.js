@@ -135,12 +135,13 @@ const UserCreatedApp = (function(MainApp) {
         div.appendChild(editButton);
 
         // 削除ボタンの追加
-        // 削除ボタンを作成
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '削除';
         deleteButton.className = 'delete-button';
-        deleteButton.onclick = () => deleteWord(index); // 直接削除を呼び出す
+        deleteButton.onclick = () => deleteWord(index);
         div.appendChild(deleteButton);
+        li.appendChild(div);
+        list.appendChild(li);
       });
     }
     console.log('User word list updated successfully'); // デバッグ用
