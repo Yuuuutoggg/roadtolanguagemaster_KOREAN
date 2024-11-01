@@ -446,11 +446,11 @@ li p {
     }
 
     /* ボタンのスタイル */
-    button {
-        max-width: 400px; /* 最大幅を拡大 */
-        padding: 15px 20px; /* パディングを調整 */
-        font-size: 1.1em; /* フォントサイズを拡大 */
-        min-width: 200px; /* 最小幅を設定 */
+    button, a.button {
+        max-width: 400px;
+        padding: 15px 20px;
+        font-size: 1.1em;
+        min-width: 200px;
     }
 
     /* クイズの選択肢ボタン */
@@ -471,8 +471,12 @@ li p {
         width: 250px; /* ボタンの幅を固定 */
     }
 
-    .button-group.centered-buttons button {
-        width: 250px; /* ボタンの幅を固定 */
+    .button-group button, .button-group a.button {
+        width: 250px;
+    }
+
+    .button-group.centered-buttons button, .button-group.centered-buttons a.button {
+        width: 250px;
     }
 
     /* 入力フィールドのスタイル */
@@ -531,11 +535,11 @@ li p {
     }
 
     /* ボタンのスタイル */
-    button {
-        max-width: 450px; /* 最大幅をさらに拡大 */
-        padding: 20px 24px; /* パディングを調整 */
-        font-size: 1.2em; /* フォントサイズを拡大 */
-        min-width: 200px; /* 最小幅を設定 */
+    button, a.button {
+        max-width: 450px;
+        padding: 20px 24px;
+        font-size: 1.2em;
+        min-width: 200px;
     }
 
     /* クイズの選択肢ボタン */
@@ -552,12 +556,12 @@ li p {
         margin-top: 30px;
     }
 
-    .button-group button {
-        width: 300px; /* ボタンの幅を固定 */
+    .button-group button, .button-group a.button {
+        width: 300px;
     }
 
-    .button-group.centered-buttons button {
-        width: 300px; /* ボタンの幅を固定 */
+    .button-group.centered-buttons button, .button-group.centered-buttons a.button {
+        width: 300px;
     }
 
     /* 入力フィールドのスタイル */
