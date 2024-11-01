@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>韓国語マスター - 単語の道</title>
-  <meta name="description" content="韓国語学習アプリ『単語の道』のホームページです。単語学習、四択クイズ、タイピング練習など、多彩な機能で韓国語をマスターしましょう。">
+  <!-- （省略） -->
   <link rel="stylesheet" href="css/stylepc.css">
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesomeの読み込み -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9196286609097521"
-     crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-9196286609097521">
+  <!-- （省略） -->
 </head>
 <body oncontextmenu="return false;">
-  <div class="app-container">
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューの開閉ボタン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i> <!-- 三本線アイコン -->
+      </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <!-- 閉じるボタン -->
+        <div class="close-menu" id="close-menu">
+          <i class="fas fa-times"></i> <!-- ×アイコン -->
+        </div>
+        <ul class="nav-list">
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
 
+  <!-- 既存のコンテンツ -->
+  <div class="app-container">
     <!-- カスタムアラートモーダル -->
     <div class="custom-modal" id="customAlertModal" style="display: none;">
       <div class="modal-content">
@@ -36,7 +57,6 @@
       </div>
     </div>
 
-    <!-- index.html -->
     <!-- タイトル画面 -->
     <div class="screen fade-in mode-selection-screen" id="modeSelectionScreen">
       <h1>韓国語マスター<br>単語の道</h1>
