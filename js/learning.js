@@ -35,34 +35,59 @@ function selectLearningLevel(level) {
 
 // 学習モードの単語読み込み関数
 function fetchLearningWords() {
-  if (!location.pathname.includes('learning.html')) return;
+  if (!location.pathname.includes('learning.html')) {
+    console.log('Not on learning.html page.');
+    return;
+  }
 
-  // **修正点**: sessionStorage から再度取得
+  // sessionStorage から再取得
   selectedLevel = sessionStorage.getItem('selectedLevel') || '';
   selectedPartOfSpeech = sessionStorage.getItem('selectedPartOfSpeech') || '';
+  console.log(`Fetching words for Level: ${selectedLevel}, Part of Speech: ${selectedPartOfSpeech}`);
 
   if (!selectedLevel || !selectedPartOfSpeech) {
     MainApp.showCustomAlert('品詞または難易度が選択されていません。');
+    console.error('Selected Level or Part of Speech is missing.');
     return;
   }
 
   const fileName = MainApp.getFileName(selectedLevel);
+  console.log(`Fetching file: data/${fileName}`);
+
   fetch(`data/${fileName}`)
-    .then((response) => response.json())
+    .then((response) => {
+      console.log(`Response Status: ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
-      console.log('データ取得成功:', data); // デバッグ用ログ
+      console.log('Data fetched successfully:', data);
+      if (!data[selectedLevel]) {
+        throw new Error(`Level "${selectedLevel}" not found in JSON.`);
+      }
+      if (!data[selectedLevel][selectedPartOfSpeech]) {
+        throw new Error(`Part of Speech "${selectedPartOfSpeech}" not found under Level "${selectedLevel}" in JSON.`);
+      }
+
       learningWordList = data[selectedLevel][selectedPartOfSpeech] || [];
+      console.log(`Learning Word List Length: ${learningWordList.length}`);
+
       if (learningWordList.length === 0) {
         MainApp.showCustomAlert('選択した品詞と難易度に対応する単語がありません。');
+        console.warn('No words found for the selected category.');
         return;
       }
+
       MainApp.shuffleArray(learningWordList);
       learningWordIndex = 0;
       showLearningWord();
       MainApp.showScreen('learningModeScreen');
+      console.log('Learning mode screen displayed.');
     })
     .catch((error) => {
-      console.error('学習モードの単語データの読み込みに失敗しました:', error);
+      console.error('Error fetching learning words:', error);
       MainApp.showCustomAlert('学習モードの単語データの読み込みに失敗しました。');
     });
 }
