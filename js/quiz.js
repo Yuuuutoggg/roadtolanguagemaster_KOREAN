@@ -30,8 +30,10 @@ function startReviewModeFromLevelSelection() {
   startReviewMode();
 }
 
-// クイズの開始関数
 function startQuiz() {
+  // 通常モード開始時にレビュー モードを無効化
+  sessionStorage.removeItem('reviewMode');
+
   // 初期化
   quizQuestions = [];
   currentQuizQuestionIndex = 0;
@@ -44,6 +46,7 @@ function startQuiz() {
   // クイズ用の質問を読み込む
   loadQuizQuestions();
 }
+
 
 // レビュー モードの開始関数
 function startReviewMode() {
@@ -194,16 +197,15 @@ function handleQuizChoice(selectedIndex) {
     quizScore++;
   } else {
     // 間違えた単語を追加（レビュー モード以外の場合）
-    if (!sessionStorage.getItem('reviewMode')) {
-      if (!incorrectWords.some(word => word.korean === question.korean)) {
-        incorrectWords.push({
-          korean: question.korean,
-          japanese: question.correct
-        });
-        // ローカルストレージに保存
-        localStorage.setItem('incorrectWords', JSON.stringify(incorrectWords));
-      }
-    }
+    if (!incorrectWords.some(word => word.korean === question.korean)) {
+      incorrectWords.push({
+        korean: question.korean,
+        japanese: question.correct
+      });
+      // ローカルストレージに保存
+      localStorage.setItem('incorrectWords', JSON.stringify(incorrectWords));
+    }    
+    
   }
 
   // スコアを表示
