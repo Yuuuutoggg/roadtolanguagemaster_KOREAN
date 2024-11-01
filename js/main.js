@@ -8,21 +8,15 @@ const MainApp = (function() {
   let confirmMessage = '';
   let confirmYesCallback = null;
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
-    const closeMenu = document.getElementById('close-menu'); // 閉じるボタン
-    const navMenu = document.querySelector('.navigation');
+    const navMenu = document.getElementById('nav-menu');
   
-    if (mobileMenu && closeMenu && navMenu) {
-      mobileMenu.addEventListener('click', () => {
-        navMenu.classList.add('active'); // メニューを開く
-      });
-  
-      closeMenu.addEventListener('click', () => {
-        navMenu.classList.remove('active'); // メニューを閉じる
-      });
-    }
+    mobileMenu.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
   });
+  
   
   
 

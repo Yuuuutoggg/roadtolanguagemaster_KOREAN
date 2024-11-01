@@ -594,7 +594,7 @@ li p {
 }
 
 
-/* デフォルト（スマホ向けのスタイル） */
+/* ヘッダーのスタイル */
 .site-header {
     background-color: rgba(255, 236, 210, 0.9);
     position: fixed;
@@ -607,43 +607,51 @@ li p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
   }
   
+  /* ハンバーガーメニューアイコンのスタイル */
   .menu-toggle {
     display: block;
     cursor: pointer;
-    font-size: 1.5em;
-    color: #6a1b9a;
+    z-index: 1001;
   }
-
+  
+  .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #6a1b9a;
+    transition: all 0.3s ease;
+  }
+  
+  /* ナビゲーションメニューのスタイル */
   .navigation {
     position: fixed;
     top: 0;
-    left: -250px; /* 初期状態で画面外に配置 */
+    left: -100%;
     width: 250px;
     height: 100%;
     background-color: rgba(255, 236, 210, 0.95);
     overflow-y: auto;
     transition: left 0.3s ease;
-    z-index: 1000;
+    z-index: 999;
   }
-
+  
   .navigation.active {
-    left: 0; /* メニューをスライドイン */
+    left: 0;
   }
-
+  
   .nav-list {
     list-style: none;
     padding: 20px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
   }
-
+  
   .nav-list li {
     margin: 15px 0;
   }
-
+  
   .nav-list a {
     color: #6a1b9a;
     text-decoration: none;
@@ -651,64 +659,13 @@ li p {
     padding: 10px;
     display: block;
   }
-
+  
   .nav-list a:hover {
     background-color: rgba(250, 208, 196, 0.5);
     border-radius: 5px;
   }
-
-  /* 閉じるボタンのスタイル */
-  .close-menu {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1.5em;
-    color: #6a1b9a;
-  }
-
+  
   /* メインコンテンツの位置調整 */
   .app-container {
-    padding-top: 50px;
+    padding-top: 60px;
   }
-
-/* タブレットおよびPC向けのデザイン（768px以上） */
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none; /* ハンバーガーメニュー非表示 */
-  }
-
-  .navigation {
-    position: static;
-    width: auto;
-    height: auto;
-    background-color: transparent;
-    overflow: visible;
-    transition: none;
-  }
-
-  .nav-list {
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-list li {
-    margin: 0 10px;
-  }
-
-  .nav-list a {
-    font-size: 0.9em;
-    padding: 5px 8px;
-    color: #6a1b9a;
-  }
-
-  .nav-list a:hover {
-    background-color: rgba(250, 208, 196, 0.5);
-    border-radius: 3px;
-  }
-
-  .close-menu {
-    display: none; /* PC表示時は非表示 */
-  }
-}
