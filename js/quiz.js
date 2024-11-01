@@ -145,8 +145,7 @@ function prepareReviewModeQuestions() {
     quizQuestions.push({
       korean: correctWord.korean,
       correct: correctWord.japanese,
-      choices: choices,
-      example: correctWord.example.japanese // 例文を追加
+      choices: choices
     });
   }
 }
