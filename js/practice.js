@@ -215,6 +215,7 @@ function selectPracticeMode(practiceMode) {
     }
 
     sessionStorage.setItem('selectedPracticeMode', practiceMode); // 選択モードをセッションストレージに保存
+    selectedPracticeMode = practiceMode; // 追加: グローバル変数を更新
     MainApp.hideAllScreens(); // 修正箇所
     if (practiceMode === 'timeattack') {
         MainApp.showScreen('timeAttackLevelSelectionScreen'); // 修正箇所
@@ -223,21 +224,26 @@ function selectPracticeMode(practiceMode) {
     }
 }
 
+
 // 難易度選択関数（タイムアタックモードおよび品詞別モード用）
 function selectDifficulty(level) {
     console.log(`選択された難易度: ${level}`);
     sessionStorage.setItem('selectedLevel', level); // 選択レベルをセッションストレージに保存
+    selectedLevel = level; // 追加: グローバル変数を更新
     MainApp.hideAllScreens(); // 修正箇所
     startTypingPractice();
 }
+
 
 // 品詞選択後に難易度選択画面に遷移する関数（品詞別モード用）
 function selectPartOfSpeech(partOfSpeech) {
     console.log(`選択された品詞: ${partOfSpeech}`);
     sessionStorage.setItem('selectedPartOfSpeech', partOfSpeech); // 選択した品詞をセッションストレージに保存
+    selectedPartOfSpeech = partOfSpeech; // 追加: グローバル変数を更新
     MainApp.hideAllScreens(); // 修正箇所
     MainApp.showScreen('difficultySelectionScreen'); // 修正箇所
 }
+
 
 // 韓国語キーボード警告を確認する関数
 function acknowledgeKoreanKeyboard() {
