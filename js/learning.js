@@ -2,6 +2,9 @@
 
 // 勉強中リストの初期化（修正後）
 let studyingList = JSON.parse(localStorage.getItem('studyingList')) || [];
+let selectedPartOfSpeech = '';
+let selectedLevel = '';
+
 
 // 品詞選択後にレベル選択画面に遷移する関数
 function selectPartOfSpeech(partOfSpeech) {
@@ -26,44 +29,37 @@ function selectPartOfSpeech(partOfSpeech) {
 function selectLearningLevel(level) {
   selectedLevel = level;
   sessionStorage.setItem('selectedLevel', level);
-  MainApp.hideAllScreens(); // 修正: hideAllScreens を MainApp のメソッドとして呼び出し
+  MainApp.hideAllScreens();
   fetchLearningWords();
 }
 
 // 学習モードの単語読み込み関数
 function fetchLearningWords() {
-  if (!location.pathname.includes('learning.html')) return; // learning.htmlでのみ実行
+  if (!location.pathname.includes('learning.html')) return;
 
-  const fileName = MainApp.getFileName(selectedLevel); // 修正: getFileName を MainApp のメソッドとして呼び出し
+  const fileName = MainApp.getFileName(selectedLevel);
   fetch(`data/${fileName}`)
     .then((response) => response.json())
     .then((data) => {
-      // 指定された品詞の単語リストを取得
       learningWordList = data[selectedLevel][selectedPartOfSpeech] || [];
       if (learningWordList.length === 0) {
-        MainApp.showCustomAlert('選択した品詞と難易度に対応する単語がありません。'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
+        MainApp.showCustomAlert('選択した品詞と難易度に対応する単語がありません。');
         return;
       }
-      // 単語をシャッフル
-      MainApp.shuffleArray(learningWordList); // 修正: shuffleArray を MainApp のメソッドとして呼び出し
+      MainApp.shuffleArray(learningWordList);
       learningWordIndex = 0;
-      // 最初の単語を表示
       showLearningWord();
-      // 学習モード画面を表示
-      const learningModeScreen = document.getElementById('learningModeScreen');
-      if (learningModeScreen) {
-        MainApp.showScreen('learningModeScreen'); // 修正: showScreen を MainApp のメソッドとして呼び出し
-      }
+      MainApp.showScreen('learningModeScreen');
     })
     .catch((error) => {
       console.error('学習モードの単語データの読み込みに失敗しました:', error);
-      MainApp.showCustomAlert('学習モードの単語データの読み込みに失敗しました。'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
+      MainApp.showCustomAlert('学習モードの単語データの読み込みに失敗しました。');
     });
 }
 
 // 学習モードの単語表示関数
 function showLearningWord() {
-  if (!location.pathname.includes('learning.html')) return; // learning.htmlでのみ実行
+  if (!location.pathname.includes('learning.html')) return;
 
   if (learningWordIndex >= 0 && learningWordIndex < learningWordList.length) {
       const word = learningWordList[learningWordIndex];
@@ -89,7 +85,7 @@ function showLearningWord() {
           exampleJapaneseElement.textContent = `例文訳 (日本語): ${word.example?.japanese || 'なし'}`;
       }
   } else {
-      MainApp.showCustomAlert('これ以上単語がありません。'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
+      MainApp.showCustomAlert('これ以上単語がありません。');
   }
 
   updateLearningNavigationButtons();
@@ -101,7 +97,7 @@ function nextLearningWord() {
     learningWordIndex++;
     showLearningWord();
   } else {
-    MainApp.showCustomAlert('これ以上単語がありません。'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
+    MainApp.showCustomAlert('これ以上単語がありません。');
   }
 }
 
@@ -111,7 +107,7 @@ function prevLearningWord() {
     learningWordIndex--;
     showLearningWord();
   } else {
-    MainApp.showCustomAlert('これ以上前の単語はありません。'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
+    MainApp.showCustomAlert('これ以上前の単語はありません。');
   }
 }
 
@@ -121,22 +117,23 @@ function addToStudyingList() {
   if (!studyingList.some((word) => word.korean === currentWord.korean)) {
     studyingList.push(currentWord);
     localStorage.setItem('studyingList', JSON.stringify(studyingList));
-    MainApp.showCustomAlert('この単語を勉強中リストに追加しました！'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
-    updateStudyingWordsList();
+    MainApp.showCustomAlert('この単語を勉強中リストに追加しました！');
+    MainApp.updateStudyingWordsList();
   } else {
-    MainApp.showCustomAlert('この単語は既に勉強中リストに含まれています。'); // 修正: showCustomAlert を MainApp のメソッドとして呼び出し
+    MainApp.showCustomAlert('この単語は既に勉強中リストに含まれています。');
   }
 }
 
 // 学習モードの終了関数
 function endLearningMode() {
-  MainApp.hideAllScreens(); // 修正: hideAllScreens を MainApp のメソッドとして呼び出し
-  MainApp.showScreen('partOfSpeechSelectionScreen'); // 修正: showScreen を MainApp のメソッドとして呼び出し
+  MainApp.hideAllScreens();
+  MainApp.showScreen('partOfSpeechSelectionScreen');
 }
+
 
 // 学習モード用のナビゲーションボタンの更新関数
 function updateLearningNavigationButtons() {
-  if (!location.pathname.includes('learning.html')) return; // learning.htmlでのみ実行
+  if (!location.pathname.includes('learning.html')) return;
 
   const prevButton = document.getElementById('prevLearningWordButton');
   const nextButton = document.getElementById('nextLearningWordButton');
@@ -210,9 +207,9 @@ MainApp.closeStudyingWords = function() {
     document.getElementById('studyingWordsScreen').style.display = 'none';
 };
 
-// 初期化処理（learning.js専用）
+// 初期化処理
 document.addEventListener('DOMContentLoaded', () => {
   if (location.pathname.includes('learning.html')) {
-    MainApp.updateStudyingWordsList(); // 修正: updateStudyingWordsList を MainApp のメソッドとして呼び出し
+    MainApp.updateStudyingWordsList();
   }
 });
