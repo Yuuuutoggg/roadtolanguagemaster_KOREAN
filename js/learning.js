@@ -35,7 +35,7 @@ function selectLearningLevel(level) {
 
 // 学習モードの単語読み込み関数
 function fetchLearningWords() {
-  if (!location.pathname.includes('learning.html')) {
+  if (!location.pathname.includes('learning')) {
     console.log('Not on learning.html page.');
     return;
   }
@@ -94,7 +94,7 @@ function fetchLearningWords() {
 
 // 学習モードの単語表示関数
 function showLearningWord() {
-  if (!location.pathname.includes('learning.html')) return;
+  if (!location.pathname.includes('learning')) return;
 
   if (learningWordIndex >= 0 && learningWordIndex < learningWordList.length) {
       const word = learningWordList[learningWordIndex];
@@ -168,7 +168,7 @@ function endLearningMode() {
 
 // 学習モード用のナビゲーションボタンの更新関数
 function updateLearningNavigationButtons() {
-  if (!location.pathname.includes('learning.html')) return;
+  if (!location.pathname.includes('learning')) return;
 
   const prevButton = document.getElementById('prevLearningWordButton');
   const nextButton = document.getElementById('nextLearningWordButton');
@@ -184,7 +184,7 @@ function updateLearningNavigationButtons() {
 
 // 学習モードの勉強中リストを更新・表示する関数
 function updateStudyingWordsList() {
-  if (!location.pathname.includes('learning.html')) return; // learning.htmlでのみ実行
+  if (!location.pathname.includes('learning')) return; // learning.htmlでのみ実行
 
   const list = document.getElementById('studyingWordsList');
   if (!list) return;
