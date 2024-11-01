@@ -1,5 +1,4 @@
-// js/setting.js
-
+//showSettings.js
 // サウンド設定関連の変数
 let isSoundOn = true;
 let bgm = new Audio('audio/bgm.mp3');
@@ -11,21 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const soundSetting = localStorage.getItem('isSoundOn');
   if (soundSetting !== null) {
     isSoundOn = JSON.parse(soundSetting);
-    updateSoundStatus();
   }
 
   // 音量設定の読み込み
   const volumeSetting = localStorage.getItem('bgmVolume');
   if (volumeSetting !== null) {
-    bgm.volume = parseFloat(volumeSetting);
+    bgm.volume = parseFloat(volumeSetting) / 100; // スライダーが0-100のため
     const volumeSlider = document.getElementById('volumeSlider');
     if (volumeSlider) {
       volumeSlider.value = volumeSetting;
     }
+  } else {
+    bgm.volume = 1; // デフォルトは最大音量
   }
 
   // ミュート状態を設定
   bgm.muted = !isSoundOn;
+
+  // サウンドステータスを更新
+  updateSoundStatus();
 
   // BGMの再生はユーザーのインタラクション後に行う
   const startBGM = () => {
@@ -44,17 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('touchstart', startBGM);
 });
 
-// サウンドのオン/オフを切り替える関数
 function toggleSound() {
   isSoundOn = !isSoundOn;
   localStorage.setItem('isSoundOn', JSON.stringify(isSoundOn));
   updateSoundStatus();
-  MainApp.hideAllScreens(); // Assuming you want to hide screens when toggling sound
+
+  // 画面の表示状態を変更する必要がないため、MainApp.hideAllScreens() の呼び出しを削除
 }
+
+
 
 // 音量を設定する関数
 function setVolume(volume) {
-  bgm.volume = parseFloat(volume);
+  bgm.volume = parseFloat(volume) / 100; // スライダーが0-100のため
   localStorage.setItem('bgmVolume', volume.toString());
 }
 
@@ -62,16 +67,21 @@ function setVolume(volume) {
 function updateSoundStatus() {
   const soundIcon = document.getElementById('soundIcon');
   const soundStatus = document.getElementById('soundStatus');
+  const volumeControl = document.getElementById('volumeControl');
+
   if (isSoundOn) {
     soundIcon.className = 'fas fa-volume-up';
     soundStatus.textContent = 'オン';
-    document.getElementById('volumeControl').style.display = 'block';
+    volumeControl.style.display = 'block';
+    bgm.muted = false;
   } else {
     soundIcon.className = 'fas fa-volume-mute';
     soundStatus.textContent = 'オフ';
-    document.getElementById('volumeControl').style.display = 'none';
+    volumeControl.style.display = 'none';
+    bgm.muted = true;
   }
 }
+
 
 // 設定ボタンをクリックしたときの処理
 function showSettings() {
