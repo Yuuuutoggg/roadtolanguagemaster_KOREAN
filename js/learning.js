@@ -37,10 +37,20 @@ function selectLearningLevel(level) {
 function fetchLearningWords() {
   if (!location.pathname.includes('learning.html')) return;
 
+  // **修正点**: sessionStorage から再度取得
+  selectedLevel = sessionStorage.getItem('selectedLevel') || '';
+  selectedPartOfSpeech = sessionStorage.getItem('selectedPartOfSpeech') || '';
+
+  if (!selectedLevel || !selectedPartOfSpeech) {
+    MainApp.showCustomAlert('品詞または難易度が選択されていません。');
+    return;
+  }
+
   const fileName = MainApp.getFileName(selectedLevel);
   fetch(`data/${fileName}`)
     .then((response) => response.json())
     .then((data) => {
+      console.log('データ取得成功:', data); // デバッグ用ログ
       learningWordList = data[selectedLevel][selectedPartOfSpeech] || [];
       if (learningWordList.length === 0) {
         MainApp.showCustomAlert('選択した品詞と難易度に対応する単語がありません。');
