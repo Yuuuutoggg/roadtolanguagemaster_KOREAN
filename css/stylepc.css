@@ -707,3 +707,32 @@ li p {
     resize: vertical;
   }
   
+
+  /* 「今日のひと単語」セクションのスタイル */
+.word-of-the-day-section {
+    margin: 0px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid darkblue;
+
+    border-radius: 15px;
+    text-align: center;
+    
+  }
+  
+  .word-of-the-day-section h2 {
+    font-size: 1.5em;
+    color: #6a1b9a;
+    margin-bottom: 0px;
+  }
+  
+  .word-of-the-day-word {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff9a9e;
+  }
+  
+  .word-of-the-day-meaning {
+    font-size: 1.2em;
+    color: #333;
+  }
