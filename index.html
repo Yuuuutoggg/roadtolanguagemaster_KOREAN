@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ハンマス 韓国語マスター 単語の道 mainmenu</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』のホームページです。単語学習、四択クイズ、タイピング練習で楽しく韓国語を習得しましょう。初心者から上級者まで対応。">
-<meta name="keywords" content="ハンマス,韓国語, 韓国語学習, 韓国語アプリ, 単語学習, 韓国語クイズ, タイピング練習, 単語の道">
-  <link rel="stylesheet" href="css/stylepc.css">
-  <!-- Font Awesome for icons -->
+  <meta name="keywords" content="ハンマス,韓国語, 韓国語学習, 韓国語アプリ, 単語学習, 韓国語クイズ, タイピング練習, 単語の道">
   <link rel="icon" href="images/logo.png" type="image/png">
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="css/stylepc.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
-  <!-- ヘッダーの追加 -->
+
+  <!-- ヘッダー -->
   <header class="site-header">
     <div class="container">
       <!-- ハンバーガーメニューアイコン -->
@@ -37,10 +40,10 @@
       </nav>
     </div>
   </header>
-  
 
-  <!-- 既存のコンテンツ -->
+  <!-- メインコンテンツラッパ -->
   <div class="app-container">
+
     <!-- カスタムアラートモーダル -->
     <div class="custom-modal" id="customAlertModal" style="display: none;">
       <div class="modal-content">
@@ -65,12 +68,14 @@
     <!-- タイトル画面 -->
     <div class="screen fade-in mode-selection-screen" id="modeSelectionScreen">
       <h1>ハンマス<br></h1>
-      <div class="content">
- <!-- ここに「今日のひと単語」セクションを追加 -->
- <div id="wordOfTheDay" class="word-of-the-day-section">
-  <!-- JavaScriptで内容が挿入されます -->
-</div>
 
+      <!-- 「今日のひと単語」セクション -->
+      <div id="wordOfTheDay" class="word-of-the-day-section">
+        <!-- JavaScriptで内容が挿入されます -->
+      </div>
+
+      <!-- 4つのボタンをまとめたボタングループ -->
+      <div class="content">
         <div class="button-group centered-buttons">
           <a href="learning.html" class="button"><i class="fas fa-book"></i> 単語学習</a>
           <a href="quiz.html" class="button"><i class="fas fa-question"></i> 四択クイズ</a>
@@ -79,12 +84,45 @@
           <a href="setting.html" class="button settings-button"><i class="fas fa-cog"></i> 設定</a>
         </div>
       </div>
-    </div>
 
-  </div>
+      <!-- Google AdSenseなどの広告を挿入したい場合の枠 -->
+      <div class="adsense-banner">
+        <!-- ここにAdSenseのコードを貼り付けてください -->
+        <p>広告エリア (728x90等のレスポンシブ広告など)</p>
+      </div>
+
+    </div> <!-- .mode-selection-screen ここまで -->
+
+  </div> <!-- .app-container ここまで -->
+
+  <!-- ===== フッター追加 ===== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== フッターここまで ===== -->
 
   <!-- スクリプトファイルの読み込み -->
-  <!--<script src="script.js"></script>-->
+  <!-- <script src="script.js"></script> (不要であれば外す) -->
   <script src="js/main.js"></script>
   <script src="js/learning.js"></script>
   <script src="js/quiz.js"></script>
@@ -100,7 +138,7 @@
       { word: "친구", meaning: "友達" },
       { word: "감사합니다", meaning: "ありがとうございます" },
       { word: "행복", meaning: "幸せ" },
-      // 他の単語を追加
+      // ここに他の単語を追加できます
     ];
 
     // 現在の日付を取得

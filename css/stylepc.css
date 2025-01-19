@@ -1,4 +1,4 @@
-/* Google Fontsの読み込み */
+/* Google Fontsの読み込み */ 
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+JP&display=swap');
 
 /* 全体のリセット */
@@ -52,7 +52,6 @@ button {
     transition: background-color 0.3s, transform 0.2s;
     max-width: 350px; /* 最大横幅を設定 */
     width: 100%; /* 幅を親コンテナに合わせる */
-    /* height: 60px; ボタンの固定高さを削除 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,27 +63,26 @@ button {
 }
 
 a.button {
-    padding: 15px 20px; /* 縦横のパディングを調整 */
+    padding: 15px 20px;
     margin: 10px 0px;
     border: none;
-    border-radius: 25px; /* 丸みを帯びたボタン */
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
-    background-color: #ff9a9e; /* パステルピンク */
+    background-color: #ff9a9e;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
-    max-width: 350px; /* 最大横幅を設定 */
-    width: 100%; /* 幅を親コンテナに合わせる */
-    /* height: 60px; ボタンの固定高さを削除 */
+    max-width: 350px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: normal; /* テキストの折り返しを許可 */
-    overflow: visible; /* はみ出しを許可 */
-    text-overflow: clip; /* テキストの省略を無効化 */
-    word-wrap: break-word; /* 単語の折り返しを許可 */
-    min-height: 50px; /* 最小高さを設定 */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-wrap: break-word;
+    min-height: 50px;
     text-decoration: none;
 }
 
@@ -98,12 +96,12 @@ button:hover {
 
 /* アイコンとテキストの間に余白を追加 */
 button i {
-    margin-right: 8px; /* アイコンとテキストの間に余白を追加 */
+    margin-right: 8px;
 }
 
 /* クイズの選択肢ボタン */
 .quiz-choice-button, .user-quiz-choice-button {
-    padding: 15px 20px; /* 縦横のパディングを調整 */
+    padding: 15px 20px;
     margin: 10px 0;
     font-size: 1em;
     border: 2px solid #ff9a9e;
@@ -111,22 +109,21 @@ button i {
     background-color: #fff;
     color: #6a1b9a;
     transition: background-color 0.3s, transform 0.2s;
-    max-width: 350px; /* 最大幅を設定 */
-    width: 100%; /* 幅を親コンテナに合わせる */
-    /* height: 60px; 固定高さを削除 */
+    max-width: 350px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: normal; /* テキストの折り返しを許可 */
-    overflow: visible; /* はみ出しを許可 */
-    text-overflow: clip; /* テキストの省略を無効化 */
-    word-wrap: break-word; /* 単語の折り返しを許可 */
-    min-height: 50px; /* 最小高さを設定 */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-wrap: break-word;
+    min-height: 50px;
 }
 
 .quiz-choice-button:hover, .user-quiz-choice-button:hover {
     background-color: #ffe6e6;
-    transform: scale(1.02); /* 動きを少なく */
+    transform: scale(1.02);
 }
 
 /* ボタングループのスタイル */
@@ -140,24 +137,25 @@ button i {
 }
 
 .button-group button {
-    flex: none; /* フレックス成長を無効化 */
-    width: 100%; /* 幅を親コンテナに合わせる */
+    flex: none;
+    width: 100%;
     max-width: 350px;
-    /* height: 60px; 固定高さを削除 */
     font-size: 1em;
 }
 
 /* 中央揃えボタングループのスタイル */
 .button-group.centered-buttons {
-    flex-direction: column; /* ボタンを縦に並べる */
-    align-items: center; /* ボタンを中央揃えにする */
-    gap: 20px; /* ボタン間のスペースを増やす */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .button-group.centered-buttons button {
-    width: 100%; /* 幅を親コンテナに合わせる */
-    max-width: 350px; /* 最大幅を設定 */
-    min-width: 200px; /* 最小幅を設定 */
+    width: 100%;
+    max-width: 350px;
+    min-width: 200px;
 }
 
 /* 親コンテナのスタイル */
@@ -193,14 +191,14 @@ input[type="text"]:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px 10rem 20px; /* パディングを減らしてコンテンツ部分を大きく */
+    padding: 50px 20px 10rem 20px;
     text-align: center;
     overflow-y: auto;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.95); /* 半透明の背景を少し不透明に */
-    margin: 20px auto; /* マージンを減らしてコンテンツを中央に配置 */
-    width: 90%; /* コンテンツの幅を拡大 */
-    max-width: 1600px; /* 最大幅を拡大 */
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1600px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -251,7 +249,7 @@ li p {
 
 /* スクロール対象部分 */
 .scrollable-content {
-    max-height: 400px; /* 固定高さでスクロール可能に */
+    max-height: 400px;
     overflow-y: auto;
     padding: 0 1rem;
 }
@@ -268,8 +266,8 @@ li p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    max-width: 300px; /* 最大幅を設定 */
-    width: 100%; /* 幅を調整 */
+    max-width: 300px;
+    width: 100%;
 }
 
 .fixed-footer i {
@@ -372,55 +370,43 @@ li p {
 }
 
 
-/* レスポンシブデザイン */
+/* ---------------------------
+   レスポンシブデザイン
+--------------------------- */
 
 /* スマホ向け */
 @media (max-width: 767px) {
-    /* タイトルのスタイル */
     h1 {
         font-size: 1.8em;
         margin-bottom: 10px;
     }
-
     h2 {
         font-size: 1.2em;
         margin-bottom: 8px;
     }
-
-    /* ボタンのスタイル */
     button {
         padding: 12px 16px;
         font-size: 0.9em;
         max-width: 100%;
         min-width: 200px;
     }
-
-    /* クイズの選択肢ボタン */
     .quiz-choice-button, .user-quiz-choice-button {
         padding: 12px 16px;
         font-size: 0.9em;
         max-width: 100%;
         min-width: 200px;
     }
-
-    /* ボタングループのスタイル */
     .button-group.centered-buttons button {
         width: 100%;
     }
-
-    /* 入力フィールドのスタイル */
     input[type="text"] {
         padding: 12px;
         font-size: 1em;
     }
-
-    /* スコア表示のスタイル */
     #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
         font-size: 1.2em;
         margin: 15px 0;
     }
-
-    /* タイマーとスコアの表示 */
     #currentTimerText, #currentScoreText, #currentProgress {
         font-size: 1.1em;
         margin: 8px 0;
@@ -428,212 +414,162 @@ li p {
 }
 
 /* タブレット向け */
-@media (min-width: 768px)  {
-    /* ボディとHTMLのスタイル */
+@media (min-width: 768px) and (max-width: 1024px) {
     body, html {
-        font-size: 1.1em; /* フォントサイズをやや大きく */
+        font-size: 1.1em;
     }
-
-    /* タイトルのスタイル */
     h1 {
-        font-size: 2.5em; /* フォントサイズを拡大 */
+        font-size: 2.5em;
         margin-bottom: 20px;
     }
-
     h2 {
         font-size: 2em;
         margin-bottom: 15px;
     }
-
-    /* ボタンのスタイル */
     button, a.button {
         max-width: 400px;
         padding: 15px 20px;
         font-size: 1.1em;
         min-width: 200px;
     }
-
-    /* クイズの選択肢ボタン */
     .quiz-choice-button, .user-quiz-choice-button {
-        max-width: 400px; /* 最大幅を拡大 */
-        padding: 15px 20px; /* パディングを調整 */
+        max-width: 400px;
+        padding: 15px 20px;
         font-size: 1.1em;
-        min-width: 200px; /* 最小幅を設定 */
+        min-width: 200px;
     }
-
-    /* ボタングループのスタイル */
     .button-group {
-        gap: 20px; /* ギャップを拡大 */
+        gap: 20px;
         margin-top: 25px;
     }
-
-    .button-group button {
-        width: 250px; /* ボタンの幅を固定 */
-    }
-
     .button-group button, .button-group a.button {
         width: 250px;
     }
-
     .button-group.centered-buttons button, .button-group.centered-buttons a.button {
         width: 250px;
     }
-
-    /* 入力フィールドのスタイル */
     input[type="text"] {
-        padding: 20px; /* パディングを増加 */
-        font-size: 1.2em; /* フォントサイズを拡大 */
+        padding: 20px;
+        font-size: 1.2em;
     }
-
-    /* スコア表示のスタイル */
     #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
-        font-size: 2em; /* フォントサイズを拡大 */
+        font-size: 2em;
         margin: 25px 0;
     }
-
-    /* タイマーとスコアの表示 */
     #currentTimerText, #currentScoreText, #currentProgress {
         font-size: 1.5em;
         margin: 15px 0;
     }
-
     #userWordList .word-list-item,
-    /* 間違えた単語の一覧 */
     #incorrectWordsList .word-list-item {
       display: flex;
       flex-direction: column;
-      align-items: center; /* 横方向の中央揃え */
-      text-align: center;   /* テキストの中央揃え */
-      padding: 10px 0;      /* 上下のパディングを調整 */
+      align-items: center;
+      text-align: center;
+      padding: 10px 0;
     }
-  
-    /* ボタンのスタイルを調整（必要に応じて） */
     #userWordList .word-list-item button,
     #incorrectWordsList .word-list-item button {
-      margin-top: 10px; /* ボタンとテキストの間に余白を追加 */
-      padding: 8px 16px; /* パディングを調整 */
-      font-size: 0.9em;   /* フォントサイズを調整 */
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 0.9em;
     }
 }
 
 /* デスクトップ向け */
-/* デスクトップ向け */
 @media (min-width: 1025px) {
-    /* ボディとHTMLのスタイル */
     body, html {
-        font-size: 1.08em; /* 1.2em * 0.9 */
+        font-size: 1.08em; /* 1.2em * 0.9  */
     }
-
-    /* タイトルのスタイル */
     h1 {
         font-size: 2.7em; /* 3em * 0.9 */
         margin-bottom: 22.5px; /* 25px * 0.9 */
     }
-
     h2 {
         font-size: 2.25em; /* 2.5em * 0.9 */
         margin-bottom: 18px; /* 20px * 0.9 */
     }
-
-    /* ボタンのスタイル */
     button, a.button {
-        max-width: 405px; /* 450px * 0.9 */
-        padding: 18px 21.6px; /* 20px * 0.9, 24px * 0.9 */
-        font-size: 1.08em; /* 1.2em * 0.9 */
-        min-width: 180px; /* 200px * 0.9 */
+        max-width: 405px;
+        padding: 18px 21.6px;
+        font-size: 1.08em;
+        min-width: 180px;
     }
-
-    /* クイズの選択肢ボタン */
     .quiz-choice-button, .user-quiz-choice-button {
-        max-width: 405px; /* 450px * 0.9 */
-        padding: 18px 21.6px; /* 20px * 0.9, 24px * 0.9 */
-        font-size: 1.08em; /* 1.2em * 0.9 */
-        min-width: 180px; /* 200px * 0.9 */
+        max-width: 405px;
+        padding: 18px 21.6px;
+        font-size: 1.08em;
+        min-width: 180px;
     }
-
-    /* ボタングループのスタイル */
     .button-group {
-        gap: 22.5px; /* 25px * 0.9 */
-        margin-top: 27px; /* 30px * 0.9 */
+        gap: 22.5px;
+        margin-top: 27px;
     }
-
     .button-group button, .button-group a.button {
-        width: 270px; /* 300px * 0.9 */
+        width: 270px;
     }
-
     .button-group.centered-buttons button, .button-group.centered-buttons a.button {
-        width: 270px; /* 300px * 0.9 */
+        width: 270px;
     }
-
-    /* 入力フィールドのスタイル */
     input[type="text"] {
-        padding: 18px; /* 20px * 0.9 */
-        font-size: 1.26em; /* 1.4em * 0.9 */
+        padding: 18px;
+        font-size: 1.26em;
     }
-
-    /* スコア表示のスタイル */
     #finalScoreMessage, #quizFinalScoreText, #userQuizFinalScoreText {
-        font-size: 2.25em; /* 2.5em * 0.9 */
-        margin: 22.5px 0; /* 25px * 0.9 */
+        font-size: 2.25em;
+        margin: 22.5px 0;
     }
-
-    /* タイマーとスコアの表示 */
     #currentTimerText, #currentScoreText, #currentProgress {
-        font-size: 1.35em; /* 1.5em * 0.9 */
-        margin: 13.5px 0; /* 15px * 0.9 */
+        font-size: 1.35em;
+        margin: 13.5px 0;
     }
-
-    /* 追加した単語の一覧 */
     #userWordList .word-list-item,
-    /* 間違えた単語の一覧 */
     #incorrectWordsList .word-list-item {
-        padding: 13.5px 0; /* 15px * 0.9 */
+        padding: 13.5px 0;
     }
-
-    /* ボタンのスタイルを調整（必要に応じて） */
     #userWordList .word-list-item button,
     #incorrectWordsList .word-list-item button {
-        padding: 9px 18px; /* 10px * 0.9, 20px * 0.9 */
-        font-size: 0.9em;   /* 1em * 0.9 */
+        padding: 9px 18px;
+        font-size: 0.9em;
     }
 }
 
-
-
-/* ヘッダーのスタイル */
+/* --------------------------------
+   ヘッダー＆ナビゲーション関連
+--------------------------------- */
 .site-header {
     background-color: rgba(255, 236, 210, 0.9);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-  }
-  
-  .site-header .container {
+}
+
+.site-header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-  }
-  
-  /* ハンバーガーメニューアイコンのスタイル */
-  .menu-toggle {
+}
+
+/* ハンバーガーメニューアイコンのスタイル */
+.menu-toggle {
     display: block;
     cursor: pointer;
     z-index: 1001;
-  }
-  
-  .menu-toggle .bar {
+}
+
+.menu-toggle .bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px;
     background-color: #6a1b9a;
     transition: all 0.3s ease;
-  }
-  
-  /* ナビゲーションメニューのスタイル */
-  .navigation {
+}
+
+/* ナビゲーションメニューのスタイル */
+.navigation {
     position: fixed;
     top: 0;
     left: -100%;
@@ -643,50 +579,88 @@ li p {
     overflow-y: auto;
     transition: left 0.3s ease;
     z-index: 999;
-  }
-  
-  .navigation.active {
+}
+
+.navigation.active {
     left: 0;
-  }
-  
-  .nav-list {
+}
+
+.nav-list {
     list-style: none;
     padding: 20px;
-  }
-  
-  .nav-list li {
+}
+
+.nav-list li {
     margin: 15px 0;
-  }
-  
-  .nav-list a {
+}
+
+.nav-list a {
     color: #6a1b9a;
     text-decoration: none;
     font-size: 1.2em;
     padding: 10px;
     display: block;
-  }
-  
-  .nav-list a:hover {
+}
+
+.nav-list a:hover {
     background-color: rgba(250, 208, 196, 0.5);
     border-radius: 5px;
-  }
-  
-  /* メインコンテンツの位置調整 */
-  .app-container {
+}
+
+/* PC(デスクトップ)では横並びのメニューに変更し、
+   ハンバーガーメニューは非表示にする */
+@media (min-width: 1025px) {
+    .menu-toggle {
+        display: none; /* PCではハンバーガーメニュー非表示 */
+    }
+
+    .navigation {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        left: 0; /* 常に表示 */
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-list li {
+        margin: 0 15px;
+    }
+
+    .nav-list li a {
+        font-size: 1em;
+        padding: 5px 10px;
+        display: inline-block;
+    }
+
+    .nav-list li a:hover {
+        background-color: rgba(250, 208, 196, 0.5);
+        border-radius: 5px;
+    }
+}
+
+/* メインコンテンツの位置調整 */
+.app-container {
     padding-top: 60px;
-  }
-
-
+}
 
 /* フォームのスタイル */
 .contact-form {
     width: 100%;
     max-width: 600px;
-  }
-  
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea {
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
@@ -696,45 +670,59 @@ li p {
     background-color: #fff;
     color: #333;
     transition: border-color 0.3s;
-  }
-  
-  .contact-form input[type="text"]:focus,
-  .contact-form input[type="email"]:focus,
-  .contact-form textarea:focus {
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
     border-color: #6a1b9a;
     outline: none;
-  }
-  
-  .contact-form textarea {
-    resize: vertical;
-  }
-  
+}
 
-  /* 「今日のひと単語」セクションのスタイル */
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* 「今日のひと単語」セクションのスタイル */
 .word-of-the-day-section {
     margin: 0px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid darkblue;
-
     border-radius: 15px;
     text-align: center;
-    
-  }
-  
-  .word-of-the-day-section h2 {
+}
+
+.word-of-the-day-section h2 {
     font-size: 1.5em;
     color: #6a1b9a;
     margin-bottom: 0px;
-  }
-  
-  .word-of-the-day-word {
+}
+
+.word-of-the-day-word {
     font-size: 2em;
     font-weight: bold;
     color: #ff9a9e;
-  }
-  
-  .word-of-the-day-meaning {
+}
+
+.word-of-the-day-meaning {
     font-size: 1.2em;
     color: #333;
-  }
+}
+
+/* --------------------------------
+   Google AdSense用の例示スタイル
+-------------------------------- */
+/* 広告を配置したい箇所にクラスをつけておき、 
+   レイアウトを調整しやすくするための例 */
+.adsense-banner {
+    width: 100%;
+    max-width: 728px; /* レスポンシブ広告なら可変幅に */
+    margin: 20px auto;
+    text-align: center;
+    /* 実際にはここに AdSense コードを挿入します */
+    background-color: #fff7e6; /* 広告枠の参考色(お好みで) */
+    padding: 10px;
+    border: 1px solid #ffe0b2;
+    border-radius: 8px;
+}
