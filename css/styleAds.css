@@ -576,10 +576,10 @@ li p {
 --------------------------------- */
 .site-header {
     background-color: rgba(255, 236, 210, 0.9);
-    position: fixed;
-    top: 0;
+    /* position: fixed; 削除 */
+    /* top: 0; 削除 */
     width: 100%;
-    z-index: 1000;
+    /* z-index: 1000; 削除 */
 }
 
 .site-header .container {
@@ -682,14 +682,6 @@ li p {
         border-radius: 5px;
     }
 }
-
-/* --------------------------------
-   .app-container (旧レイアウト用)
---------------------------------- */
-.app-container {
-    padding-top: 60px; /* ヘッダー分の余白 */
-}
-
 /* --------------------------------
    お問い合わせフォームのスタイル
 --------------------------------- */
