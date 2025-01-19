@@ -1,3 +1,4 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,55 +7,123 @@
   <title>ハンマス 韓国語マスター 単語の道 - 運営者情報</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』の運営者情報ページ。開発の目的やサポート情報をご案内します。">
   <meta name="keywords" content="ハンマス, 韓国語, 韓国語学習, 運営者情報, アプリ開発, サポート, 単語の道">
-  <link rel="stylesheet" href="css/styleAds.css">
-  <!-- Font Awesome for icons -->
+
+  <!-- ファビコン -->
   <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- メインCSS（広告レイアウト対応のstyleAds.css） -->
+  <link rel="stylesheet" href="css/styleAds.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
 
-<div class="app-container">
-  <div class="screen fade-in" id="aboutScreen">
-    <h1>運営者情報</h1>
-    <div class="content">
-      <p>韓国語マスター『単語の道』をご利用いただき、ありがとうございます。</p>
-      <p>当サイトは、韓国語学習を楽しく効果的に進めていただくために開発されました。</p>
-      <h2>運営者について</h2>
-      <p>名前：Poly_Yu</p>
-      <p>連絡先：<a href="mailto:languagemaster_app@gmail.com">languagemaster_app&#64;gmail.com</a></p>
-      <div class="button-group centered-buttons">
-        <a href="index.html" class="button"><i class="fas fa-home"></i> ホームに戻る</a>
+  <!-- ◆◆◆ トップバナー広告スペース ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告 (例: 728x90)</p>
+  </div>
+
+  <!-- ========== ページ全体を2カラムにするコンテナ ========== -->
+  <div class="page-container">
+
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
+      <div class="screen fade-in" id="aboutScreen">
+        <h1>運営者情報</h1>
+        <div class="content">
+          <p>韓国語マスター『単語の道』をご利用いただき、ありがとうございます。</p>
+          <p>当サイトは、韓国語学習を楽しく効果的に進めていただくために開発されました。</p>
+          
+          <h2>運営者について</h2>
+          <p>名前：Poly_Yu</p>
+          <p>
+            連絡先：
+            <a href="mailto:languagemaster_app@gmail.com">languagemaster_app&#64;gmail.com</a>
+          </p>
+          <div class="button-group centered-buttons">
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> ホームに戻る
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (例: 300x250)</p>
+      </div>
+      <!-- サイドバー広告2（オプション） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (例: 300x600)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
       </div>
     </div>
-  </div>
-</div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
 
-<!-- スクリプトファイルの読み込み -->
-<script src="js/main.js"></script>
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
+  <script src="js/main.js"></script>
 </body>
 </html>

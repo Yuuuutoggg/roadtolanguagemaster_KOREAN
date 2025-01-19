@@ -1,94 +1,161 @@
+<!-- add_word.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ハンマス 韓国語マスター 単語の道 - 単語を追加する</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』で自分の学習に合わせて単語を追加しましょう。自由に単語リストを作成し、効率的な学習が可能です。">
   <meta name="keywords" content="ハンマス, 韓国語, 韓国語学習, 単語追加, 自由に単語追加, 韓国語アプリ, 単語の道">
-  <link rel="stylesheet" href="css/styleAds.css">
-  <!-- Font Awesome for icons -->
+  
+  <!-- ファビコン -->
   <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- メインのCSSファイル（広告レイアウト対応） -->
+  <link rel="stylesheet" href="css/styleAds.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
+
+  <!-- ◆◆◆ トップ広告スペース ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告 (例: 728x90)</p>
   </div>
-</header>
 
-  <div class="app-container">
+  <!-- ========== ページ全体を2カラムにするコンテナ ========== -->
+  <div class="page-container">
 
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;" role="alertdialog" aria-labelledby="alertMessage">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="MainApp.closeCustomAlert()">OK</button>
-        </div>
-      </div>
-    </div>
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
 
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;" role="dialog" aria-labelledby="confirmMessage">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="MainApp.confirmYesCustom()">はい</button>
-          <button onclick="MainApp.confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 単語追加画面 -->
-    <div class="screen fade-in" id="addWordScreen">
-      <h2>単語を追加する</h2>
-      <div class="content">
-        <form id="addWordForm" onsubmit="UserCreatedApp.addUserWord(); return false;">
-          <label for="userWordKorean">韓国語の単語</label>
-          <input type="text" id="userWordKorean" name="userWordKorean" required><br>
-
-          <label for="userWordJapanese">日本語訳</label>
-          <input type="text" id="userWordJapanese" name="userWordJapanese" required><br>
-
-          <label for="userWordExampleKorean">例文（韓国語） ※任意</label>
-          <input type="text" id="userWordExampleKorean" name="userWordExampleKorean"><br>
-
-          <label for="userWordExampleJapanese">例文訳（日本語） ※任意</label>
-          <input type="text" id="userWordExampleJapanese" name="userWordExampleJapanese"><br>
-
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;" role="alertdialog" aria-labelledby="alertMessage">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
           <div class="button-group centered-buttons">
-            <button type="submit"><i class="fas fa-save"></i> 単語を追加する</button>
-            <a href="user_created.html" class="button"><i class="fas fa-times"></i> キャンセル</a>
+            <button onclick="MainApp.closeCustomAlert()">OK</button>
           </div>
-        </form>
+        </div>
+      </div>
+
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;" role="dialog" aria-labelledby="confirmMessage">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="MainApp.confirmYesCustom()">はい</button>
+            <button onclick="MainApp.confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 単語追加画面 -->
+      <div class="screen fade-in" id="addWordScreen">
+        <h2>単語を追加する</h2>
+        <div class="content">
+          <form id="addWordForm" onsubmit="UserCreatedApp.addUserWord(); return false;">
+            <label for="userWordKorean">韓国語の単語</label>
+            <input type="text" id="userWordKorean" name="userWordKorean" required><br>
+
+            <label for="userWordJapanese">日本語訳</label>
+            <input type="text" id="userWordJapanese" name="userWordJapanese" required><br>
+
+            <label for="userWordExampleKorean">例文（韓国語） ※任意</label>
+            <input type="text" id="userWordExampleKorean" name="userWordExampleKorean"><br>
+
+            <label for="userWordExampleJapanese">例文訳（日本語） ※任意</label>
+            <input type="text" id="userWordExampleJapanese" name="userWordExampleJapanese"><br>
+
+            <div class="button-group centered-buttons">
+              <button type="submit">
+                <i class="fas fa-save"></i> 単語を追加する
+              </button>
+              <a href="user_created.html" class="button">
+                <i class="fas fa-times"></i> キャンセル
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (例: 300x250)</p>
+      </div>
+      <!-- サイドバー広告2（オプション） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (例: 300x600)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
       </div>
     </div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
 
-  </div>
-
-  <!-- スクリプトファイルの読み込み -->
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
   <script src="js/main.js"></script>
   <script src="js/userCreated.js"></script>
 </body>

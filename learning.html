@@ -3,145 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ハンマス 韓国語マスター 単語の道- 単語学習</title>
+  <title>ハンマス 韓国語マスター 単語の道 - 単語学習</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』の単語学習ページです。動詞、形容詞、名詞など、様々な品詞を学びながら語彙力を強化しましょう。">
   <meta name="keywords" content="ハンマス, 韓国語, 単語学習, 語彙力, 動詞, 形容詞, 名詞, 韓国語学習, 単語の道">
-  <link rel="stylesheet" href="css/styleAds.css">
-  <!-- Font Awesome for icons -->
   <link rel="icon" href="images/logo.png" type="image/png">
+  
+  <!-- メインのCSSファイル（Google AdSense向けレイアウト含む） -->
+  <link rel="stylesheet" href="css/styleAds.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-  <div class="app-container">
-
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <!-- 修正: 閉じるボタンの onclick を MainApp メソッドに変更 -->
-          <button onclick="MainApp.closeCustomAlert()">OK</button>
-        </div>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
 
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <!-- 修正: はい/いいえボタンの onclick を MainApp メソッドに変更 -->
-          <button onclick="MainApp.confirmYesCustom()">はい</button>
-          <button onclick="MainApp.confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- learning.html -->
-    <!-- 学習モードの品詞選択画面 -->
-    <div class="screen fade-in part-of-speech-selection-screen" id="partOfSpeechSelectionScreen">
-      <h2>学びたい品詞を<br>選んでください</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectPartOfSpeech('verbs')">動詞</button>
-          <button onclick="selectPartOfSpeech('adjectives')">形容詞</button>
-          <button onclick="selectPartOfSpeech('nouns')">名詞</button>
-          <button onclick="selectPartOfSpeech('adverbs')">副詞</button>
-          <button onclick="selectPartOfSpeech('conjunctions')">接続詞</button>
-          <button onclick="selectPartOfSpeech('particles')">助詞</button>
-          <button onclick="selectPartOfSpeech('pronouns')">代名詞</button>
-          <button onclick="selectPartOfSpeech('numerals')">数詞</button>
-          <button onclick="viewStudyingWords()"><i class="fas fa-list"></i> 勉強中の単語の一覧を見る</button>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 学習モードのレベル選択画面 -->
-    <div class="screen fade-in learning-level-selection-screen" id="learningLevelSelectionScreen" style="display: none;">
-      <h2>難易度を選択してください</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectLearningLevel('beginner')">初級</button>
-          <button onclick="selectLearningLevel('intermediate')">中級</button>
-          <button onclick="selectLearningLevel('advanced')">上級</button>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 学習モード画面 -->
-    <div class="screen fade-in learning-mode-screen" id="learningModeScreen" style="display: none;">
-      <h2>学習モード</h2>
-      <div class="content">
-        <!-- 追加: 現在の単語番号を表示 -->
-        <p class="learning-text" id="learningProgress">単語 1 / 10</p>
-        <p class="learning-text" id="learningKoreanWord">韓国語: 단어</p>
-        <p class="learning-text" id="learningJapaneseTranslation">日本語訳: 単語</p>
-        <p class="learning-text" id="learningExampleKorean">例文 (韓国語): 예문</p>
-        <p class="learning-text" id="learningExampleJapanese">例文訳 (日本語): 例文訳</p>
-        <div class="button-group centered-buttons">
-          <button onclick="MainApp.addToStudyingList()">勉強中リストに追加</button>
-          <!-- 追加: 「前へ」ボタンを追加 -->
-          <button onclick="prevLearningWord()" id="prevLearningWordButton" disabled>
-            <i class="fas fa-arrow-left"></i> 前の単語
-          </button>
-          <button onclick="nextLearningWord()" id="nextLearningWordButton" disabled>
-            <i class="fas fa-arrow-right"></i> 次の単語
-          </button>
-          <button onclick="endLearningMode()"><i class="fas fa-times-circle"></i> 終了</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 勉強中の単語の一覧 (モーダルとして修正) -->
-    <div class="custom-modal studying-words-screen" id="studyingWordsScreen" style="display: none;">
-      <div class="modal-content">
-        <h2>勉強中の単語</h2>
-        <div class="content scrollable-content">
-          <ul id="studyingWordsList">
-            <li>勉強中の単語がありません。</li>
-          </ul>
-        </div>
-        <div class="button-group centered-buttons">
-          <!-- 修正: 閉じるボタンの onclick を MainApp メソッドに変更 -->
-          <button onclick="MainApp.closeStudyingWords()" class="fixed-footer"><i class="fas fa-times"></i> 閉じる</button>
-        </div>
-      </div>
-    </div>
-
+  <!-- ◆◆◆ トップバナー広告スペース（横長） ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告の例 (728x90 等)</p>
   </div>
 
-  <!-- スクリプトファイルの読み込み -->
-  <!--<script src="script.js"></script>-->
+  <!-- ========== ページ全体コンテナ (2カラム対応) ========== -->
+  <div class="page-container">
+
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
+
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
+          <div class="button-group centered-buttons">
+            <!-- 閉じるボタン (MainAppのメソッドを呼び出す) -->
+            <button onclick="MainApp.closeCustomAlert()">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <!-- はい/いいえボタン (MainAppのメソッドを呼び出す) -->
+            <button onclick="MainApp.confirmYesCustom()">はい</button>
+            <button onclick="MainApp.confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== 学習ページの各画面 ======== -->
+
+      <!-- ◆ 品詞選択画面 -->
+      <div class="screen fade-in part-of-speech-selection-screen" id="partOfSpeechSelectionScreen">
+        <h2>学びたい品詞を<br>選んでください</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectPartOfSpeech('verbs')">動詞</button>
+            <button onclick="selectPartOfSpeech('adjectives')">形容詞</button>
+            <button onclick="selectPartOfSpeech('nouns')">名詞</button>
+            <button onclick="selectPartOfSpeech('adverbs')">副詞</button>
+            <button onclick="selectPartOfSpeech('conjunctions')">接続詞</button>
+            <button onclick="selectPartOfSpeech('particles')">助詞</button>
+            <button onclick="selectPartOfSpeech('pronouns')">代名詞</button>
+            <button onclick="selectPartOfSpeech('numerals')">数詞</button>
+            <button onclick="viewStudyingWords()"><i class="fas fa-list"></i> 勉強中の単語の一覧を見る</button>
+            <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ◆ レベル選択画面 -->
+      <div class="screen fade-in learning-level-selection-screen" id="learningLevelSelectionScreen" style="display: none;">
+        <h2>難易度を選択してください</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectLearningLevel('beginner')">初級</button>
+            <button onclick="selectLearningLevel('intermediate')">中級</button>
+            <button onclick="selectLearningLevel('advanced')">上級</button>
+            <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ◆ 学習モード画面 -->
+      <div class="screen fade-in learning-mode-screen" id="learningModeScreen" style="display: none;">
+        <h2>学習モード</h2>
+        <div class="content">
+          <!-- 現在の単語番号 -->
+          <p class="learning-text" id="learningProgress">単語 1 / 10</p>
+          <p class="learning-text" id="learningKoreanWord">韓国語: 단어</p>
+          <p class="learning-text" id="learningJapaneseTranslation">日本語訳: 単語</p>
+          <p class="learning-text" id="learningExampleKorean">例文 (韓国語): 예문</p>
+          <p class="learning-text" id="learningExampleJapanese">例文訳 (日本語): 例文訳</p>
+          <div class="button-group centered-buttons">
+            <button onclick="MainApp.addToStudyingList()">勉強中リストに追加</button>
+            <!-- 「前へ」ボタン -->
+            <button onclick="prevLearningWord()" id="prevLearningWordButton" disabled>
+              <i class="fas fa-arrow-left"></i> 前の単語
+            </button>
+            <!-- 「次へ」ボタン -->
+            <button onclick="nextLearningWord()" id="nextLearningWordButton" disabled>
+              <i class="fas fa-arrow-right"></i> 次の単語
+            </button>
+            <button onclick="endLearningMode()"><i class="fas fa-times-circle"></i> 終了</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ◆ 勉強中の単語の一覧 (モーダル) -->
+      <div class="custom-modal studying-words-screen" id="studyingWordsScreen" style="display: none;">
+        <div class="modal-content">
+          <h2>勉強中の単語</h2>
+          <div class="content scrollable-content">
+            <ul id="studyingWordsList">
+              <li>勉強中の単語がありません。</li>
+            </ul>
+          </div>
+          <div class="button-group centered-buttons">
+            <button onclick="MainApp.closeStudyingWords()" class="button">
+              <i class="fas fa-times"></i> 閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (300x250など)</p>
+      </div>
+      
+      <!-- サイドバー広告2（必要に応じて） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (300x600等)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
+
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
   <script src="js/main.js"></script>
   <script src="js/learning.js"></script>
-
 </body>
 </html>

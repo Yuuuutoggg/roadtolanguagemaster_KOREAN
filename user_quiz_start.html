@@ -1,109 +1,179 @@
+<!-- user_quiz_start.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ハンマス 韓国語マスター 単語の道- ユーザー作成クイズ開始</title>
+  <title>ハンマス 韓国語マスター 単語の道 - ユーザー作成クイズ開始</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』のユーザー作成クイズ開始ページ。自分で追加した単語を使ってクイズに挑戦しましょう。">
   <meta name="keywords" content="ハンマス, 韓国語, ユーザー作成クイズ, 単語クイズ, 韓国語学習, 単語の道">
-  <link rel="stylesheet" href="css/styleAds.css">
-  <!-- Font Awesome for icons -->
+
+  <!-- ファビコン -->
   <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- メインのCSSファイル（広告レイアウト対応） -->
+  <link rel="stylesheet" href="css/styleAds.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-  <div class="app-container">
-
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;" role="alertdialog" aria-labelledby="alertMessage">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="MainApp.closeCustomAlert()">OK</button>
-        </div>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
 
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;" role="dialog" aria-labelledby="confirmMessage">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="MainApp.confirmYesCustom()">はい</button>
-          <button onclick="MainApp.confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ユーザー作成クイズ開始前画面 -->
-    <div class="screen fade-in" id="userQuizStartScreen">
-      <h2>ユーザー作成クイズ</h2>
-      <div class="content">
-        <p>ユーザーが追加した単語からクイズを行います。</p>
-        <p>クイズを始めるには、最低4つの単語が必要です。</p>
-        <p class="warning">※ローカルストレージにデータが保存されます。<br>ブラウザのキャッシュクリア等でデータが消える可能性があります。</p>
-        <div class="button-group centered-buttons">
-          <button onclick="UserCreatedApp.startUserQuiz()"><i class="fas fa-play"></i> クイズを始める</button>
-          <a href="user_created.html" class="button"><i class="fas fa-arrow-left"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- クイズ画面 -->
-    <div class="screen fade-in" id="userQuizScreen" style="display: none;">
-      <h2>クイズ</h2>
-      <div class="content">
-        <p id="quizQuestionText">質問がここに表示されます。</p>
-        <div id="quizChoices" class="choices-container">
-          <!-- 選択肢がここに動的に追加される -->
-        </div>
-        <div id="quizFeedbackText"></div>
-        <div id="quizScoreText">スコア: 0</div>
-      </div>
-    </div>
-
-    <!-- クイズ結果画面 -->
-    <div class="screen fade-in" id="userQuizResultScreen" style="display: none;">
-      <h2>クイズの結果</h2>
-      <ul id="userQuizSummaryList">
-        <!-- クイズ結果がここに動的に追加される -->
-      </ul>
-      <p id="userQuizFinalScoreText"></p>
-      <div class="button-group centered-buttons">
-        <button onclick="UserCreatedApp.retryUserQuiz()">もう一度挑戦</button>
-        <button onclick="UserCreatedApp.backToUserCreatedMenu()">メニューに戻る</button>
-      </div>
-    </div>
-
+  <!-- ◆◆◆ トップ広告スペース ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告 (例: 728x90)</p>
   </div>
 
-  <!-- スクリプトファイルの読み込み -->
+  <!-- ========== ページ全体2カラムレイアウト ========== -->
+  <div class="page-container">
+
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
+
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;" role="alertdialog" aria-labelledby="alertMessage">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="MainApp.closeCustomAlert()">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;" role="dialog" aria-labelledby="confirmMessage">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="MainApp.confirmYesCustom()">はい</button>
+            <button onclick="MainApp.confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ユーザー作成クイズ開始前画面 -->
+      <div class="screen fade-in" id="userQuizStartScreen">
+        <h2>ユーザー作成クイズ</h2>
+        <div class="content">
+          <p>ユーザーが追加した単語からクイズを行います。</p>
+          <p>クイズを始めるには、最低4つの単語が必要です。</p>
+          <p class="warning">
+            ※ローカルストレージにデータが保存されます。<br>
+            ブラウザのキャッシュクリア等でデータが消える可能性があります。
+          </p>
+          <div class="button-group centered-buttons">
+            <button onclick="UserCreatedApp.startUserQuiz()">
+              <i class="fas fa-play"></i> クイズを始める
+            </button>
+            <a href="user_created.html" class="button">
+              <i class="fas fa-arrow-left"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- クイズ画面 -->
+      <div class="screen fade-in" id="userQuizScreen" style="display: none;">
+        <h2>クイズ</h2>
+        <div class="content">
+          <p id="quizQuestionText">質問がここに表示されます。</p>
+          <div id="quizChoices" class="choices-container">
+            <!-- 選択肢がここに動的に追加される -->
+          </div>
+          <div id="quizFeedbackText"></div>
+          <div id="quizScoreText">スコア: 0</div>
+        </div>
+      </div>
+
+      <!-- クイズ結果画面 -->
+      <div class="screen fade-in" id="userQuizResultScreen" style="display: none;">
+        <h2>クイズの結果</h2>
+        <ul id="userQuizSummaryList">
+          <!-- クイズ結果が動的に追加される -->
+        </ul>
+        <p id="userQuizFinalScoreText"></p>
+        <div class="button-group centered-buttons">
+          <button onclick="UserCreatedApp.retryUserQuiz()">もう一度挑戦</button>
+          <button onclick="UserCreatedApp.backToUserCreatedMenu()">メニューに戻る</button>
+        </div>
+      </div>
+
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (例: 300x250)</p>
+      </div>
+      <!-- サイドバー広告2（オプション） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (例: 300x600)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
+
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
   <script src="js/main.js"></script>
   <script src="js/userCreated.js"></script>
 </body>

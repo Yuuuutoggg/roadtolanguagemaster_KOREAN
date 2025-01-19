@@ -4,174 +4,261 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ハンマス 韓国語マスター 単語の道- タイピング練習</title>
+  <title>ハンマス 韓国語マスター 単語の道 - タイピング練習</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』でタイピング練習。タイムアタックや品詞別モードで楽しく韓国語のタイピングスキルを向上させましょう。">
   <meta name="keywords" content="ハンマス, 韓国語, タイピング練習, タイムアタック, 韓国語学習, 単語の道">
-  <!-- Font Awesome for icons -->
+
+  <!-- ファビコン -->
   <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- メインのCSSファイル（Google AdSense対応版） -->
   <link rel="stylesheet" href="css/styleAds.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-  <div class="app-container">
-
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="closeCustomAlert()">OK</button>
-        </div>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
 
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="confirmYesCustom()">はい</button>
-          <button onclick="confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 韓国語キーボード警告画面 -->
-    <div class="screen fade-in korean-keyboard-warning-screen" id="koreanKeyboardWarningScreen">
-      <h2>タイピング練習には<br>韓国語キーボードが必要です</h2>
-      <div class="content">
-        <p>お使いのデバイスに韓国語キーボードをインストールしてください。</p>
-        <div class="button-group centered-buttons">
-          <button onclick="acknowledgeKoreanKeyboard()"><i class="fas fa-check"></i> 理解しました</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- タイピング練習モードの練習モード選択画面 -->
-    <div class="screen fade-in practice-mode-selection-screen" id="practiceModeSelectionScreen" style="display: none;">
-      <h2>練習形式を選択してください</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectPracticeMode('timeattack')"><i class="fas fa-clock"></i> タイムアタック</button>
-          <button onclick="selectPracticeMode('partofspeech')"><i class="fas fa-list"></i> 品詞別</button>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- タイムアタックモードのレベル選択画面 -->
-    <div class="screen fade-in time-attack-level-selection-screen" id="timeAttackLevelSelectionScreen" style="display: none;">
-      <h2>レベルを選択してください（タイムアタック）</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectDifficulty('beginner')">初級</button>
-          <button onclick="selectDifficulty('intermediate')">中級</button>
-          <button onclick="selectDifficulty('advanced')">上級</button>
-          <a href="practice.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 品詞選択画面（品詞別モード用） -->
-    <div class="screen fade-in part-of-speech-selection-screen" id="practicePartOfSpeechSelectionScreen" style="display: none;">
-      <h2>学びたい品詞を<br>選んでください</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectPartOfSpeech('verbs')">動詞</button>
-          <button onclick="selectPartOfSpeech('adjectives')">形容詞</button>
-          <button onclick="selectPartOfSpeech('nouns')">名詞</button>
-          <button onclick="selectPartOfSpeech('adverbs')">副詞</button>
-          <button onclick="selectPartOfSpeech('conjunctions')">接続詞</button>
-          <button onclick="selectPartOfSpeech('particles')">助詞</button>
-          <button onclick="selectPartOfSpeech('pronouns')">代名詞</button>
-          <button onclick="selectPartOfSpeech('numerals')">数詞</button>
-          <button onclick="viewStudyingWords()"><i class="fas fa-list"></i> 勉強中の単語の一覧を見る</button>
-          <a href="practice.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 難易度選択画面（品詞別モード用） -->
-    <div class="screen fade-in difficulty-selection-screen" id="difficultySelectionScreen" style="display: none;">
-      <h2>難易度を選択してください</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectDifficulty('beginner')">初級</button>
-          <button onclick="selectDifficulty('intermediate')">中級</button>
-          <button onclick="selectDifficulty('advanced')">上級</button>
-          <a href="practice.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- タイピング練習画面 -->
-    <div class="screen fade-in typing-practice-screen" id="typingPracticeScreen" style="display: none;">
-      <h2>タイピング練習</h2>
-      <div class="content">
-        <p id="currentTimerText">残り時間: 60秒</p>
-        <p id="currentScoreText">スコア: 0</p>
-        <p id="currentProgress">単語 1 / 10</p>
-        <div id="word-display">
-          <p id="currentKoreanWord">単語</p>
-          <p>日本語訳: <span id="currentJapaneseTranslation">単語</span></p>
-        </div>
-        <input
-          type="text"
-          id="user-input"
-          placeholder="韓国語を入力"
-          autocomplete="off"
-        >
-        <div class="button-group centered-buttons">
-          <a href="index.html" class="button"><i class="fas fa-home"></i> タイトルに戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- スコア画面 -->
-    <div class="screen fade-in score-screen" id="scoreScreen" style="display: none;">
-      <h2>結果</h2>
-      <div class="content">
-        <p id="finalScoreMessage">あなたのスコアは 0 です。</p>
-        <div class="button-group centered-buttons">
-          <button onclick="postToX()"><i class="fab fa-twitter"></i> 結果をXでポストする</button>
-          <button onclick="retryGame()"><i class="fas fa-redo"></i> リトライ</button>
-          <button onclick="goToLevelSelection()"><i class="fas fa-level-up-alt"></i> レベル選択</button>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> タイトルに戻る</a>
-        </div>
-      </div>
-    </div>
-
+  <!-- ◆◆◆ トップ広告スペース ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告 (例: 728x90)</p>
   </div>
 
-  <!-- スクリプトファイルの読み込み -->
-  <!--<script src="script.js"></script>-->
+  <!-- ========== ページ全体を2カラムにするコンテナ ========== -->
+  <div class="page-container">
+
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
+
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="closeCustomAlert()">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="confirmYesCustom()">はい</button>
+            <button onclick="confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 韓国語キーボード警告画面 -->
+      <div class="screen fade-in korean-keyboard-warning-screen" id="koreanKeyboardWarningScreen">
+        <h2>タイピング練習には<br>韓国語キーボードが必要です</h2>
+        <div class="content">
+          <p>お使いのデバイスに韓国語キーボードをインストールしてください。</p>
+          <div class="button-group centered-buttons">
+            <button onclick="acknowledgeKoreanKeyboard()">
+              <i class="fas fa-check"></i> 理解しました
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 練習モード選択画面 -->
+      <div class="screen fade-in practice-mode-selection-screen" id="practiceModeSelectionScreen" style="display: none;">
+        <h2>練習形式を選択してください</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectPracticeMode('timeattack')">
+              <i class="fas fa-clock"></i> タイムアタック
+            </button>
+            <button onclick="selectPracticeMode('partofspeech')">
+              <i class="fas fa-list"></i> 品詞別
+            </button>
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- タイムアタックモードのレベル選択画面 -->
+      <div class="screen fade-in time-attack-level-selection-screen" id="timeAttackLevelSelectionScreen" style="display: none;">
+        <h2>レベルを選択してください（タイムアタック）</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectDifficulty('beginner')">初級</button>
+            <button onclick="selectDifficulty('intermediate')">中級</button>
+            <button onclick="selectDifficulty('advanced')">上級</button>
+            <a href="practice.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 品詞選択画面（品詞別モード用） -->
+      <div class="screen fade-in part-of-speech-selection-screen"
+           id="practicePartOfSpeechSelectionScreen" style="display: none;">
+        <h2>学びたい品詞を<br>選んでください</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectPartOfSpeech('verbs')">動詞</button>
+            <button onclick="selectPartOfSpeech('adjectives')">形容詞</button>
+            <button onclick="selectPartOfSpeech('nouns')">名詞</button>
+            <button onclick="selectPartOfSpeech('adverbs')">副詞</button>
+            <button onclick="selectPartOfSpeech('conjunctions')">接続詞</button>
+            <button onclick="selectPartOfSpeech('particles')">助詞</button>
+            <button onclick="selectPartOfSpeech('pronouns')">代名詞</button>
+            <button onclick="selectPartOfSpeech('numerals')">数詞</button>
+            <a href="practice.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 難易度選択画面（品詞別モード用） -->
+      <div class="screen fade-in difficulty-selection-screen" id="difficultySelectionScreen" style="display: none;">
+        <h2>難易度を選択してください</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectDifficulty('beginner')">初級</button>
+            <button onclick="selectDifficulty('intermediate')">中級</button>
+            <button onclick="selectDifficulty('advanced')">上級</button>
+            <a href="practice.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- タイピング練習画面 -->
+      <div class="screen fade-in typing-practice-screen" id="typingPracticeScreen" style="display: none;">
+        <h2>タイピング練習</h2>
+        <div class="content">
+          <p id="currentTimerText">残り時間: 60秒</p>
+          <p id="currentScoreText">スコア: 0</p>
+          <p id="currentProgress">単語 1 / 10</p>
+          <div id="word-display">
+            <p id="currentKoreanWord">単語</p>
+            <p>日本語訳: <span id="currentJapaneseTranslation">単語</span></p>
+          </div>
+          <input
+            type="text"
+            id="user-input"
+            placeholder="韓国語を入力"
+            autocomplete="off"
+          >
+          <div class="button-group centered-buttons">
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> タイトルに戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- スコア画面 -->
+      <div class="screen fade-in score-screen" id="scoreScreen" style="display: none;">
+        <h2>結果</h2>
+        <div class="content">
+          <p id="finalScoreMessage">あなたのスコアは 0 です。</p>
+          <div class="button-group centered-buttons">
+            <button onclick="postToX()">
+              <i class="fab fa-twitter"></i> 結果をXでポストする
+            </button>
+            <button onclick="retryGame()">
+              <i class="fas fa-redo"></i> リトライ
+            </button>
+            <button onclick="goToLevelSelection()">
+              <i class="fas fa-level-up-alt"></i> レベル選択
+            </button>
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> タイトルに戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (300x250など)</p>
+      </div>
+
+      <!-- サイドバー広告2（オプション） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (300x600 等)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
+
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
   <script src="js/main.js"></script>
   <script src="js/practice.js"></script>
+
 </body>
 </html>

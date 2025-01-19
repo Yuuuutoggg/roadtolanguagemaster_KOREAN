@@ -1,142 +1,234 @@
-  <!--setting.html-->
-
+<!-- setting.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ハンマス 韓国語マスター 単語の道- 設定</title>
+  <title>ハンマス 韓国語マスター 単語の道 - 設定</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』の設定ページです。サウンド設定、プライバシーポリシー、アプリ情報の管理が可能です。">
   <meta name="keywords" content="ハンマス, 韓国語, 設定, 韓国語アプリ, プライバシーポリシー, サウンド設定, 単語の道">
-  <link rel="stylesheet" href="css/styleAds.css">
-  <!-- Font Awesome for icons -->
+
+  <!-- ファビコン -->
   <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- メインCSS（広告レイアウト対応のstyleAds.css） -->
+  <link rel="stylesheet" href="css/styleAds.css">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
+
+  <!-- ◆◆◆ トップ広告スペース ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告 (例: 728x90)</p>
   </div>
-</header>
 
-  <div class="app-container">
+  <!-- ========== ページ全体2カラムレイアウト ========== -->
+  <div class="page-container">
 
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="closeCustomAlert()">OK</button>
-        </div>
-      </div>
-    </div>
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
 
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="confirmYesCustom()">はい</button>
-          <button onclick="confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen fade-in settings-screen" id="settingsScreen">
-      <h2>設定</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button type="button" onclick="toggleSound()">
-            <i class="" id="soundIcon"></i>
-            サウンド: <span id="soundStatus">オン</span>
-          </button>
-          <!-- 音量調節スライダー -->
-          <div class="volume-control" id="volumeControl" style="display: block;">
-            <label for="volumeSlider">音量調節:</label>
-            <input
-              id="volumeSlider"
-              type="range"
-              min="0"
-              max="100"
-              step="10"
-              value="100"
-              oninput="setVolume(this.value)"
-            />
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="closeCustomAlert()">OK</button>
           </div>
-          <button type="button" onclick="showTermsOfUse()"><i class="fas fa-file-alt"></i> 利用規約</button>
-          <button type="button" onclick="showPrivacyPolicy()"><i class="fas fa-user-secret"></i> プライバシーポリシー</button>
-          <button type="button" onclick="showAppInfo()"><i class="fas fa-info-circle"></i> アプリ情報</button>
-          <a href="contact.html" class="button"><i class="fas fa-envelope"></i> お問い合わせ</a>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
         </div>
       </div>
-    </div>
-    
 
-    <!-- 利用規約画面 -->
-    <div class="screen fade-in terms-of-use-screen" id="termsOfUseScreen" style="display: none;">
-      <h2>利用規約</h2>
-      <div class="content scrollable-content">
-        <p>
-          利用規約の全文は、<a href="https://app-terms-and-privacy.netlify.app/terms_of_service.html" target="_blank" rel="noopener noreferrer">こちら</a>からご覧いただけます。
-        </p>
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="confirmYesCustom()">はい</button>
+            <button onclick="confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
       </div>
-      <div class="button-group centered-buttons">
-        <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
-      </div>
-    </div>
 
-    <!-- プライバシーポリシー画面 -->
-    <div class="screen fade-in privacy-policy-screen" id="privacyPolicyScreen" style="display: none;">
-      <h2>プライバシーポリシー</h2>
-      <div class="content scrollable-content">
-        <p>
-          プライバシーポリシーの全文は、<a href="https://app-terms-and-privacy.netlify.app/privacy_policy.html" target="_blank" rel="noopener noreferrer">こちら</a>からご覧いただけます。
-        </p>
+      <!-- 設定画面 -->
+      <div class="screen fade-in settings-screen" id="settingsScreen">
+        <h2>設定</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button type="button" onclick="toggleSound()">
+              <i class="" id="soundIcon"></i>
+              サウンド: <span id="soundStatus">オン</span>
+            </button>
+            <!-- 音量調節スライダー -->
+            <div class="volume-control" id="volumeControl" style="display: block;">
+              <label for="volumeSlider">音量調節:</label>
+              <input
+                id="volumeSlider"
+                type="range"
+                min="0"
+                max="100"
+                step="10"
+                value="100"
+                oninput="setVolume(this.value)"
+              />
+            </div>
+            <button type="button" onclick="showTermsOfUse()">
+              <i class="fas fa-file-alt"></i> 利用規約
+            </button>
+            <button type="button" onclick="showPrivacyPolicy()">
+              <i class="fas fa-user-secret"></i> プライバシーポリシー
+            </button>
+            <button type="button" onclick="showAppInfo()">
+              <i class="fas fa-info-circle"></i> アプリ情報
+            </button>
+            <a href="contact.html" class="button">
+              <i class="fas fa-envelope"></i> お問い合わせ
+            </a>
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="button-group centered-buttons">
-        <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
-      </div>
-    </div>
 
-    <!-- アプリ情報画面 -->
-    <div class="screen fade-in app-info-screen" id="appInfoScreen" style="display: none;">
-      <h2>アプリ情報</h2>
-      <div class="content">
-        <p>アプリ名: 韓国語タイピング＆学習アプリ</p>
-        <p>バージョン: <span id="appVersion">1.0.0</span></p>
+      <!-- 利用規約画面 -->
+      <div class="screen fade-in terms-of-use-screen" id="termsOfUseScreen" style="display: none;">
+        <h2>利用規約</h2>
+        <div class="content scrollable-content">
+          <p>
+            利用規約の全文は、
+            <a href="https://app-terms-and-privacy.netlify.app/terms_of_service.html"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+              こちら
+            </a>
+            からご覧いただけます。
+          </p>
+        </div>
         <div class="button-group centered-buttons">
-          <a href="setting.html" class="button"><i class="fas fa-times"></i> 閉じる</a>
+          <a href="setting.html" class="button">
+            <i class="fas fa-times"></i> 閉じる
+          </a>
         </div>
       </div>
+
+      <!-- プライバシーポリシー画面 -->
+      <div class="screen fade-in privacy-policy-screen" id="privacyPolicyScreen" style="display: none;">
+        <h2>プライバシーポリシー</h2>
+        <div class="content scrollable-content">
+          <p>
+            プライバシーポリシーの全文は、
+            <a href="https://app-terms-and-privacy.netlify.app/privacy_policy.html"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+              こちら
+            </a>
+            からご覧いただけます。
+          </p>
+        </div>
+        <div class="button-group centered-buttons">
+          <a href="setting.html" class="button">
+            <i class="fas fa-times"></i> 閉じる
+          </a>
+        </div>
+      </div>
+
+      <!-- アプリ情報画面 -->
+      <div class="screen fade-in app-info-screen" id="appInfoScreen" style="display: none;">
+        <h2>アプリ情報</h2>
+        <div class="content">
+          <p>アプリ名: 韓国語タイピング＆学習アプリ</p>
+          <p>バージョン: <span id="appVersion">1.0.0</span></p>
+          <div class="button-group centered-buttons">
+            <a href="setting.html" class="button">
+              <i class="fas fa-times"></i> 閉じる
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (例: 300x250)</p>
+      </div>
+
+      <!-- サイドバー広告2（任意で増減可） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (例: 300x600)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
+      </div>
     </div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
 
-  </div>
-
-  <!-- スクリプトファイルの読み込み -->
-  <!--<script src="script.js"></script>-->
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
   <script src="js/main.js"></script>
   <script src="js/setting.js"></script>
+
 </body>
 </html>

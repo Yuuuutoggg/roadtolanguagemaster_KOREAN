@@ -1,139 +1,221 @@
+<!-- quiz.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ハンマス 韓国語マスター 単語の道- 四択クイズ</title>
+  <title>ハンマス 韓国語マスター 単語の道 - 四択クイズ</title>
   <meta name="description" content="韓国語学習サイト『ハンマス』の四択クイズページです。学んだ単語を使ってクイズに挑戦し、語彙力をチェックしましょう。初心者から上級者まで対応。">
   <meta name="keywords" content="ハンマス, 韓国語, 韓国語クイズ, 四択クイズ, 韓国語学習, 単語の道">
+
+  <!-- メインのCSSファイル（広告レイアウト対応） -->
   <link rel="stylesheet" href="css/styleAds.css">
-  <!-- Font Awesome for icons -->
+
+  <!-- ファビコン -->
   <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-<!-- ヘッダーの追加 -->
-<header class="site-header">
-  <div class="container">
-    <!-- ハンバーガーメニューアイコン -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-    <!-- ナビゲーションメニュー -->
-    <nav class="navigation" id="nav-menu">
-      <ul class="nav-list">
-        <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
-        <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
-        <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
-        <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
-        <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
-        <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-  <div class="app-container">
-
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="closeCustomAlert()">OK</button>
-        </div>
+  <!-- ========== ヘッダー ========== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-    </div>
-
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="confirmYesCustom()">はい</button>
-          <button onclick="confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- quiz.html -->
-    <!-- 四択クイズ用レベル選択画面 -->
-    <div class="screen fade-in level-selection-screen" id="levelSelectionScreen">
-      <h2>レベルを選択してください</h2>
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <button onclick="selectLevel('beginner')">初級</button>
-          <button onclick="selectLevel('intermediate')">中級</button>
-          <button onclick="selectLevel('advanced')">上級</button>
-          <!-- 復習モード開始ボタン -->
-          <button onclick="startReviewModeFromLevelSelection()"><i class="fas fa-redo-alt"></i> 復習モードを開始</button>
-          <!-- 間違えた単語一覧表示ボタン -->
-          <button onclick="viewIncorrectWordsFromLevelSelection()"><i class="fas fa-list"></i> 間違えた単語の一覧を見る</button>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 四択クイズ画面 -->
-    <div class="screen fade-in quiz-screen" id="quizScreen" style="display: none;">
-      <h2>四択クイズ</h2>
-      <div class="content">
-        <p id="quizQuestionText">クイズの質問</p>
-        <div id="quizFeedbackText">フィードバック</div>
-        <div id="quizChoices">
-          <button class="quiz-choice-button" onclick="handleQuizChoice(0)">選択肢1</button>
-          <button class="quiz-choice-button" onclick="handleQuizChoice(1)">選択肢2</button>
-          <button class="quiz-choice-button" onclick="handleQuizChoice(2)">選択肢3</button>
-          <button class="quiz-choice-button" onclick="handleQuizChoice(3)">選択肢4</button>
-        </div>
-        <p id="quizScoreText">スコア: 0</p>
-        <div class="button-group centered-buttons">
-          <a href="index.html" class="button"><i class="fas fa-home"></i> タイトルに戻る</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- クイズ終了後の解答一覧画面 -->
-    <div class="screen fade-in quiz-summary-screen" id="quizSummaryScreen" style="display: none;">
-      <h2>解答一覧</h2>
-      <div class="content scrollable-content">
-        <ul id="quizSummaryList">
-          <li>解答がありません。</li>
+      <!-- ナビゲーションメニュー -->
+      <nav class="navigation" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="learning.html"><i class="fas fa-book"></i> 単語学習</a></li>
+          <li><a href="quiz.html"><i class="fas fa-question"></i> 四択クイズ</a></li>
+          <li><a href="practice.html"><i class="fas fa-keyboard"></i> タイピング練習</a></li>
+          <li><a href="user_created.html"><i class="fas fa-user"></i> ユーザー作成モード</a></li>
+          <li><a href="setting.html"><i class="fas fa-cog"></i> 設定</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> 運営者情報</a></li>
         </ul>
-        <p id="quizFinalScoreText">最終スコア: 0 / 10</p>
-        <!-- ボタンをスクロール可能なコンテンツ内に配置 -->
-        <div class="button-group centered-buttons">
-          <button onclick="retryQuiz()"><i class="fas fa-redo"></i> もう一度クイズをする</button>
-          <button onclick="startReviewMode()"><i class="fas fa-redo-alt"></i> 復習モードを開始</button>
-          <!-- 間違えた単語一覧表示ボタン -->
-          <button onclick="viewIncorrectWordsFromLevelSelection()"><i class="fas fa-list"></i> 間違えた単語の一覧を見る</button>
-          <a href="index.html" class="button"><i class="fas fa-home"></i> 戻る</a>
-        </div>
-      </div>
+      </nav>
     </div>
+  </header>
+  <!-- ========== ヘッダーここまで ========== -->
 
-    <!-- 四択クイズモードの間違えた単語一覧 -->
-    <div class="screen fade-in incorrect-words-screen" id="incorrectWordsScreen" style="display: none;">
-      <h2>間違えた単語一覧</h2>
-      <div class="content scrollable-content">
-        <ul id="incorrectWordsList">
-          <li>間違えた単語はありません。</li>
-        </ul>
-      </div>
-      <div class="button-group centered-buttons">
-        <button onclick="closeIncorrectWordsScreen()" class="fixed-footer"><i class="fas fa-times"></i> 閉じる</button>
-      </div>
-    </div>
-
+  <!-- ◆◆◆ トップ広告スペース ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+    <p>トップバナー広告 (例: 728x90)</p>
   </div>
 
-  <!-- スクリプトファイルの読み込み -->
+  <!-- ========== ページ全体を2カラムにするコンテナ ========== -->
+  <div class="page-container">
+
+    <!-- ========== メインコンテンツ ========== -->
+    <main class="main-content">
+
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="closeCustomAlert()">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="confirmYesCustom()">はい</button>
+            <button onclick="confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 以下、四択クイズの各画面 ========== -->
+
+      <!-- レベル選択画面 -->
+      <div class="screen fade-in level-selection-screen" id="levelSelectionScreen">
+        <h2>レベルを選択してください</h2>
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <button onclick="selectLevel('beginner')">初級</button>
+            <button onclick="selectLevel('intermediate')">中級</button>
+            <button onclick="selectLevel('advanced')">上級</button>
+            <!-- 復習モード開始ボタン -->
+            <button onclick="startReviewModeFromLevelSelection()">
+              <i class="fas fa-redo-alt"></i> 復習モードを開始
+            </button>
+            <!-- 間違えた単語一覧表示ボタン -->
+            <button onclick="viewIncorrectWordsFromLevelSelection()">
+              <i class="fas fa-list"></i> 間違えた単語の一覧を見る
+            </button>
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 四択クイズ画面 -->
+      <div class="screen fade-in quiz-screen" id="quizScreen" style="display: none;">
+        <h2>四択クイズ</h2>
+        <div class="content">
+          <p id="quizQuestionText">クイズの質問</p>
+          <div id="quizFeedbackText">フィードバック</div>
+          <div id="quizChoices">
+            <button class="quiz-choice-button" onclick="handleQuizChoice(0)">選択肢1</button>
+            <button class="quiz-choice-button" onclick="handleQuizChoice(1)">選択肢2</button>
+            <button class="quiz-choice-button" onclick="handleQuizChoice(2)">選択肢3</button>
+            <button class="quiz-choice-button" onclick="handleQuizChoice(3)">選択肢4</button>
+          </div>
+          <p id="quizScoreText">スコア: 0</p>
+          <div class="button-group centered-buttons">
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> タイトルに戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- クイズ終了後の解答一覧画面 -->
+      <div class="screen fade-in quiz-summary-screen" id="quizSummaryScreen" style="display: none;">
+        <h2>解答一覧</h2>
+        <div class="content scrollable-content">
+          <ul id="quizSummaryList">
+            <li>解答がありません。</li>
+          </ul>
+          <p id="quizFinalScoreText">最終スコア: 0 / 10</p>
+          <div class="button-group centered-buttons">
+            <button onclick="retryQuiz()">
+              <i class="fas fa-redo"></i> もう一度クイズをする
+            </button>
+            <button onclick="startReviewMode()">
+              <i class="fas fa-redo-alt"></i> 復習モードを開始
+            </button>
+            <!-- 間違えた単語一覧表示ボタン -->
+            <button onclick="viewIncorrectWordsFromLevelSelection()">
+              <i class="fas fa-list"></i> 間違えた単語の一覧を見る
+            </button>
+            <a href="index.html" class="button">
+              <i class="fas fa-home"></i> 戻る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 間違えた単語一覧画面 -->
+      <div class="screen fade-in incorrect-words-screen" id="incorrectWordsScreen" style="display: none;">
+        <h2>間違えた単語一覧</h2>
+        <div class="content scrollable-content">
+          <ul id="incorrectWordsList">
+            <li>間違えた単語はありません。</li>
+          </ul>
+        </div>
+        <div class="button-group centered-buttons">
+          <button onclick="closeIncorrectWordsScreen()" class="fixed-footer">
+            <i class="fas fa-times"></i> 閉じる
+          </button>
+        </div>
+      </div>
+
+    </main>
+    <!-- ========== メインコンテンツここまで ========== -->
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告1 (300x250など)</p>
+      </div>
+      <!-- サイドバー広告2（任意で増やせます） -->
+      <div class="ad-space sidebar-ad">
+        <!-- ここにGoogle AdSenseコードを貼り付けてください -->
+        <p>サイドバー広告2 (300x600等)</p>
+      </div>
+    </aside>
+    <!-- ========== サイドバーここまで ========== -->
+
+  </div> <!-- .page-container ここまで -->
+
+  <!-- ========== フッター ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- フッター左エリア（ロゴなど） -->
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="ハンマス ロゴ" />
+      </div>
+
+      <!-- フッター中央エリア（各種リンク） -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+        </ul>
+      </div>
+
+      <!-- フッター右エリア（コピーライトなど） -->
+      <div class="footer-copy">
+        <p>© 2023 ハンマス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== フッターここまで ========== -->
+
+  <!-- ===============================
+       スクリプトファイルの読み込み
+  ================================ -->
   <script src="js/main.js"></script>
   <script src="js/quiz.js"></script>
+
 </body>
 </html>
