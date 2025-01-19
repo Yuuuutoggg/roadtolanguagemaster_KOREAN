@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,8 +7,9 @@
   <meta name="description" content="韓国語学習サイト『ハンマス』のホームページです。単語学習、四択クイズ、タイピング練習で楽しく韓国語を習得しましょう。初心者から上級者まで対応。">
   <meta name="keywords" content="ハンマス,韓国語, 韓国語学習, 韓国語アプリ, 単語学習, 韓国語クイズ, タイピング練習, 単語の道">
   <link rel="icon" href="images/logo.png" type="image/png">
-  <!-- スタイルシート -->
-  <link rel="stylesheet" href="css/stylepc.css">
+
+  <!-- 新しいCSSを読み込み -->
+  <link rel="stylesheet" href="css/styleAds.css">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,61 +41,84 @@
     </div>
   </header>
 
-  <!-- メインコンテンツラッパ -->
-  <div class="app-container">
+  <!-- ◆◆◆ トップ広告（横長バナーなど） ◆◆◆ -->
+  <div class="ad-space top-ad">
+    <!-- Google AdSense等の広告コードを挿入 -->
+    <p>ここにトップバナー広告が入ります（例: 728x90）</p>
+  </div>
 
-    <!-- カスタムアラートモーダル -->
-    <div class="custom-modal" id="customAlertModal" style="display: none;">
-      <div class="modal-content">
-        <p id="alertMessage">アラートメッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="closeCustomAlert()">OK</button>
-        </div>
-      </div>
-    </div>
+  <!-- ページ全体のコンテナ -->
+  <div class="page-container">
 
-    <!-- カスタム確認モーダル -->
-    <div class="modal" id="customConfirmModal" style="display: none;">
-      <div class="modal-content">
-        <p id="confirmMessage">確認メッセージ</p>
-        <div class="button-group centered-buttons">
-          <button onclick="confirmYesCustom()">はい</button>
-          <button onclick="confirmNoCustom()">いいえ</button>
-        </div>
-      </div>
-    </div>
+    <!-- メインコンテンツ -->
+    <main class="main-content">
 
-    <!-- タイトル画面 -->
-    <div class="screen fade-in mode-selection-screen" id="modeSelectionScreen">
-      <h1>ハンマス<br></h1>
-
-      <!-- 「今日のひと単語」セクション -->
-      <div id="wordOfTheDay" class="word-of-the-day-section">
-        <!-- JavaScriptで内容が挿入されます -->
-      </div>
-
-      <!-- 4つのボタンをまとめたボタングループ -->
-      <div class="content">
-        <div class="button-group centered-buttons">
-          <a href="learning.html" class="button"><i class="fas fa-book"></i> 単語学習</a>
-          <a href="quiz.html" class="button"><i class="fas fa-question"></i> 四択クイズ</a>
-          <a href="practice.html" class="button"><i class="fas fa-keyboard"></i> タイピング練習</a>
-          <a href="user_created.html" class="button"><i class="fas fa-user"></i> ユーザー作成モード</a>
-          <a href="setting.html" class="button settings-button"><i class="fas fa-cog"></i> 設定</a>
+      <!-- カスタムアラートモーダル -->
+      <div class="custom-modal" id="customAlertModal" style="display: none;">
+        <div class="modal-content">
+          <p id="alertMessage">アラートメッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="closeCustomAlert()">OK</button>
+          </div>
         </div>
       </div>
 
-      <!-- Google AdSenseなどの広告を挿入したい場合の枠 -->
-      <div class="adsense-banner">
-        <!-- ここにAdSenseのコードを貼り付けてください -->
-        <p>広告エリア (728x90等のレスポンシブ広告など)</p>
+      <!-- カスタム確認モーダル -->
+      <div class="modal" id="customConfirmModal" style="display: none;">
+        <div class="modal-content">
+          <p id="confirmMessage">確認メッセージ</p>
+          <div class="button-group centered-buttons">
+            <button onclick="confirmYesCustom()">はい</button>
+            <button onclick="confirmNoCustom()">いいえ</button>
+          </div>
+        </div>
       </div>
 
-    </div> <!-- .mode-selection-screen ここまで -->
+      <!-- タイトル画面 -->
+      <div class="screen fade-in mode-selection-screen" id="modeSelectionScreen">
+        <h1>ハンマス</h1>
 
-  </div> <!-- .app-container ここまで -->
+        <!-- 「今日のひと単語」セクション -->
+        <div id="wordOfTheDay" class="word-of-the-day-section">
+          <!-- JSで内容が挿入される -->
+        </div>
 
-  <!-- ===== フッター追加 ===== -->
+        <!-- ボタンエリア -->
+        <div class="content">
+          <div class="button-group centered-buttons">
+            <a href="learning.html" class="button"><i class="fas fa-book"></i> 単語学習</a>
+            <a href="quiz.html" class="button"><i class="fas fa-question"></i> 四択クイズ</a>
+            <a href="practice.html" class="button"><i class="fas fa-keyboard"></i> タイピング練習</a>
+            <a href="user_created.html" class="button"><i class="fas fa-user"></i> ユーザー作成モード</a>
+            <a href="setting.html" class="button settings-button"><i class="fas fa-cog"></i> 設定</a>
+          </div>
+        </div>
+
+        <!-- メイン広告エリア（例: レスポンシブ広告） -->
+        <div class="ad-space main-ad">
+          <p>ここにメインエリア用広告を挿入（例: レスポンシブ広告）</p>
+        </div>
+
+      </div><!-- .mode-selection-screen ここまで -->
+
+    </main><!-- .main-content ここまで -->
+
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <!-- サイドバー広告1 -->
+      <div class="ad-space sidebar-ad">
+        <p>サイド広告1</p>
+      </div>
+
+      <!-- サイドバー広告2 -->
+      <div class="ad-space sidebar-ad">
+        <p>サイド広告2</p>
+      </div>
+    </aside>
+
+  </div><!-- .page-container ここまで -->
+
+  <!-- フッター -->
   <footer class="site-footer">
     <div class="footer-container">
       <!-- フッター左エリア（ロゴなど） -->
@@ -119,10 +142,8 @@
       </div>
     </div>
   </footer>
-  <!-- ===== フッターここまで ===== -->
 
-  <!-- スクリプトファイルの読み込み -->
-  <!-- <script src="script.js"></script> (不要であれば外す) -->
+  <!-- 必要なスクリプトファイルの読み込み -->
   <script src="js/main.js"></script>
   <script src="js/learning.js"></script>
   <script src="js/quiz.js"></script>
@@ -138,7 +159,7 @@
       { word: "친구", meaning: "友達" },
       { word: "감사합니다", meaning: "ありがとうございます" },
       { word: "행복", meaning: "幸せ" },
-      // ここに他の単語を追加できます
+      // 他の単語を追加
     ];
 
     // 現在の日付を取得
@@ -163,7 +184,6 @@
 
     // HTMLに単語を挿入
     var wordOfTheDayDiv = document.getElementById('wordOfTheDay');
-
     if (wordOfTheDayDiv) {
       wordOfTheDayDiv.innerHTML = '<h2>今日のひと単語</h2>' +
                                   '<p class="word-of-the-day-word">' + todaysWord.word + '</p>' +

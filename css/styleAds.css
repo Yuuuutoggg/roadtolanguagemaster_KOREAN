@@ -1,0 +1,398 @@
+/* styleAds.css */
+
+/* Google Fontsの読み込み（必要に応じて） */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+JP&display=swap');
+
+/* ---------------------
+   リセット & 基本設定
+--------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #333;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* タイトルのスタイル */
+h1, h2 {
+  font-family: 'Caveat', cursive; /* 手書き風で可愛い印象 */
+  color: #6a1b9a;                 /* パステルパープル */
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* ----------------------
+   ヘッダー関連
+---------------------- */
+.site-header {
+  background-color: rgba(255, 236, 210, 0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+/* ハンバーガーメニュー */
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: #6a1b9a;
+  transition: all 0.3s ease;
+}
+
+/* ナビゲーションメニュー */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(255, 236, 210, 0.95);
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.navigation.active {
+  left: 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.nav-list li {
+  margin: 15px 0;
+}
+
+.nav-list a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px;
+  display: block;
+}
+
+.nav-list a:hover {
+  background-color: rgba(250, 208, 196, 0.5);
+  border-radius: 5px;
+}
+
+/* デスクトップでは横並びに */
+@media (min-width: 1025px) {
+  .menu-toggle {
+    display: none; /* PCでは非表示に */
+  }
+
+  .navigation {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-list li {
+    margin: 0 15px;
+  }
+
+  .nav-list li a {
+    font-size: 1em;
+    padding: 5px 10px;
+    display: inline-block;
+  }
+
+  .nav-list li a:hover {
+    background-color: rgba(250, 208, 196, 0.5);
+    border-radius: 5px;
+  }
+}
+
+/* ヘッダーの下にコンテンツが隠れないよう余白確保 */
+body {
+  padding-top: 60px; /* ヘッダーの高さ分 */
+}
+
+/* ----------------------
+   広告用クラス
+---------------------- */
+.ad-space {
+  background-color: #fff7e6; /* 薄い背景色 */
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ffe0b2;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* サイズ・位置の例示 */
+.top-ad {
+  max-width: 728px;  /* 一般的な横長バナーサイズ */
+}
+.main-ad {
+  max-width: 336px;  /* レスポンシブ広告など */
+}
+.sidebar-ad {
+  max-width: 300px;  /* 縦長広告、スクエア広告など */
+}
+
+/* ----------------------
+   ページ全体のレイアウト
+---------------------- */
+.page-container {
+  display: flex;
+  flex-wrap: wrap;  /* 狭い画面では折り返す */
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;   /* 中央寄せ */
+}
+
+/* メインコンテンツ */
+.main-content {
+  flex: 1;
+  min-width: 0; /* 狭い画面で極端に潰れないようにするなら調整 */
+  padding: 20px;
+}
+
+/* サイドバー */
+.sidebar {
+  flex: 0 0 300px; /* デスクトップ時は300px固定 */
+  padding: 20px;
+}
+
+/* ----------------------
+   各画面の要素デザイン
+---------------------- */
+
+/* ボタンのスタイル */
+button, a.button {
+  padding: 15px 20px;
+  margin: 10px 0px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: #ff9a9e;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  word-wrap: break-word;
+  min-height: 50px;
+  text-decoration: none;
+}
+
+button:hover, a.button:hover {
+  background-color: #fad0c4;
+}
+
+button i, a.button i {
+  margin-right: 8px;
+}
+
+/* ボタングループ */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+.button-group.centered-buttons {
+  gap: 20px;
+}
+.button-group.centered-buttons button,
+.button-group.centered-buttons a.button {
+  max-width: 350px;
+  min-width: 200px;
+}
+
+/* 「今日のひと単語」セクション */
+.word-of-the-day-section {
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid darkblue;
+  border-radius: 15px;
+  text-align: center;
+}
+.word-of-the-day-section h2 {
+  font-size: 1.5em;
+  color: #6a1b9a;
+  margin-bottom: 0;
+}
+.word-of-the-day-word {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ff9a9e;
+}
+.word-of-the-day-meaning {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* スクリーンの箱 */
+.screen {
+  background: rgba(255, 255, 255, 0.95);
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* その他のコンテンツ共通 */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* モーダル */
+.modal, .custom-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal-content, .custom-modal .modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------------
+   フッター
+---------------------- */
+.site-footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #fcb69f;
+  padding: 20px 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-logo img {
+  width: 70px;
+  height: auto;
+  display: block;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+.footer-links li a:hover {
+  color: #ff9a9e;
+}
+
+.footer-copy p {
+  font-size: 0.9em;
+  color: #333;
+  margin: 0;
+  text-align: right;
+}
+
+/* ----------------------
+   レスポンシブ対応
+---------------------- */
+/* スマホ (最大767px) */
+@media (max-width: 767px) {
+  .page-container {
+    flex-direction: column; /* 縦並びに */
+  }
+  .sidebar {
+    flex: 0 0 auto;
+  }
+  .footer-copy p {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* タブレット (768px～1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* 適宜調整 */
+  .page-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sidebar {
+    flex: 0 0 250px;
+  }
+}
