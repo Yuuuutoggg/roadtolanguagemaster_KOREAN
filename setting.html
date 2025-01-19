@@ -97,29 +97,12 @@
         <h2>設定</h2>
         <div class="content">
           <div class="button-group centered-buttons">
-            <button type="button" onclick="toggleSound()">
-              <i class="" id="soundIcon"></i>
-              サウンド: <span id="soundStatus">オン</span>
-            </button>
-            <!-- 音量調節スライダー -->
-            <div class="volume-control" id="volumeControl" style="display: block;">
-              <label for="volumeSlider">音量調節:</label>
-              <input
-                id="volumeSlider"
-                type="range"
-                min="0"
-                max="100"
-                step="10"
-                value="100"
-                oninput="setVolume(this.value)"
-              />
-            </div>
-            <button type="button" onclick="showTermsOfUse()">
+            <a href="terms.html" class="button">
               <i class="fas fa-file-alt"></i> 利用規約
-            </button>
-            <button type="button" onclick="showPrivacyPolicy()">
+            </a>            
+            <a href="privacy.html" class="button">
               <i class="fas fa-user-secret"></i> プライバシーポリシー
-            </button>
+            </a>            
             <button type="button" onclick="showAppInfo()">
               <i class="fas fa-info-circle"></i> アプリ情報
             </button>
@@ -130,50 +113,6 @@
               <i class="fas fa-home"></i> 戻る
             </a>
           </div>
-        </div>
-      </div>
-
-      <!-- 利用規約画面 -->
-      <div class="screen fade-in terms-of-use-screen" id="termsOfUseScreen" style="display: none;">
-        <h2>利用規約</h2>
-        <div class="content scrollable-content">
-          <p>
-            利用規約の全文は、
-            <a href="https://app-terms-and-privacy.netlify.app/terms_of_service.html"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-              こちら
-            </a>
-            からご覧いただけます。
-          </p>
-        </div>
-        <div class="button-group centered-buttons">
-          <a href="setting.html" class="button">
-            <i class="fas fa-times"></i> 閉じる
-          </a>
-        </div>
-      </div>
-
-      <!-- プライバシーポリシー画面 -->
-      <div class="screen fade-in privacy-policy-screen" id="privacyPolicyScreen" style="display: none;">
-        <h2>プライバシーポリシー</h2>
-        <div class="content scrollable-content">
-          <p>
-            プライバシーポリシーの全文は、
-            <a href="https://app-terms-and-privacy.netlify.app/privacy_policy.html"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-              こちら
-            </a>
-            からご覧いただけます。
-          </p>
-        </div>
-        <div class="button-group centered-buttons">
-          <a href="setting.html" class="button">
-            <i class="fas fa-times"></i> 閉じる
-          </a>
         </div>
       </div>
 
