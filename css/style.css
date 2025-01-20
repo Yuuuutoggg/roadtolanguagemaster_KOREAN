@@ -1,4 +1,4 @@
-/* styleAds.css */
+/* style.css */
 
 /* --------------------------------
    Google Fontsの読み込み
@@ -299,25 +299,36 @@ li p {
     margin-right: 0.5rem;
 }
 
-/* --------------------------------
-   音量調節スライダーのスタイル
---------------------------------- */
-.volume-control {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.volume-control label {
-    display: block;
+.learning-mode-screen .learning-text {
+    margin: 0.8rem 0;           
+    line-height: 1.6;            
+  }
+  
+  #learningKoreanWord,
+  #learningExampleKorean {
+    font-weight: bold;           
+    color: #d81b60;              
+    background-color: #ffe6ec;   
+    border-left: 6px solid #ff9a9e;
+    padding: 10px;               
+    margin: 1.2rem 0;            
+    border-radius: 5px;          
+  }
+  
+  #learningJapaneseTranslation,
+  #learningExampleJapanese {
+    margin: 1rem 0;
+    padding-left: 5px;           
+    color: #333;                 
+  }
+  
+  #learningKoreanWord, 
+  #learningExampleKorean,
+  #learningJapaneseTranslation, 
+  #learningExampleJapanese {
     font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #6a1b9a;
-}
-
-.volume-control input[type='range'] {
-    width: 70%;
-    max-width: 400px;
-}
+  }
+  
 
 /* --------------------------------
    単語表示のスタイル
